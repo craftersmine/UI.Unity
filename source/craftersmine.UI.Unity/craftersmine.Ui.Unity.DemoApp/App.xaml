@@ -1,0 +1,14 @@
+﻿<Application x:Class="craftersmine.UI.Unity.DemoApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:craftersmine.UI.Unity.DemoApp"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/craftersmine.UI.Unity;component/DarkTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/craftersmine.Ui.Unity;component/UnityUI.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

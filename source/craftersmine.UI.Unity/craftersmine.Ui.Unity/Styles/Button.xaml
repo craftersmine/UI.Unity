@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:craftersmine.UI.Unity"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource ButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="ButtonHoverBackgroundBrush" Color="{DynamicResource ButtonHoverBackgroundColor}"/>
+    <SolidColorBrush x:Key="ButtonPressedBackgroundBrush" Color="{local:ColorBlend {DynamicResource ButtonBackgroundColor}, {DynamicResource UnityUIAccentColor}, 0.46}"/>
+    <SolidColorBrush x:Key="ButtonDisabledBackgroundBrush" Color="{local:ColorBlend {DynamicResource ButtonBackgroundColor}, Transparent, 0.5}"/>
+
+    <SolidColorBrush x:Key="ButtonBorderSidesBrush" Color="{DynamicResource ButtonBorderColor}" Opacity="{DynamicResource ButtonBorderOpacity}"/>
+    <SolidColorBrush x:Key="ButtonBorderBottomBrush" Color="{DynamicResource ButtonBorderColor}" Opacity="1"/>
+    <SolidColorBrush x:Key="ButtonBorderTopBrush" Color="{DynamicResource ButtonBorderColor}" Opacity="{DynamicResource ButtonBorderOpacity}"/>
+    
+    <SolidColorBrush x:Key="ButtonPressedBorderSidesBrush" Color="{DynamicResource ButtonBorderColor}" Opacity="1"/>
+    <SolidColorBrush x:Key="ButtonPressedBorderBottomBrush" Color="{DynamicResource ButtonBorderColor}" Opacity="1"/>
+    <SolidColorBrush x:Key="ButtonPressedBorderTopBrush" Color="{DynamicResource ButtonPressedBorderColor}" Opacity="1"/>
+
+    <Style TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource InterFont}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" Margin="1" CornerRadius="1"/>
+
+                        <Border x:Name="ButtonBorderTop" BorderThickness="0 1 0 0" CornerRadius="2.5 2.5 0 0" BorderBrush="{DynamicResource ButtonBorderTopBrush}" DockPanel.Dock="Top"/>
+                        <Border x:Name="ButtonBorderSideLeft" BorderThickness="1 0 0 0" CornerRadius="2.5 0 0 2.5" BorderBrush="{DynamicResource ButtonBorderSidesBrush}" DockPanel.Dock="Left"/>
+                        <Border x:Name="ButtonBorderSideRight" BorderThickness="0 0 1 0" CornerRadius="0 2.5 2.5 0" BorderBrush="{DynamicResource ButtonBorderSidesBrush}" DockPanel.Dock="Right"/>
+                        <Border x:Name="ButtonBorderBottom" BorderThickness="0 0 0 1" CornerRadius="0 0 2.5 2.5" BorderBrush="{DynamicResource ButtonBorderBottomBrush}" DockPanel.Dock="Bottom"/>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonHoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonPressedBackgroundBrush}"/>
+                            <Setter TargetName="ButtonBorderSideLeft" Property="BorderBrush" Value="{DynamicResource ButtonPressedBorderSidesBrush}"/>
+                            <Setter TargetName="ButtonBorderSideRight" Property="BorderBrush" Value="{DynamicResource ButtonPressedBorderSidesBrush}"/>
+                            <Setter TargetName="ButtonBorderBottom" Property="BorderBrush" Value="{DynamicResource ButtonPressedBorderBottomBrush}"/>
+                            <Setter TargetName="ButtonBorderTop" Property="BorderBrush" Value="{DynamicResource ButtonPressedBorderTopBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value=".5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

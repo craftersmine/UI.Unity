@@ -24,5 +24,13 @@
                 <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
+        <GroupBox Header="TextBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+            <StackPanel>
+                <TextBox Text="Default"/>
+                <TextBox Text="Disabled" IsEnabled="False"/>
+                <TextBox Text="ReadOnly" IsReadOnly="True"/>
+                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
     </WrapPanel>
 </Window>

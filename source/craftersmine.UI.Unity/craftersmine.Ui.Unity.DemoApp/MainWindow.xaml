@@ -14,5 +14,15 @@
                 <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>
             </StackPanel>
         </GroupBox>
+        <GroupBox Header="CheckBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+            <StackPanel>
+                <CheckBox Content="Default"/>
+                <CheckBox Content="Checked" IsChecked="True"/>
+                <CheckBox Content="Indeterminate" IsThreeState="True" IsChecked="{x:Null}"/>
+                <CheckBox Content="Disabled" IsEnabled="False"/>
+                <CheckBox Content="CheckedDisabled" IsChecked="True" IsEnabled="False"/>
+                <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
     </WrapPanel>
 </Window>

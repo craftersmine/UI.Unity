@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="CheckboxTopBorderBrush" Color="{DynamicResource CheckboxTopBorderColor}"/>
+    <SolidColorBrush x:Key="CheckboxBorderBrush" Color="{DynamicResource CheckboxBorderColor}"/>
+    <SolidColorBrush x:Key="CheckboxTopHoverBorderBrush" Color="{DynamicResource CheckboxTopHoverBorderColor}"/>
+    <SolidColorBrush x:Key="CheckboxHoverBorderBrush" Color="{DynamicResource CheckboxHoverBorderColor}"/>
+    <SolidColorBrush x:Key="CheckboxTopFocusedBorderBrush" Color="{DynamicResource UnityUIAccentColor}"/>
+    <SolidColorBrush x:Key="CheckboxFocusedBorderBrush" Color="{DynamicResource UnityUIAccentColor}"/>
+    
+    <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource CheckboxBackgroundColor}"/>
+    <SolidColorBrush x:Key="CheckboxForegroundBrush" Color="{DynamicResource UnityUIAccentColor}"/>
+
+    <Style TargetType="CheckBox">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{StaticResource InterFont}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="22"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <BulletDecorator>
+                                <Grid Width="14" Height="14">
+                                    <Border CornerRadius="1" Background="{DynamicResource CheckboxBackgroundBrush}" x:Name="CheckboxInner">
+                                        <Path x:Name="Tick" Data="M 2,6 L 5,9 M 4,9 L 10,3" Stroke="{DynamicResource ControlForegroundBrush}" HorizontalAlignment="Center" Width="12" Height="12"/>
+                                    </Border>
+                                    <Border BorderBrush="{DynamicResource CheckboxTopBorderBrush}" BorderThickness="0 1 0 0" CornerRadius="1.5 1.5 0 0" x:Name="CheckboxTopBorder"/>
+                                    <Border BorderBrush="{DynamicResource CheckboxBorderBrush}" BorderThickness="1 0 1 1" CornerRadius="1.5" x:Name="CheckboxBorder"/>
+                                </Grid>
+                            </BulletDecorator>
+
+                            <ContentControl x:Name="Content" Grid.Column="1" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CheckboxBorder" Property="BorderBrush" Value="{DynamicResource CheckboxHoverBorderBrush}"/>
+                                <Setter TargetName="CheckboxTopBorder" Property="BorderBrush" Value="{DynamicResource CheckboxTopHoverBorderBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource CheckboxForegroundBrush}"/>
+                                <Setter TargetName="CheckboxBorder" Property="BorderBrush" Value="{DynamicResource CheckboxFocusedBorderBrush}"/>
+                                <Setter TargetName="CheckboxTopBorder" Property="BorderBrush" Value="{DynamicResource CheckboxTopFocusedBorderBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value=".5"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="Tick" Property="Visibility" Value="Hidden"/>
+                                <Setter TargetName="Tick" Property="Stroke" Value="{DynamicResource ControlForegroundBrush}"/>
+                                <Setter TargetName="Tick" Property="Fill" Value="{x:Null}"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsThreeState" Value="True"/>
+                                    <Condition Property="IsChecked" Value="{x:Null}"/>
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter TargetName="Tick" Property="Visibility" Value="Visible"/>
+                                    <Setter TargetName="Tick" Property="Stroke" Value="{x:Null}"/>
+                                    <Setter TargetName="Tick" Property="Fill" Value="{DynamicResource ControlForegroundBrush}"/>
+                                    <Setter TargetName="Tick" Property="Data" Value="M 2.5,2.5 L 9.5,2.5 L 9.5,9.5 L 2.5,9.5"/>
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    
+</ResourceDictionary>

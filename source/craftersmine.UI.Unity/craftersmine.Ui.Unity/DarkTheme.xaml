@@ -10,5 +10,11 @@
     <Color x:Key="ButtonHoverBackgroundColor">#676767</Color>
     <Color x:Key="ButtonBorderColor">#242424</Color>
     <Color x:Key="ButtonPressedBorderColor">#0D0D0D</Color>
+
+    <Color x:Key="CheckboxBackgroundColor">#2a2a2a</Color>
+    <Color x:Key="CheckboxTopBorderColor">#0d0d0d</Color>
+    <Color x:Key="CheckboxBorderColor">#212121</Color>
+    <Color x:Key="CheckboxTopHoverBorderColor">#656565</Color>
+    <Color x:Key="CheckboxHoverBorderColor">#656565</Color>
     
 </ResourceDictionary>

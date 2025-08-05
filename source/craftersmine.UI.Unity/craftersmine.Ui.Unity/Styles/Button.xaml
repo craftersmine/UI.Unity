@@ -21,9 +21,10 @@
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
         <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}"/>
         <Setter Property="FontFamily" Value="{DynamicResource InterFont}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="Button" x:Name="Root">
                     <Grid>
                         <Border Background="{TemplateBinding Background}" Margin="1" CornerRadius="1"/>
 
@@ -32,8 +33,9 @@
                         <Border x:Name="ButtonBorderSideRight" BorderThickness="0 0 1 0" CornerRadius="0 2.5 2.5 0" BorderBrush="{DynamicResource ButtonBorderSidesBrush}" DockPanel.Dock="Right"/>
                         <Border x:Name="ButtonBorderBottom" BorderThickness="0 0 0 1" CornerRadius="0 0 2.5 2.5" BorderBrush="{DynamicResource ButtonBorderBottomBrush}" DockPanel.Dock="Bottom"/>
 
-                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}" Focusable="False"/>
                     </Grid>
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="{DynamicResource ButtonHoverBackgroundBrush}"/>

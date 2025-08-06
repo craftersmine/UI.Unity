@@ -10,9 +10,12 @@
     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{local:ColorBlend {DynamicResource BackgroundColor}, {DynamicResource UnityUIAccentColor}, 0.8}"/>
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/PasswordBox.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TextBlock.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/CheckBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Button.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TextBox.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Slider.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

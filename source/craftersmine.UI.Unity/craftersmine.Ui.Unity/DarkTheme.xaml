@@ -25,4 +25,9 @@
     <Color x:Key="TextBoxTopHoverBorderColor">#656565</Color>
     <Color x:Key="TextBoxHoverBorderColor">#656565</Color>
 
+    <Color x:Key="SliderTrackColor">#5e5e5e</Color>
+    <Color x:Key="SliderHandleColor">#999999</Color>
+    <Color x:Key="SliderHandleHoverColor">#EAEAEA</Color>
+    <sys:Double x:Key="SliderHandleFocusedBorderOpacity">0.5</sys:Double>
+
 </ResourceDictionary>

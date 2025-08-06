@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="TextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
+            <Setter Property="FontFamily" Value="{StaticResource InterFont}"/>
+        </Style.Setters>
+    </Style>
+    
+</ResourceDictionary>

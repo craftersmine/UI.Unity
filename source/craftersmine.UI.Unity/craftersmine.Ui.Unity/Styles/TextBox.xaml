@@ -19,6 +19,7 @@
             <Setter Property="MinHeight" Value="18"/>
             <Setter Property="MinWidth" Value="120"/>
             <Setter Property="CaretBrush" Value="{DynamicResource ControlForegroundBrush}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">

@@ -32,5 +32,16 @@
                 <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
+        <GroupBox Header="TextBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+            <StackPanel>
+                <PasswordBox Password="Default" Style="{DynamicResource UnityPasswordBox}"/>
+                <PasswordBox Password="Disabled" Style="{DynamicResource UnityPasswordBox}" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Sliders" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+            <StackPanel>
+                <Slider/>
+            </StackPanel>
+        </GroupBox>
     </WrapPanel>
 </Window>

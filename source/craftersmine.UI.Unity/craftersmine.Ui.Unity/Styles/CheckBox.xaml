@@ -35,7 +35,7 @@
                                 </Grid>
                             </BulletDecorator>
 
-                            <ContentControl x:Name="Content" Grid.Column="1" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"/>
+                            <ContentPresenter x:Name="Content" Grid.Column="1" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"/>
                         </Grid>
 
                         <ControlTemplate.Triggers>

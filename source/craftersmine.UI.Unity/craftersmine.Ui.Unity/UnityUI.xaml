@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:craftersmine.UI.Unity">
 
-    <FontFamily x:Key="InterFont">./craftersmine.Ui.Unity;component/Fonts/#Inter</FontFamily>
+    <FontFamily x:Key="InterFont">/craftersmine.Ui.Unity;component/Fonts/#Inter</FontFamily>
 
     <Color x:Key="UnityUIAccentColor">#3A79BB</Color>
 

@@ -39,8 +39,15 @@
             </StackPanel>
         </GroupBox>
         <GroupBox Header="Sliders" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
-            <StackPanel>
-                <Slider/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Slider/>
+                    <Slider IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Slider Orientation="Vertical"/>
+                    <Slider IsEnabled="False" Orientation="Vertical"/>
+                </StackPanel>
             </StackPanel>
         </GroupBox>
     </WrapPanel>

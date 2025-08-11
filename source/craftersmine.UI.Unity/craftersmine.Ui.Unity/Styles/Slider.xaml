@@ -6,7 +6,7 @@
     <SolidColorBrush x:Key="SliderHandleHoverBrush" Color="{DynamicResource SliderHandleHoverColor}"/>
     <SolidColorBrush x:Key="SliderHandleFocusedBorderBrush" Color="{DynamicResource UnityUIAccentColor}" Opacity="{DynamicResource SliderHandleFocusedBorderOpacity}"/>
 
-    <Style x:Key="SliderRepeatButtonLeft" TargetType="RepeatButton">
+    <Style x:Key="SliderRepeatButtonDecrease" TargetType="RepeatButton">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="IsTabStop" Value="False"/>
@@ -20,7 +20,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="SliderRepeatButtonRight" TargetType="RepeatButton">
+    <Style x:Key="SliderRepeatButtonIncrease" TargetType="RepeatButton">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="IsTabStop" Value="False"/>
@@ -37,15 +37,16 @@
     <Style x:Key="SliderThumb" TargetType="Thumb">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Focusable" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
-                    <Border x:Name="SliderThumbOutsideBorder" BorderBrush="{DynamicResource SliderHandleFocusedBorderBrush}" BorderThickness="4" CornerRadius="5" Width="14" Height="14" Margin="-3">
+                    <Border x:Name="SliderThumbOutsideBorder" BorderBrush="Transparent" BorderThickness="4" CornerRadius="7" Width="16" Height="16" Margin="-4">
                         <Border x:Name="SliderThumb" Background="{DynamicResource SliderHandleBrush}" CornerRadius="6" Width="8" Height="8"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="SliderThumbOutsideBorder" Property="BorderBrush" Value="Transparent"/>
+                            <Setter TargetName="SliderThumbOutsideBorder" Property="BorderBrush" Value="{DynamicResource SliderHandleFocusedBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="SliderThumb" Property="Background" Value="{DynamicResource SliderHandleHoverBrush}"/>
@@ -62,13 +63,31 @@
 
             <Track x:Name="PART_Track" Margin="0" VerticalAlignment="Center">
                 <Track.DecreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource SliderRepeatButtonLeft}"/>
+                    <RepeatButton Style="{StaticResource SliderRepeatButtonDecrease}" Height="{TemplateBinding Height}" Command="Slider.DecreaseLarge"/>
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
                     <Thumb Style="{StaticResource SliderThumb}" Margin="0"/>
                 </Track.Thumb>
                 <Track.IncreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource SliderRepeatButtonRight}"/>
+                    <RepeatButton Style="{StaticResource SliderRepeatButtonIncrease}" Height="{TemplateBinding Height}" Command="Slider.IncreaseLarge"/>
+                </Track.IncreaseRepeatButton>
+            </Track>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="VerticalSlider" TargetType="Slider">
+        <Grid>
+            <Border Background="{StaticResource SliderTrackBackgroundBrush}" Width="2" Margin="0" HorizontalAlignment="Center"/>
+
+            <Track x:Name="PART_Track" Margin="0" HorizontalAlignment="Center">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderRepeatButtonDecrease}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Style="{StaticResource SliderThumb}" Margin="0"/>
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderRepeatButtonIncrease}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
                 </Track.IncreaseRepeatButton>
             </Track>
         </Grid>
@@ -77,11 +96,20 @@
     <Style TargetType="Slider">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Focusable" Value="False"/>
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="MinHeight" Value="21"/>
                 <Setter Property="MinWidth" Value="104"/>
                 <Setter Property="Template" Value="{StaticResource HorizontalSlider}"/>
+            </Trigger>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="MinWidth" Value="21"/>
+                <Setter Property="MinHeight" Value="21"/>
+                <Setter Property="Template" Value="{StaticResource VerticalSlider}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
             </Trigger>
         </Style.Triggers>
     </Style>

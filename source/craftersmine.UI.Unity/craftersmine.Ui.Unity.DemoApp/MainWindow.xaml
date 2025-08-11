@@ -60,5 +60,11 @@
                 <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
             </StackPanel>
         </GroupBox>
+        <GroupBox Header="DropDowns" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+            <StackPanel>
+                <ComboBox/>
+                <ComboBox IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
     </WrapPanel>
 </Window>

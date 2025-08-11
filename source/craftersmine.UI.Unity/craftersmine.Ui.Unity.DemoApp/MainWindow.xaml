@@ -34,8 +34,8 @@
         </GroupBox>
         <GroupBox Header="PasswordBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
             <StackPanel>
-                <PasswordBox Password="Default" Style="{DynamicResource UnityPasswordBox}"/>
-                <PasswordBox Password="Disabled" Style="{DynamicResource UnityPasswordBox}" IsEnabled="False"/>
+                <PasswordBox Password="Default"/>
+                <PasswordBox Password="Disabled" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Header="Sliders" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">

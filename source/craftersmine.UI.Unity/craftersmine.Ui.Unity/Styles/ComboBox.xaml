@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="ComboBoxForegroundBrush" Color="{DynamicResource ComboBoxForegroundColor}"/>
+
+    <SolidColorBrush x:Key="ComboBoxButtonBackgroundBrush" Color="{DynamicResource ComboBoxButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="ComboBoxButtonBorderBrush" Color="{DynamicResource ComboBoxButtonBorderColor}" Opacity="{DynamicResource ComboBoxButtonBorderOpacity}"/>
+    <SolidColorBrush x:Key="ComboBoxButtonBottomBorderBrush" Color="{DynamicResource ComboBoxButtonBorderColor}"/>
+    <SolidColorBrush x:Key="ComboBoxButtonFocusedBorderBrush" Color="{DynamicResource UnityUIAccentColor}"/>
+    <SolidColorBrush x:Key="ComboBoxButtonFocusedBottomBorderBrush" Color="{DynamicResource UnityUIAccentColor}"/>
+    
+    
+
+</ResourceDictionary>

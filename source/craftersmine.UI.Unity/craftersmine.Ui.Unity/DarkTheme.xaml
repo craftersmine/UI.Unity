@@ -34,5 +34,11 @@
     <Color x:Key="RadioButtonBorderColor">#212121</Color>
     <Color x:Key="RadioButtonHoverBorderColor">#646464</Color>
     <Color x:Key="RadioButtonCheckedDotColor">#C4C4C4</Color>
-    
+
+    <Color x:Key="ComboBoxForegroundColor">#C4C4C4</Color>
+    <Color x:Key="ComboBoxButtonBackgroundColor">#515151</Color>
+    <Color x:Key="ComboBoxButtonBorderColor">#242424</Color>
+    <sys:Double x:Key="ComboBoxButtonBorderOpacity">0.4</sys:Double>
+    <Color x:Key="ComboBoxButtonHoverBackgroundColor">#585858</Color>
+
 </ResourceDictionary>

@@ -4,7 +4,8 @@
     <Style TargetType="TextBlock">
         <Style.Setters>
             <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
-            <Setter Property="FontFamily" Value="{StaticResource InterFont}"/>
+            <Setter Property="FontFamily" Value="{DynamicResource InterFont}"/>
+            <Setter Property="FontSize" Value="8pt"/>
         </Style.Setters>
     </Style>
     

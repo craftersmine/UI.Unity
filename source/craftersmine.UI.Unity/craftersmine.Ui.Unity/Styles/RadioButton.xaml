@@ -50,6 +50,10 @@
                             <Setter TargetName="RadioButtonOuterBorder" Property="BorderBrush" Value="{DynamicResource RadioButtonFocusedBorderBrush}"/>
                             <Setter TargetName="RadioButtonContent" Property="TextElement.Foreground" Value="{DynamicResource RadioButtonForegroundFocusedBrush}"/>
                         </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="RadioButtonOuterBorder" Property="BorderBrush" Value="{DynamicResource RadioButtonFocusedBorderBrush}"/>
+                            <Setter TargetName="RadioButtonContent" Property="TextElement.Foreground" Value="{DynamicResource RadioButtonForegroundFocusedBrush}"/>
+                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="RadioButtonOuterBorder" Property="BorderBrush" Value="{DynamicResource RadioButtonHoverBorderBrush}"/>
                         </Trigger>

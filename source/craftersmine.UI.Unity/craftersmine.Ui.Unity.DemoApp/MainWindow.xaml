@@ -50,5 +50,15 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
+        <GroupBox Header="RadioButtons" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+            <StackPanel>
+                <StackPanel>
+                    <RadioButton Content="Default"/>
+                    <RadioButton IsChecked="True" Content="Checked"/>
+                </StackPanel>
+                <RadioButton IsEnabled="False" Content="Disabled"/>
+                <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
+            </StackPanel>
+        </GroupBox>
     </WrapPanel>
 </Window>

@@ -12,6 +12,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/PasswordBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TextBlock.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/RadioButton.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/CheckBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Button.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TextBox.xaml"/>

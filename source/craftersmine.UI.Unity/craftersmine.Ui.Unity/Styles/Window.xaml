@@ -3,9 +3,179 @@
 
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource BackgroundColor}"/>
     <SolidColorBrush x:Key="ControlForegroundBrush" Color="{DynamicResource ForegroundColor}"/>
+    
+    <SolidColorBrush x:Key="WindowTitleBackgroundBrush" Color="{DynamicResource WindowHeaderBackgroundColor}"/>
+
+    <SolidColorBrush x:Key="WindowButtonGlyphBrush" Color="{DynamicResource WindowButtonGlyphColor}"/>
+    <SolidColorBrush x:Key="WindowButtonInactiveGlyphBrush" Color="{DynamicResource WindowButtonInactiveGlyphColor}"/>
+
+    <SolidColorBrush x:Key="CloseButtonBackground" Color="Transparent"/>
+    <SolidColorBrush x:Key="CloseButtonHoverBackground" Color="{DynamicResource WindowCloseButtonHoverBackgroundColor}"/>
+    <SolidColorBrush x:Key="MaximizeRestoreButtonBackground" Color="Transparent"/>
+    <SolidColorBrush x:Key="MaximizeRestoreButtonHoverBackground" Color="{DynamicResource WindowButtonHoverBackgroundColor}" Opacity="0.5"/>
 
     <Style x:Key="UnityWindowStyle" TargetType="Window">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome UseAeroCaptionButtons="False"
+                              GlassFrameThickness="1"
+                              CaptionHeight="30"
+                              NonClientFrameEdges="None"
+                              ResizeBorderThickness="5"/>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Window" x:Name="WindowRoot">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="WindowTitle">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="45"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="WindowTitleBackground" Grid.Row="0" Height="30" Background="{DynamicResource WindowTitleBackgroundBrush}" Grid.ColumnSpan="4" VerticalAlignment="Bottom">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Icon}" Width="16" Height="16"/>
+                                    <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Title}" Grid.Column="1" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                            <Button x:Name="MinimizeButton" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="ButtonBackground" Background="{DynamicResource MaximizeRestoreButtonBackground}">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0:0:0.15"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="MouseOver">
+                                                        <Storyboard>
+                                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground"
+                                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource WindowButtonHoverBackgroundColor}"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Pressed">
+                                                        <Storyboard>
+                                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground"
+                                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource WindowButtonPressedBackgroundColor}"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <Path Width="10" Height="10" Data="M 0,5 L 10,5" Stroke="White" StrokeThickness="1" StrokeEndLineCap="Flat"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="MaximizeRestoreButton" Grid.Column="2" WindowChrome.IsHitTestVisibleInChrome="True">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="ButtonBackground" Background="{DynamicResource MaximizeRestoreButtonBackground}">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0:0:0.15"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="MouseOver">
+                                                        <Storyboard>
+                                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground"
+                                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource WindowButtonHoverBackgroundColor}"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Pressed">
+                                                        <Storyboard>
+                                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground"
+                                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource WindowButtonPressedBackgroundColor}"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            
+                                            <Path Width="10" Height="10" Data="M 0,0 L 9,0 M 9,0 L 9,9 M 9,9 L 0,9 M 0,9 L 0,0" Stroke="White" StrokeThickness="1"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="CloseButton" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="ButtonBackground" Background="{DynamicResource CloseButtonBackground}">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0:0:0.15"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="MouseOver">
+                                                        <Storyboard>
+                                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground"
+                                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource WindowCloseButtonHoverBackgroundColor}"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Pressed">
+                                                        <Storyboard>
+                                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground"
+                                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource WindowCloseButtonPressedBackgroundColor}"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+
+                                            <Path Width="10" Height="10" Data="M 0,0 L 9,9 M 0,9 L 9,0" Stroke="White" StrokeThickness="1"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                        <Grid Grid.Row="1" Background="{DynamicResource ControlBackgroundBrush}">
+                            <ContentPresenter />
+                        </Grid>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="WindowTitleBackground" Property="Height" Value="22"/>
+                            <Setter TargetName="WindowTitleBackground" Property="VerticalAlignment" Value="Bottom"/>
+                            <Setter TargetName="WindowTitle" Property="Margin" Value="0 0 8 0"/>
+                            <Setter TargetName="CloseButton" Property="Height" Value="22"/>
+                            <Setter TargetName="MaximizeRestoreButton" Property="Height" Value="22"/>
+                            <Setter TargetName="MinimizeButton" Property="Height" Value="22"/>
+                            <Setter TargetName="CloseButton" Property="VerticalAlignment" Value="Bottom"/>
+                            <Setter TargetName="MaximizeRestoreButton" Property="VerticalAlignment" Value="Bottom"/>
+                            <Setter TargetName="MinimizeButton" Property="VerticalAlignment" Value="Bottom"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="Control">

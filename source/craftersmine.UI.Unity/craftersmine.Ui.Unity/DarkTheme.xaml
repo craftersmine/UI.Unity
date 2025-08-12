@@ -10,8 +10,10 @@
     <Color x:Key="WindowButtonGlyphColor">#E9E9E8</Color>
     <Color x:Key="WindowButtonInactiveGlyphColor">#757575</Color>
     <Color x:Key="WindowButtonDisabledGlyphColor">#535353</Color>
+    <Color x:Key="WindowButtonBackgroundColor">#00ffffff</Color>
     <Color x:Key="WindowButtonHoverBackgroundColor">#1affffff</Color>
     <Color x:Key="WindowButtonPressedBackgroundColor">#10ffffff</Color>
+    <Color x:Key="WindowCloseButtonBackgroundColor">#00C42B1C</Color>
     <Color x:Key="WindowCloseButtonHoverBackgroundColor">#C42B1C</Color>
     <Color x:Key="WindowCloseButtonPressedBackgroundColor">#B32B1C</Color>
 

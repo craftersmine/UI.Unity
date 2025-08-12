@@ -24,4 +24,13 @@ namespace craftersmine.Ui.Unity
             return Color.FromRgb(r, g, b);
         }
     }
+
+    internal static class ObjectExtensions
+    {
+        public static void ForWindowFromTemplate(this object templateFrameworkElement, Action<Window> action)
+        {
+            Window? wnd = ((FrameworkElement) templateFrameworkElement).TemplatedParent as Window;
+            if (wnd is not null) action(wnd);
+        }
+    }
 }

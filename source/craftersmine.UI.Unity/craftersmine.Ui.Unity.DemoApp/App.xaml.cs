@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace craftersmine.UI.Unity.DemoApp
+namespace craftersmine.Ui.Unity.DemoApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

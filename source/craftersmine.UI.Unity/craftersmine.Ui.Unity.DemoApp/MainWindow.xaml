@@ -1,12 +1,12 @@
-﻿<Window x:Class="craftersmine.UI.Unity.DemoApp.MainWindow"
+﻿<Window x:Class="craftersmine.Ui.Unity.DemoApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:craftersmine.UI.Unity.DemoApp"
+        xmlns:local="clr-namespace:craftersmine.Ui.Unity.DemoApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Style="{DynamicResource UnityWindowStyle}">
+        Style="{DynamicResource UnityWindowStyle}" Icon="/about.png">
     <WrapPanel>
         <GroupBox Header="Buttons" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
             <StackPanel>

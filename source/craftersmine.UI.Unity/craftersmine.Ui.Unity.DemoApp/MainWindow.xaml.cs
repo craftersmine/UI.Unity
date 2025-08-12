@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace craftersmine.UI.Unity.DemoApp
+namespace craftersmine.Ui.Unity.DemoApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

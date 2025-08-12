@@ -1,7 +1,7 @@
-﻿<Application x:Class="craftersmine.UI.Unity.DemoApp.App"
+﻿<Application x:Class="craftersmine.Ui.Unity.DemoApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:craftersmine.UI.Unity.DemoApp"
+             xmlns:local="clr-namespace:craftersmine.Ui.Unity.DemoApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>

@@ -10,7 +10,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace craftersmine.UI.Unity
+namespace craftersmine.Ui.Unity
 {
     internal class ColorBlendExtension : MarkupExtension
     {

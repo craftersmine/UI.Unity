@@ -7,6 +7,7 @@
     <Color x:Key="UnityUIAccentColor">#3A79BB</Color>
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Window.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/PasswordBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TextBlock.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/RadioButton.xaml"/>
@@ -15,7 +16,7 @@
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TextBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Slider.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ComboBox.xaml"/>
-        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Window.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/GroupBox.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TabControl.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

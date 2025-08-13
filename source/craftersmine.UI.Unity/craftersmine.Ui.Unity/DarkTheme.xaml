@@ -57,4 +57,8 @@
     <Color x:Key="GroupBoxBorderColor">#232323</Color>
     <Color x:Key="GroupBoxBackgroundColor">#404040</Color>
 
+    <Color x:Key="TabControlTabsBackgroundColor">#141414</Color>
+    <Color x:Key="TabControlTabHoverColor">#303030</Color>
+    <Color x:Key="TabControlTabSelectedColor">#3C3C3C</Color>
+
 </ResourceDictionary>

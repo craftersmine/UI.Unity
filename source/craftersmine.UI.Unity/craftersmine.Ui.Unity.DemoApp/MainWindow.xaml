@@ -8,14 +8,14 @@
         Title="MainWindow" Height="450" Width="800"
         Style="{DynamicResource UnityWindowStyle}" Icon="/about.png"
         ResizeMode="CanResize">
-    <WrapPanel>
-        <GroupBox Header="Buttons" MinWidth="250" HorizontalContentAlignment="Stretch">
+    <TabControl>
+        <TabItem Header="Buttons">
             <StackPanel>
                 <Button Content="Button" Margin="1" Padding="10"/>
                 <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>
             </StackPanel>
-        </GroupBox>
-        <GroupBox Header="CheckBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
+        </TabItem>
+        <TabItem Header="CheckBoxes">
             <StackPanel>
                 <CheckBox Content="Default"/>
                 <CheckBox Content="Checked" IsChecked="True"/>
@@ -24,34 +24,38 @@
                 <CheckBox Content="CheckedDisabled" IsChecked="True" IsEnabled="False"/>
                 <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
             </StackPanel>
-        </GroupBox>
-        <GroupBox Header="TextBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
+        </TabItem>
+        <TabItem Header="TextBoxes">
             <StackPanel>
-                <TextBox Text="Default"/>
-                <TextBox Text="Disabled" IsEnabled="False"/>
-                <TextBox Text="ReadOnly" IsReadOnly="True"/>
-                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+                <GroupBox Header="TextBox">
+                    <StackPanel>
+                        <TextBox Text="Default"/>
+                        <TextBox Text="Disabled" IsEnabled="False"/>
+                        <TextBox Text="ReadOnly" IsReadOnly="True"/>
+                        <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="PasswordBox">
+                    <StackPanel>
+                        <PasswordBox Password="Default"/>
+                        <PasswordBox Password="Disabled" IsEnabled="False"/>
+                    </StackPanel>
+                </GroupBox>
             </StackPanel>
-        </GroupBox>
-        <GroupBox Header="PasswordBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
-            <StackPanel>
-                <PasswordBox Password="Default"/>
-                <PasswordBox Password="Disabled" IsEnabled="False"/>
-            </StackPanel>
-        </GroupBox>
-        <GroupBox Header="Sliders" MinWidth="250" HorizontalContentAlignment="Stretch">
+        </TabItem>
+        <TabItem Header="Sliders">
             <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <Slider/>
-                    <Slider IsEnabled="False"/>
-                </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Slider Orientation="Vertical"/>
                     <Slider IsEnabled="False" Orientation="Vertical"/>
                 </StackPanel>
+                <StackPanel>
+                    <Slider/>
+                    <Slider IsEnabled="False"/>
+                </StackPanel>
             </StackPanel>
-        </GroupBox>
-        <GroupBox Header="RadioButtons" MinWidth="250" HorizontalContentAlignment="Stretch">
+        </TabItem>
+        <TabItem Header="RadioButtons">
             <StackPanel>
                 <StackPanel>
                     <RadioButton Content="Default"/>
@@ -60,8 +64,8 @@
                 <RadioButton IsEnabled="False" Content="Disabled"/>
                 <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
             </StackPanel>
-        </GroupBox>
-        <GroupBox Header="ComboBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
+        </TabItem>
+        <TabItem Header="ComboBoxes">
             <StackPanel>
                 <ComboBox SelectedIndex="0">
                     <ComboBoxItem Content="Test"/>
@@ -76,6 +80,6 @@
                     <ComboBoxItem Content="Test"/>
                 </ComboBox>
             </StackPanel>
-        </GroupBox>
-    </WrapPanel>
+        </TabItem>
+    </TabControl>
 </Window>

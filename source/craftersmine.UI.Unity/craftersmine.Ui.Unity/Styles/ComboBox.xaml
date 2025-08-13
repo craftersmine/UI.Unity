@@ -103,7 +103,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">
                     <Border x:Name="ItemBorder">
-                        <ContentPresenter x:Name="ItemContainerHost" Margin="4 2 4 2" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        <ContentPresenter x:Name="ItemContainerHost" Margin="4 2 4 2" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="Center"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
@@ -111,6 +111,9 @@
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource ComboBoxItemHoverBackground}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

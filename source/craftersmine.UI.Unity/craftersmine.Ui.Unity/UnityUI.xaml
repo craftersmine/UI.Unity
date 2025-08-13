@@ -16,5 +16,6 @@
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Slider.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ComboBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Window.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/GroupBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

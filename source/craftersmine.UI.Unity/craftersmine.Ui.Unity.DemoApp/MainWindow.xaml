@@ -9,13 +9,13 @@
         Style="{DynamicResource UnityWindowStyle}" Icon="/about.png"
         ResizeMode="CanResize">
     <WrapPanel>
-        <GroupBox Header="Buttons" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+        <GroupBox Header="Buttons" MinWidth="250" HorizontalContentAlignment="Stretch">
             <StackPanel>
                 <Button Content="Button" Margin="1" Padding="10"/>
                 <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="CheckBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+        <GroupBox Header="CheckBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
             <StackPanel>
                 <CheckBox Content="Default"/>
                 <CheckBox Content="Checked" IsChecked="True"/>
@@ -25,7 +25,7 @@
                 <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="TextBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+        <GroupBox Header="TextBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
             <StackPanel>
                 <TextBox Text="Default"/>
                 <TextBox Text="Disabled" IsEnabled="False"/>
@@ -33,13 +33,13 @@
                 <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="PasswordBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+        <GroupBox Header="PasswordBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
             <StackPanel>
                 <PasswordBox Password="Default"/>
                 <PasswordBox Password="Disabled" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="Sliders" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+        <GroupBox Header="Sliders" MinWidth="250" HorizontalContentAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
                     <Slider/>
@@ -51,7 +51,7 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="RadioButtons" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+        <GroupBox Header="RadioButtons" MinWidth="250" HorizontalContentAlignment="Stretch">
             <StackPanel>
                 <StackPanel>
                     <RadioButton Content="Default"/>
@@ -61,12 +61,12 @@
                 <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="ComboBoxes" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
+        <GroupBox Header="ComboBoxes" MinWidth="250" HorizontalContentAlignment="Stretch">
             <StackPanel>
-                <ComboBox SelectedIndex="0" IsDropDownOpen="True">
+                <ComboBox SelectedIndex="0">
                     <ComboBoxItem Content="Test"/>
                     <ComboBoxItem Content="Test"/>
-                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test" IsEnabled="False"/>
                     <ComboBoxItem Content="Test"/>
                 </ComboBox>
                 <ComboBox IsEnabled="False" SelectedIndex="0">

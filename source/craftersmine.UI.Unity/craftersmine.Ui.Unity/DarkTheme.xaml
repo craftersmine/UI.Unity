@@ -61,4 +61,7 @@
     <Color x:Key="TabControlTabHoverColor">#303030</Color>
     <Color x:Key="TabControlTabSelectedColor">#3C3C3C</Color>
 
+    <Color x:Key="ToolTipBackgroundColor">#373737</Color>
+    <Color x:Key="ToolTipBorderColor">#191919</Color>
+
 </ResourceDictionary>

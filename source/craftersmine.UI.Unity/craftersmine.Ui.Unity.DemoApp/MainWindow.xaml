@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:craftersmine.Ui.Unity.DemoApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Style="{DynamicResource UnityWindowStyle}" Icon="/about.png">
+        Style="{DynamicResource UnityWindowStyle}" Icon="/about.png"
+        ResizeMode="CanResize">
     <WrapPanel>
         <GroupBox Header="Buttons" MinWidth="250" HorizontalContentAlignment="Stretch" Padding="10">
             <StackPanel>

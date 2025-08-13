@@ -4,7 +4,7 @@
 
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource BackgroundColor}"/>
     <SolidColorBrush x:Key="ControlForegroundBrush" Color="{DynamicResource ForegroundColor}"/>
-    
+
     <SolidColorBrush x:Key="WindowTitleBackgroundBrush" Color="{DynamicResource WindowHeaderBackgroundColor}"/>
 
     <SolidColorBrush x:Key="WindowButtonGlyphBrush" Color="{DynamicResource WindowButtonGlyphColor}"/>
@@ -50,11 +50,11 @@
                                         <ColumnDefinition Width="30"/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="4 0 0 0" MouseUp="OnIconMouseUp"/>
+                                    <Image Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="4 0 0 0" MouseUp="OnIconMouseUp" WindowChrome.IsHitTestVisibleInChrome="True"/>
                                     <TextBlock Text="{TemplateBinding Title}" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI"/>
                                 </Grid>
                             </Border>
-                            <Button x:Name="MinimizeButton" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True">
+                            <Button x:Name="MinimizeButton" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMinimizeClick">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBackground" Background="{DynamicResource MaximizeRestoreButtonBackground}">
@@ -82,14 +82,37 @@
                                                     </VisualState>
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>
-                                            <Path SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,5 L 10,5" Stroke="White" StrokeThickness="1" StrokeEndLineCap="Flat"/>
+                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,5 L 10,5" Stroke="White" StrokeThickness="1" StrokeEndLineCap="Flat"/>
                                         </Border>
                                         <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Opacity" Value="0.5"/>
+                                            </Trigger>
+                                            <Trigger Property="Tag" Value="Unfocused">
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonInactiveGlyphBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="Tag" Value="UnfocusedMaximized">
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonInactiveGlyphBrush}"/>
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="Tag" Value="Unfocused"/>
+                                                    <Condition Property="IsMouseOver" Value="True"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonGlyphBrush}"/>
+                                            </MultiTrigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="Tag" Value="UnfocusedMaximized"/>
+                                                    <Condition Property="IsMouseOver" Value="True"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonGlyphBrush}"/>
+                                            </MultiTrigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="MaximizeRestoreButton" Grid.Column="2" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True">
+                            <Button x:Name="MaximizeRestoreButton" Grid.Column="2" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMaximizeClick">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBackground" Background="{DynamicResource MaximizeRestoreButtonBackground}">
@@ -118,18 +141,41 @@
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>
 
-                                            <Path x:Name="MaximizeRestoreButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,0 M 9,0 L 9,9 M 9,9 L 0,9 M 0,9 L 0,0" Stroke="White" StrokeThickness="1" UseLayoutRounding="False"/>
+                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,0 M 9,0 L 9,9 M 9,9 L 0,9 M 0,9 L 0,0" Stroke="White" StrokeThickness="1" UseLayoutRounding="False"/>
                                         </Border>
 
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="Tag" Value="Maximized">
-                                                <Setter TargetName="MaximizeRestoreButtonGlyph" Property="Data" Value="M 2,0 L 7,0 M 7,0 L 9,2 M 9,2 L 9,7 M 0,2 L 7,2 L 7,9 L 0,9 L 0,2"/>
+                                                <Setter TargetName="ButtonGlyph" Property="Data" Value="M 2,0 L 7,0 M 7,0 L 9,2 M 9,2 L 9,7 M 0,2 L 7,2 L 7,9 L 0,9 L 0,2"/>
                                             </Trigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Opacity" Value="0.5"/>
+                                            </Trigger>
+                                            <Trigger Property="Tag" Value="Unfocused">
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonInactiveGlyphBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="Tag" Value="UnfocusedMaximized">
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonInactiveGlyphBrush}"/>
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="Tag" Value="Unfocused"/>
+                                                    <Condition Property="IsMouseOver" Value="True"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonGlyphBrush}"/>
+                                            </MultiTrigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="Tag" Value="UnfocusedMaximized"/>
+                                                    <Condition Property="IsMouseOver" Value="True"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonGlyphBrush}"/>
+                                            </MultiTrigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="CloseButton" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True">
+                            <Button x:Name="CloseButton" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnCloseClick">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBackground" Background="{DynamicResource CloseButtonBackground}">
@@ -158,8 +204,33 @@
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>
 
-                                            <Path SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,9 M 0,9 L 9,0" Stroke="White" StrokeThickness="1"/>
+                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,9 M 0,9 L 9,0" Stroke="White" StrokeThickness="1"/>
                                         </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Opacity" Value="0.5"/>
+                                            </Trigger>
+                                            <Trigger Property="Tag" Value="Unfocused">
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonInactiveGlyphBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="Tag" Value="UnfocusedMaximized">
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonInactiveGlyphBrush}"/>
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="Tag" Value="Unfocused"/>
+                                                    <Condition Property="IsMouseOver" Value="True"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonGlyphBrush}"/>
+                                            </MultiTrigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="Tag" Value="UnfocusedMaximized"/>
+                                                    <Condition Property="IsMouseOver" Value="True"/>
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="ButtonGlyph" Property="Stroke" Value="{DynamicResource WindowButtonGlyphBrush}"/>
+                                            </MultiTrigger>
+                                        </ControlTemplate.Triggers>
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
@@ -181,6 +252,29 @@
                             <Setter TargetName="MaximizeRestoreButton" Property="VerticalAlignment" Value="Bottom"/>
                             <Setter TargetName="MinimizeButton" Property="VerticalAlignment" Value="Bottom"/>
                             <Setter TargetName="MaximizeRestoreButton" Property="Tag" Value="Maximized"/>
+                            <Setter TargetName="CloseButton" Property="Tag" Value="Maximized"/>
+                            <Setter TargetName="MinimizeButton" Property="Tag" Value="Maximized"/>
+                        </Trigger>
+                        <Trigger Property="IsActive" Value="False">
+                            <Setter TargetName="MaximizeRestoreButton" Property="Tag" Value="Unfocused"/>
+                            <Setter TargetName="CloseButton" Property="Tag" Value="Unfocused"/>
+                            <Setter TargetName="MinimizeButton" Property="Tag" Value="Unfocused"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsActive" Value="False"/>
+                                <Condition Property="WindowState" Value="Maximized"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="MaximizeRestoreButton" Property="Tag" Value="UnfocusedMaximized"/>
+                            <Setter TargetName="CloseButton" Property="Tag" Value="UnfocusedMaximized"/>
+                            <Setter TargetName="MinimizeButton" Property="Tag" Value="UnfocusedMaximized"/>
+                        </MultiTrigger>
+                        <Trigger Property="ResizeMode" Value="CanMinimize">
+                            <Setter TargetName="MaximizeRestoreButton" Property="IsEnabled" Value="False"/>
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="NoResize">
+                            <Setter TargetName="MaximizeRestoreButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="MinimizeButton" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

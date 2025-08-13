@@ -10,6 +10,9 @@
         ResizeMode="CanResize">
     <TabControl>
         <TabItem Header="Buttons">
+            <TabItem.ToolTip>
+                <TextBlock Text="Every available button in this style"/>
+            </TabItem.ToolTip>
             <StackPanel>
                 <Button Content="Button" Margin="1" Padding="10"/>
                 <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>

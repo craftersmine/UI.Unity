@@ -46,6 +46,9 @@
                     </Grid>
 
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="RadioButtonOuterBorder" Property="BorderBrush" Value="{DynamicResource RadioButtonHoverBorderBrush}"/>
+                        </Trigger>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter TargetName="RadioButtonOuterBorder" Property="BorderBrush" Value="{DynamicResource RadioButtonFocusedBorderBrush}"/>
                             <Setter TargetName="RadioButtonContent" Property="TextElement.Foreground" Value="{DynamicResource RadioButtonForegroundFocusedBrush}"/>
@@ -53,9 +56,6 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="RadioButtonOuterBorder" Property="BorderBrush" Value="{DynamicResource RadioButtonFocusedBorderBrush}"/>
                             <Setter TargetName="RadioButtonContent" Property="TextElement.Foreground" Value="{DynamicResource RadioButtonForegroundFocusedBrush}"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="RadioButtonOuterBorder" Property="BorderBrush" Value="{DynamicResource RadioButtonHoverBorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="False">
                             <Setter TargetName="RadioButtonCheckedDot" Property="Visibility" Value="Hidden"/>

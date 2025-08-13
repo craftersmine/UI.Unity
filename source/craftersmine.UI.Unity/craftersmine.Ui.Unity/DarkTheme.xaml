@@ -4,7 +4,7 @@
                     xmlns:local="clr-namespace:craftersmine.Ui.Unity">
 
     <Color x:Key="BackgroundColor">#383838</Color>
-    <Color x:Key="ForegroundColor">#fff</Color>
+    <Color x:Key="ForegroundColor">#D2D2D2</Color>
     <Color x:Key="HighlightTextColor">#3662a0</Color>
 
     <Color x:Key="WindowInactiveTitleColor">#757575</Color>

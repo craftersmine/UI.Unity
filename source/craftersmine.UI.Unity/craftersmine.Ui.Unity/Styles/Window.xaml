@@ -6,6 +6,7 @@
     <SolidColorBrush x:Key="ControlForegroundBrush" Color="{DynamicResource ForegroundColor}"/>
 
     <SolidColorBrush x:Key="WindowTitleBackgroundBrush" Color="{DynamicResource WindowHeaderBackgroundColor}"/>
+    <SolidColorBrush x:Key="WindowTitleInactiveBrush" Color="{DynamicResource WindowInactiveTitleColor}"/>
 
     <SolidColorBrush x:Key="WindowButtonGlyphBrush" Color="{DynamicResource WindowButtonGlyphColor}"/>
     <SolidColorBrush x:Key="WindowButtonInactiveGlyphBrush" Color="{DynamicResource WindowButtonInactiveGlyphColor}"/>
@@ -51,7 +52,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <Image Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="4 0 0 0" MouseUp="OnIconMouseUp" WindowChrome.IsHitTestVisibleInChrome="True"/>
-                                    <TextBlock Text="{TemplateBinding Title}" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+                                    <TextBlock x:Name="WindowTitleTextBlock" Text="{TemplateBinding Title}" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI"/>
                                 </Grid>
                             </Border>
                             <Button x:Name="MinimizeButton" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMinimizeClick">
@@ -259,6 +260,7 @@
                             <Setter TargetName="MaximizeRestoreButton" Property="Tag" Value="Unfocused"/>
                             <Setter TargetName="CloseButton" Property="Tag" Value="Unfocused"/>
                             <Setter TargetName="MinimizeButton" Property="Tag" Value="Unfocused"/>
+                            <Setter TargetName="WindowTitleTextBlock" Property="Foreground" Value="{DynamicResource WindowTitleInactiveBrush}"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

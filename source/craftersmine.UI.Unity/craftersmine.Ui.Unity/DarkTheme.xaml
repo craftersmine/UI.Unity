@@ -7,6 +7,7 @@
     <Color x:Key="ForegroundColor">#fff</Color>
     <Color x:Key="HighlightTextColor">#3662a0</Color>
 
+    <Color x:Key="WindowInactiveTitleColor">#757575</Color>
     <Color x:Key="WindowButtonGlyphColor">#E9E9E8</Color>
     <Color x:Key="WindowButtonInactiveGlyphColor">#757575</Color>
     <Color x:Key="WindowButtonDisabledGlyphColor">#535353</Color>

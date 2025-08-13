@@ -55,7 +55,7 @@
                                     <TextBlock x:Name="WindowTitleTextBlock" Text="{TemplateBinding Title}" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI"/>
                                 </Grid>
                             </Border>
-                            <Button x:Name="MinimizeButton" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMinimizeClick">
+                            <Button x:Name="MinimizeButton" Focusable="False" IsTabStop="False" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMinimizeClick">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBackground" Background="{DynamicResource MaximizeRestoreButtonBackground}">
@@ -113,7 +113,7 @@
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="MaximizeRestoreButton" Grid.Column="2" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMaximizeClick">
+                            <Button x:Name="MaximizeRestoreButton" Grid.Column="2" Focusable="False" IsTabStop="False" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMaximizeClick">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBackground" Background="{DynamicResource MaximizeRestoreButtonBackground}">
@@ -176,7 +176,7 @@
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="CloseButton" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnCloseClick">
+                            <Button x:Name="CloseButton" Grid.Column="3" Focusable="False" IsTabStop="False" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnCloseClick">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="ButtonBackground" Background="{DynamicResource CloseButtonBackground}">

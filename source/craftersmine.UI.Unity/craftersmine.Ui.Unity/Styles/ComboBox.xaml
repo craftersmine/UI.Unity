@@ -4,11 +4,118 @@
     <SolidColorBrush x:Key="ComboBoxForegroundBrush" Color="{DynamicResource ComboBoxForegroundColor}"/>
 
     <SolidColorBrush x:Key="ComboBoxButtonBackgroundBrush" Color="{DynamicResource ComboBoxButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="ComboBoxButtonHoverBackgroundBrush" Color="{DynamicResource ComboBoxButtonHoverBackgroundColor}"/>
     <SolidColorBrush x:Key="ComboBoxButtonBorderBrush" Color="{DynamicResource ComboBoxButtonBorderColor}" Opacity="{DynamicResource ComboBoxButtonBorderOpacity}"/>
     <SolidColorBrush x:Key="ComboBoxButtonBottomBorderBrush" Color="{DynamicResource ComboBoxButtonBorderColor}"/>
     <SolidColorBrush x:Key="ComboBoxButtonFocusedBorderBrush" Color="{DynamicResource UnityUIAccentColor}"/>
     <SolidColorBrush x:Key="ComboBoxButtonFocusedBottomBorderBrush" Color="{DynamicResource UnityUIAccentColor}"/>
-    
-    
+
+    <SolidColorBrush x:Key="ComboBoxItemHoverBackground" Color="{DynamicResource ComboBoxButtonHoverBackgroundColor}"/>
+    <SolidColorBrush x:Key="ComboBoxitemSelectedBackground" Color="{DynamicResource UnityUIAccentColor}" Opacity="0.4"/>
+
+    <ControlTemplate x:Key="UnityComboBoxToggleButton" TargetType="ToggleButton">
+        <Grid>
+            <Border x:Name="ButtonBorder" BorderBrush="{DynamicResource ComboBoxButtonBorderBrush}" BorderThickness="1 1 1 0" CornerRadius="2"/>
+            <Border x:Name="BottomButtonBorder" BorderBrush="{DynamicResource ComboBoxButtonBottomBorderBrush}" BorderThickness="0 0 0 1" CornerRadius="2"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="1" Margin="1"
+                        Background="{DynamicResource ComboBoxButtonBackgroundBrush}"
+                        x:Name="ButtonBackground"/>
+                <Path Grid.Column="1"
+                      Width="8"
+                      Height="4"
+                      Fill="{DynamicResource ComboBoxForegroundBrush}"
+                      Data="M 0,0 L 8,0 L 4,4 L 0,0"/>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxButtonFocusedBorderBrush}"/>
+                <Setter TargetName="BottomButtonBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxButtonFocusedBottomBorderBrush}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxButtonFocusedBorderBrush}"/>
+                <Setter TargetName="BottomButtonBorder" Property="BorderBrush" Value="{DynamicResource ComboBoxButtonFocusedBottomBorderBrush}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ButtonBackground" Property="Background" Value="{DynamicResource ComboBoxButtonHoverBackgroundBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="ComboBox">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="MinHeight" Value="18"/>
+        <Setter Property="Foreground" Value="{DynamicResource CheckboxForegroundBrush}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <ToggleButton x:Name="ComboBoxToggleButton"
+                                      Template="{DynamicResource UnityComboBoxToggleButton}"
+                                      IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press"/>
+                        <ContentPresenter x:Name="ContentSite"
+                                          IsHitTestVisible="False"
+                                          Focusable="False"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Left"
+                                          Margin="4 0 0 0"/>
+                        <Popup x:Name="ComboBoxPopup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Fade">
+                            <Grid>
+                                <Border x:Name="DropDownBorder"
+                                        Background="{DynamicResource ComboBoxButtonBackgroundBrush}"
+                                        BorderBrush="{DynamicResource ComboBoxButtonBorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="2"
+                                        MinWidth="{TemplateBinding ActualWidth}"/>
+                                <ScrollViewer Margin="1" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ComboBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Border x:Name="ItemBorder">
+                        <ContentPresenter x:Name="ItemContainerHost" Margin="4 2 4 2" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource ComboBoxitemSelectedBackground}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource ComboBoxItemHoverBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

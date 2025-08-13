@@ -42,7 +42,8 @@
                                           Focusable="False"
                                           x:Name="RadioButtonContent"
                                           Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          VerticalAlignment="Center"/>
                     </Grid>
 
                     <ControlTemplate.Triggers>

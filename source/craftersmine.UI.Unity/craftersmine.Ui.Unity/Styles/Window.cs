@@ -11,9 +11,9 @@ namespace craftersmine.Ui.Unity.Styles
 {
     partial class Window : ResourceDictionary
     {
-        public void OnIconMouseUp(object sender, MouseEventArgs e)
+        public void OnIconMouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Released)
+            if (e.LeftButton == MouseButtonState.Released && e.ClickCount <= 1)
             {
                 sender.ForWindowFromTemplate(w => SystemCommands.ShowSystemMenu(w, ((Image)sender).PointToScreen(new Point(0, 0))));
             }

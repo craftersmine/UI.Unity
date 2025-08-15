@@ -12,7 +12,6 @@
     </LinearGradientBrush>
     <SolidColorBrush x:Key="ProgressBarBorderBrush" Color="{DynamicResource ProgressBarBorderColor}"/>
     <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="{DynamicResource ProgressBarBackgroundColor}"/>
-    <local:WidthConverter x:Key="ProgressWidthConverter"/>
 
     <Style TargetType="ProgressBar">
         <Setter Property="SnapsToDevicePixels" Value="True"/>

@@ -84,5 +84,12 @@
                 </ComboBox>
             </StackPanel>
         </TabItem>
+        <TabItem Header="ProgressBars">
+            <StackPanel Margin="4">
+                <Slider x:Name="ProgressSlider" Minimum="0" Maximum="100"/>
+                <ProgressBar Value="{Binding ElementName=ProgressSlider, Path=Value}"/>
+                <ProgressBar IsIndeterminate="True"/>
+            </StackPanel>
+        </TabItem>
     </TabControl>
 </Window>

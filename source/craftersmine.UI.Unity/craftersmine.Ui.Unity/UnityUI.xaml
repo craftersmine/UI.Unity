@@ -19,5 +19,6 @@
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/GroupBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TabControl.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Tooltip.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ProgressBar.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

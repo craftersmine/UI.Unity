@@ -64,4 +64,6 @@
     <Color x:Key="ToolTipBackgroundColor">#373737</Color>
     <Color x:Key="ToolTipBorderColor">#191919</Color>
 
+    <Color x:Key="ProgressBarBorderColor">#252525</Color>
+    <Color x:Key="ProgressBarBackgroundColor">#303030</Color>
 </ResourceDictionary>

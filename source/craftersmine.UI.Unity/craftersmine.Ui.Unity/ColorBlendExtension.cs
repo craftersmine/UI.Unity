@@ -40,6 +40,8 @@ namespace craftersmine.Ui.Unity
                 return c;
             if (value is SolidColorBrush brush)
                 return brush.Color;
+            if (value is string)
+                return FindResource<Color>(value, target);
             if (value is Expression expression)
                 return FindResource<Color>(ResolveResourceKey(expression), target);
 

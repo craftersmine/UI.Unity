@@ -91,5 +91,12 @@
                 <ProgressBar IsIndeterminate="True"/>
             </StackPanel>
         </TabItem>
+        <TabItem Header="Expanders">
+            <StackPanel>
+                <Expander Header="Inspector Style">
+                    <TextBlock Text="Unity UI is interesting"/>
+                </Expander>
+            </StackPanel>
+        </TabItem>
     </TabControl>
 </Window>

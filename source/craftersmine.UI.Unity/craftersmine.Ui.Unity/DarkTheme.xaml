@@ -95,4 +95,7 @@
     <Color x:Key="ListViewItemSelectedBackgroundColor">#4d4d4d</Color>
     <Color x:Key="ListViewGridViewHeaderBackgroundColor">#3C3C3C</Color>
     <Color x:Key="ListViewGridViewHeaderBorderColor">#232323</Color>
+
+    <Color x:Key="GridSplitterColor">#191919</Color>
+
 </ResourceDictionary>

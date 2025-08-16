@@ -8,6 +8,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Window.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/MiscControls.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/PasswordBox.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TextBlock.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/RadioButton.xaml"/>

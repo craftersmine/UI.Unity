@@ -90,4 +90,9 @@
 
     <Color x:Key="ListBoxBackgroundColor">#333333</Color>
     <Color x:Key="ListBoxItemSelectedBackgroundColor">#4d4d4d</Color>
+
+    <Color x:Key="ListViewBackgroundColor">#333333</Color>
+    <Color x:Key="ListViewItemSelectedBackgroundColor">#4d4d4d</Color>
+    <Color x:Key="ListViewGridViewHeaderBackgroundColor">#3C3C3C</Color>
+    <Color x:Key="ListViewGridViewHeaderBorderColor">#232323</Color>
 </ResourceDictionary>

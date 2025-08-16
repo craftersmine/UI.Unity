@@ -25,5 +25,6 @@
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ScrollViewer.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/TreeView.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ListBox.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ListView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

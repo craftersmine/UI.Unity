@@ -3,12 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:craftersmine.Ui.Unity.DemoApp"
+        xmlns:local="clr-namespace:craftersmine.Ui.Unity.DemoApp" xmlns:demoapp="clr-namespace:craftersmine.UI.Unity.DemoApp" xmlns:collections="clr-namespace:System.Collections;assembly=netstandard" xmlns:controls="clr-namespace:craftersmine.Ui.Unity.Controls;assembly=craftersmine.UI.Unity"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         Style="{DynamicResource UnityWindowStyle}" Icon="/about.png"
         ResizeMode="CanResize">
     <TabControl>
+        <TabItem Header="Groups And Boxes" Padding="4">
+            <StackPanel>
+                <GroupBox Header="Group Box" Margin="4">
+                    <TextBlock Text="Lorem ipsum sit dolor amet"/>
+                </GroupBox>
+                <GroupBox Header="Help Boxes" Margin="4">
+                    <StackPanel>
+                        <controls:HelpBox Margin="4">
+                            <TextBlock Text="This can show useful tip on how to use something"/>
+                        </controls:HelpBox>
+                        <controls:HelpBox Margin="4" Type="Error">
+                            <TextBlock Text="This can show an issue with some settings or properties, or mark issue with something else that prevents something from working that user must fix" TextWrapping="Wrap"/>
+                        </controls:HelpBox>
+                        <controls:HelpBox Margin="4" Type="Warning">
+                            <TextBlock Text="This can show an important recomendation or warning user on something that might not work or work only with specific condition" TextWrapping="Wrap"/>
+                        </controls:HelpBox>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </TabItem>
         <TabItem Header="Buttons">
             <TabItem.ToolTip>
                 <TextBlock Text="Every available button in this style"/>
@@ -68,7 +88,7 @@
                 <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
             </StackPanel>
         </TabItem>
-        <TabItem Header="ComboBoxes">
+        <TabItem Header="ComboBoxes" Padding="16">
             <StackPanel>
                 <ComboBox SelectedIndex="0">
                     <ComboBoxItem Content="Test"/>
@@ -567,6 +587,83 @@
                     <LineBreak/>
                 </TextBlock>
             </ScrollViewer>
+        </TabItem>
+        <TabItem Header="ListViews">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TreeView Grid.Column="0">
+                    <TreeViewItem IsExpanded="True">
+                        <TreeViewItem.Header>
+                            <TextBlock Text="Favourites" FontWeight="Bold"/>
+                        </TreeViewItem.Header>
+                        <TreeViewItem Header="All Materials"/>
+                        <TreeViewItem Header="All Models"/>
+                        <TreeViewItem Header="All Prefabs"/>
+                    </TreeViewItem>
+                    <TreeViewItem IsEnabled="False"/>
+                    <TreeViewItem IsExpanded="True">
+                        <TreeViewItem.Header>
+                            <TextBlock Text="Assets" FontWeight="Bold"/>
+                        </TreeViewItem.Header>
+                        <TreeViewItem Header="Content"/>
+                        <TreeViewItem Header="Editor"/>
+                        <TreeViewItem Header="Prefabs" IsEnabled="False"/>
+                        <TreeViewItem Header="Scripts">
+                            <TreeViewItem Header="Player Controlers"/>
+                            <TreeViewItem Header="NPC"/>
+                            <TreeViewItem Header="Systems"/>
+                        </TreeViewItem>
+                        <TreeViewItem Header="Scenes"/>
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock Text="Packages" FontWeight="Bold"/>
+                        </TreeViewItem.Header>
+                        <TreeViewItem Header="Burst" IsEnabled="False"/>
+                        <TreeViewItem Header="Unity UI"/>
+                        <TreeViewItem Header="Universal RP"/>
+                        <TreeViewItem Header="Visual Studio Editor"/>
+                    </TreeViewItem>
+                </TreeView>
+
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="2"/>
+
+                <ListBox Grid.Column="2" SelectionMode="Extended">
+                    <ListBoxItem Content="Content"/>
+                    <ListBoxItem Content="Editor"/>
+                    <ListBoxItem Content="Models"/>
+                    <ListBoxItem Content="Scenes"/>
+                    <ListBoxItem Content="Scripts"/>
+                </ListBox>
+                
+                <GridSplitter Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="2"/>
+                
+                <ListView Grid.Column="4" ItemsSource="{DynamicResource Assets}" SelectionMode="Extended">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="S" DisplayMemberBinding="{Binding Path=Symbol}"/>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Path=Type}"/>
+                        </GridView>
+                    </ListView.View>
+                    <ListView.Resources>
+                        <collections:ArrayList x:Key="Assets">
+                            <demoapp:DebugItem Symbol="O" Name="Material1.mat" Type="Material"/>
+                            <demoapp:DebugItem Symbol="O" Name="Material2.mat" Type="Material"/>
+                            <demoapp:DebugItem Symbol="O" Name="Material3.mat" Type="Material"/>
+                            <demoapp:DebugItem Symbol="P" Name="Table.prefab" Type="Prefab"/>
+                            <demoapp:DebugItem Symbol="P" Name="Character.prefab" Type="Prefab"/>
+                        </collections:ArrayList>
+                    </ListView.Resources>
+                </ListView>
+            </Grid>
         </TabItem>
     </TabControl>
 </Window>

@@ -9,6 +9,7 @@
     <Style TargetType="TabControl">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource TabControlTabsBackgroundBrush}"/>
+        <Setter Property="Padding" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabControl">
@@ -19,7 +20,7 @@
                         </Grid.RowDefinitions>
                         <TabPanel IsItemsHost="True" Grid.Row="0" Panel.ZIndex="1" Background="{DynamicResource TabControlTabsBackgroundBrush}"/>
                         <Grid Grid.Row="1">
-                            <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+                            <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
                         </Grid>
                     </Grid>
                 </ControlTemplate>

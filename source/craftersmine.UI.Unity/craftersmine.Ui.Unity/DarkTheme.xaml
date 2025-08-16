@@ -7,6 +7,11 @@
     <Color x:Key="ForegroundColor">#D2D2D2</Color>
     <Color x:Key="HighlightTextColor">#3662a0</Color>
 
+    <Color x:Key="UnityHelpBoxForegroundColor">#919191</Color>
+    <Color x:Key="UnityHelpBoxErrorIconColor">#FF5555</Color>
+    <Color x:Key="UnityHelpBoxInfoIconColor">#F0F0F0</Color>
+    <Color x:Key="UnityHelpBoxWarnIconColor">#FFC107</Color>
+
     <Color x:Key="WindowInactiveTitleColor">#757575</Color>
     <Color x:Key="WindowButtonGlyphColor">#E9E9E8</Color>
     <Color x:Key="WindowButtonInactiveGlyphColor">#757575</Color>

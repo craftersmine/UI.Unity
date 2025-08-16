@@ -84,4 +84,7 @@
     
     <Color x:Key="ScrollViewerCornerBackgroundColor">#383838</Color>
 
+    <Color x:Key="TreeViewBackgroundColor">#383838</Color>
+    <Color x:Key="TreeViewItemSelectedBackgroundColor">#4d4d4d</Color>
+    <Color x:Key="TreeViewItemGlyphColor">#999999</Color>
 </ResourceDictionary>

@@ -8,6 +8,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="FontFamily" Value="{DynamicResource InterFont}"/>
         <Setter Property="Padding" Value="4"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="GroupBox">

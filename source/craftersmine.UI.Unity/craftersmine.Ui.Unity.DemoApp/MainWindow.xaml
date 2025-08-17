@@ -19,14 +19,71 @@
                         <controls:HelpBox Margin="4">
                             <TextBlock Text="This can show useful tip on how to use something"/>
                         </controls:HelpBox>
-                        <controls:HelpBox Margin="4" Type="Error">
-                            <TextBlock Text="This can show an issue with some settings or properties, or mark issue with something else that prevents something from working that user must fix" TextWrapping="Wrap"/>
-                        </controls:HelpBox>
                         <controls:HelpBox Margin="4" Type="Warning">
                             <TextBlock Text="This can show an important recomendation or warning user on something that might not work or work only with specific condition" TextWrapping="Wrap"/>
                         </controls:HelpBox>
+                        <controls:HelpBox Margin="4" Type="Error">
+                            <TextBlock Text="This can show an issue with some settings or properties, or mark issue with something else that prevents something from working that user must fix" TextWrapping="Wrap"/>
+                        </controls:HelpBox>
                     </StackPanel>
                 </GroupBox>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Menu and Toolbars">
+            <StackPanel>
+                <Menu>
+                    <MenuItem Header="File">
+                        <MenuItem Header="New" KeyTipService.KeyTip="Ctrl + N"/>
+                        <MenuItem Header="Open..."/>
+                        <MenuItem Header="Save"/>
+                    </MenuItem>
+                    <MenuItem Header="Edit"/>
+                    <MenuItem Header="Help"/>
+                </Menu>
+                <ToolBar>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                </ToolBar>
+                <ToolBar>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                    <Button>
+                        <Button.Content>
+                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                        </Button.Content>
+                    </Button>
+                </ToolBar>
             </StackPanel>
         </TabItem>
         <TabItem Header="Buttons">

@@ -103,4 +103,7 @@
 
     <Color x:Key="GridSplitterColor">#191919</Color>
 
+    <Color x:Key="MenuBarBackgroundColor">#404040</Color>
+    <Color x:Key="MenuBarBorderColor">#232323</Color>
+
 </ResourceDictionary>

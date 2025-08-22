@@ -13,10 +13,27 @@
 
     <SolidColorBrush x:Key="MenuSubmenuBackgroundBrush" Color="{DynamicResource MenuSubmenuBackgroundColor}"/>
     <SolidColorBrush x:Key="MenuSubmenuBorderBrush" Color="{DynamicResource MenuSubmenuBorderColor}"/>
-    <SolidColorBrush x:Key="MenuSubmenuItemHighlighted" Color="{DynamicResource UnityUIAccentColor}"/>
+    <SolidColorBrush x:Key="MenuSubmenuItemHighlighted" Color="{DynamicResource UnityUIAccentColor}" Opacity="0.75"/>
 
     <SolidColorBrush x:Key="MenuItemSeparatorBrush" Color="{DynamicResource MenuItemSeparatorColor}"/>
 
+    <Geometry x:Key="MenuItemRightArrowGeometry">M 0,0 L 4,4 L 0,8</Geometry>
+    <Geometry x:Key="MenuItemUpArrowGeometry">M 0,4 L 4,0 L 8,4</Geometry>
+    <Geometry x:Key="MenuItemDownArrowGeometry">M 0,0 L 4,4 L 8,0</Geometry>
+    <Geometry x:Key="MenuItemCheckGeometry">M 1,4 L 3,6 Q 4,2 6,0</Geometry>
+
+    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator">
+        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Separator">
+                    <Rectangle Height="1" Width="{TemplateBinding Width}" Fill="{DynamicResource MenuSubmenuBorderBrush}" Margin="0 9 0 9"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style TargetType="Menu">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
@@ -31,6 +48,21 @@
         </Setter>
     </Style>
 
+    <Style x:Key="MenuScrollButton" TargetType="RepeatButton">
+        <Setter Property="Background" Value="{DynamicResource MenuSubmenuBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter ContentSource="Content"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style x:Key="MenuScrollViewer" TargetType="ScrollViewer">
         <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -42,11 +74,11 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="9"/>
                             <RowDefinition Height="*"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="9"/>
                         </Grid.RowDefinitions>
-                        <RepeatButton Command="{x:Static ScrollBar.LineUpCommand}" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="0" Grid.Row="0">
+                        <RepeatButton Command="{x:Static ScrollBar.LineUpCommand}" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="0" Grid.Row="0" Style="{DynamicResource MenuScrollButton}">
                             <RepeatButton.Visibility>
                                 <MultiBinding ConverterParameter="0" Converter="{StaticResource MenuScrollingVisibilityConverter}" FallbackValue="Visibility.Collapsed">
                                     <Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -55,12 +87,12 @@
                                     <Binding Path="ViewportHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
                                 </MultiBinding>
                             </RepeatButton.Visibility>
-                            <TextBlock Text="Up"/>
+                            <Path Width="8" Height="4" Data="{DynamicResource MenuItemUpArrowGeometry}" Fill="{DynamicResource ControlForegroundBrush}"/>
                         </RepeatButton>
                         <Border Grid.Column="0" Grid.Row="1">
                             <ScrollContentPresenter CanContentScroll="{TemplateBinding CanContentScroll}" Margin="{TemplateBinding Padding}"/>
                         </Border>
-                        <RepeatButton Command="{x:Static ScrollBar.LineDownCommand}" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="0" Grid.Row="2">
+                        <RepeatButton Command="{x:Static ScrollBar.LineDownCommand}" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="0" Grid.Row="2" Style="{DynamicResource MenuScrollButton}">
                             <RepeatButton.Visibility>
                                 <MultiBinding ConverterParameter="0" Converter="{StaticResource MenuScrollingVisibilityConverter}" FallbackValue="Visibility.Collapsed">
                                     <Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -69,7 +101,7 @@
                                     <Binding Path="ViewportHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
                                 </MultiBinding>
                             </RepeatButton.Visibility>
-                            <TextBlock Text="Down"/>
+                            <Path Width="8" Height="4" Data="{DynamicResource MenuItemDownArrowGeometry}" Fill="{DynamicResource ControlForegroundBrush}"/>
                         </RepeatButton>
                     </Grid>
                 </ControlTemplate>
@@ -81,8 +113,9 @@
         <Border x:Name="MenuItemRoot" 
                 Background="{DynamicResource MenuItemBackgroundBrush}" 
                 BorderBrush="{DynamicResource MenuItemBorderBrush}" 
-                BorderThickness="0 0 1 0"
-                MinHeight="21">
+                BorderThickness="1 0 1 0"
+                MinHeight="21"
+                Margin="-1 0 0 0">
             <Grid VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -110,6 +143,12 @@
             <Trigger Property="IsHighlighted" Value="True">
                 <Setter TargetName="MenuItemRoot" Property="Background" Value="{DynamicResource MenuItemHoverBackgroundBrush}"/>
             </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="MenuItemRoot" Property="Background" Value="{DynamicResource MenuItemHoverBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="MenuItemRoot" Property="Background" Value="{DynamicResource MenuItemSelectedBackgroundBrush}"/>
+            </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value="0.5"/>
             </Trigger>
@@ -119,9 +158,10 @@
     <ControlTemplate x:Key="MenuTopLevelHeaderTemplate" TargetType="MenuItem">
         <Border x:Name="MenuItemRoot"
                 Background="{DynamicResource MenuItemBackgroundBrush}"
-                BorderBrush="{DynamicResource MenuItemBorderBrush}"
-                BorderThickness="0 0 1 0"
-                MinHeight="21">
+                BorderBrush="{DynamicResource MenuItemBorderBrush}" 
+                BorderThickness="1 0 1 0"
+                MinHeight="21"
+                Margin="-1 0 0 0">
             <Grid VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -134,9 +174,6 @@
                                   VerticalAlignment="Center"
                                   Width="16" Height="16"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Grid.Column="0"/>
-                <Path x:Name="GlyphPanel" Data="" FlowDirection="LeftToRight"
-                      Fill="{DynamicResource ControlForegroundBrush}"
-                      VerticalAlignment="Center" Visibility="Collapsed" Grid.Column="1"/>
                 <ContentPresenter ContentSource="Header" Grid.Column="2"
                                   Margin="{TemplateBinding Padding}"
                                   RecognizesAccessKey="True"
@@ -160,7 +197,6 @@
                                                Height="{Binding ElementName=SubmenuPopupBorder, Path=ActualHeight}"
                                                Width="{Binding ElementName=SubmenuPopupBorder, Path=ActualWidth}"/>
                                 </Canvas>
-                                <Rectangle Fill="{DynamicResource MenuItemSeparatorBrush}" HorizontalAlignment="Center" Width="1"/>
                                 <ItemsPresenter x:Name="ItemsPresenter" 
                                                 KeyboardNavigation.DirectionalNavigation="Cycle"
                                                 KeyboardNavigation.TabNavigation="Cycle"
@@ -180,11 +216,16 @@
                 <Setter TargetName="IconPresenter" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             <Trigger Property="IsChecked" Value="True">
-                <Setter TargetName="GlyphPanel" Property="Visibility" Value="Visible"/>
-                <Setter TargetName="IconPresenter" Property="Visibility" Value="Collapsed"/>
+                <Setter TargetName="MenuItemRoot" Property="Background" Value="{DynamicResource MenuItemSelectedBackgroundBrush}"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
                 <Setter TargetName="MenuItemRoot" Property="Background" Value="{DynamicResource MenuItemHoverBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="MenuItemRoot" Property="Background" Value="{DynamicResource MenuItemHoverBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="MenuItemRoot" Property="Background" Value="{DynamicResource MenuItemSelectedBackgroundBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value="0.5"/>
@@ -197,11 +238,112 @@
     </ControlTemplate>
 
     <ControlTemplate x:Key="MenuSubmenuItemTemplate" TargetType="MenuItem">
-        <!-- TODO: implement submenu item template -->
+        <Border x:Name="MenuSubmenuItemRoot"
+                Background="Transparent" BorderBrush="Transparent"
+                MinHeight="16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="16"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" MinWidth="16"/>
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="IconPresenter" ContentSource="Icon"
+                                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                                  Width="16" Height="16" Grid.Column="0"/>
+                <Border x:Name="CheckedGlyphBorder" Height="16" Width="16" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center" 
+                        Visibility="Collapsed" Grid.Column="0">
+                    <Path Width="8" Height="8" Data="{DynamicResource MenuItemCheckGeometry}" Stroke="{DynamicResource ControlForegroundBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+                <ContentPresenter x:Name="MenuItemHeader" ContentSource="Header" 
+                                  Grid.Column="1" HorizontalAlignment="Left" 
+                                  Margin="4 0 0 0" RecognizesAccessKey="True" 
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                  VerticalAlignment="Center"/>
+                <TextBlock x:Name="MenuGestureText" Grid.Column="2" Margin="{TemplateBinding Padding}" Opacity="0.7" Text="{TemplateBinding InputGestureText}" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Icon" Value="{x:Null}">
+                <Setter TargetName="IconPresenter" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter TargetName="CheckedGlyphBorder" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="IconPresenter" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+            <Trigger Property="IsHighlighted" Value="True">
+                <Setter TargetName="MenuSubmenuItemRoot" Property="Background" Value="{DynamicResource MenuSubmenuItemHighlighted}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <ControlTemplate x:Key="MenuSubmenuHeaderTemplate" TargetType="MenuItem">
-        <!-- TODO: implement submenu header template -->
+        <Border x:Name="MenuSubmenuItemRoot"
+                Background="Transparent" BorderBrush="Transparent" MinHeight="16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="16"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" MinWidth="16"/>
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="IconPresenter" ContentSource="Icon"
+                                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                                  Width="16" Height="16" Grid.Column="0"/>
+                <Border x:Name="CheckedGlyphBorder" Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" Grid.Column="0">
+                    <Path Width="8" Height="8" Data="{DynamicResource MenuItemCheckGeometry}" Stroke="{DynamicResource ControlForegroundBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+                <ContentPresenter x:Name="MenuItemHeader" ContentSource="Header" 
+                                  Grid.Column="1" HorizontalAlignment="Left" 
+                                  Margin="4 0 0 0" RecognizesAccessKey="True" 
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                  VerticalAlignment="Center"/>
+                <TextBlock x:Name="MenuGestureText" Grid.Column="2" Margin="{TemplateBinding Padding}" Opacity="0.7" Text="{TemplateBinding InputGestureText}" VerticalAlignment="Center"/>
+                <Path x:Name="RightArrow" Fill="{DynamicResource ControlForegroundBrush}" Data="{DynamicResource MenuItemRightArrowGeometry}" Grid.Column="3" Margin="8 0 8 0" Height="8" Width="4"/>
+                <Popup x:Name="PART_Popup" AllowsTransparency="True"
+                       Focusable="False"
+                       IsOpen="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSubmenuOpen}" 
+                       Placement="Right" PopupAnimation="None"
+                       VerticalOffset="-9">
+                    <Border x:Name="SubMenuBorder" Background="{DynamicResource MenuSubmenuBackgroundBrush}" BorderBrush="{DynamicResource MenuSubmenuBorderBrush}" BorderThickness="1">
+                        <ScrollViewer x:Name="SubMenuScrollViewer"
+                                      Style="{DynamicResource MenuScrollViewer}">
+                            <Grid RenderOptions.ClearTypeHint="Enabled">
+                                <Canvas HorizontalAlignment="Left" Height="0" VerticalAlignment="Center" Width="0">
+                                    <Rectangle x:Name="OpaqueRect" Fill="{Binding ElementName=SubMenuBorder, Path=Background}"
+                                               Height="{Binding ElementName=SubMenuBorder, Path=ActualHeight}"
+                                               Width="{Binding ElementName=SubMenuBorder, Path=ActualWidth}"/>
+                                </Canvas>
+                                <ItemsPresenter x:Name="ItemsPresenter" 
+                                                KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                KeyboardNavigation.TabNavigation="Cycle"
+                                                Grid.IsSharedSizeScope="True"
+                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </Grid>
+                        </ScrollViewer>
+                    </Border>
+                </Popup>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Icon" Value="{x:Null}">
+                <Setter TargetName="IconPresenter" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter TargetName="CheckedGlyphBorder" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="IconPresenter" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+            <Trigger Property="IsHighlighted" Value="True">
+                <Setter TargetName="MenuSubmenuItemRoot" Property="Background" Value="{DynamicResource MenuSubmenuItemHighlighted}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="MenuItem">
@@ -219,6 +361,15 @@
                 <Setter Property="BorderBrush" Value="Transparent"/>
                 <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
                 <Setter Property="Template" Value="{DynamicResource MenuTopLevelItemTemplate}"/>
+            </Trigger>
+            <Trigger Property="Role" Value="TopLevelHeader">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
+                <Setter Property="Template" Value="{DynamicResource MenuTopLevelHeaderTemplate}"/>
+            </Trigger>
+            <Trigger Property="Role" Value="SubmenuHeader">
+                <Setter Property="Template" Value="{DynamicResource MenuSubmenuHeaderTemplate}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

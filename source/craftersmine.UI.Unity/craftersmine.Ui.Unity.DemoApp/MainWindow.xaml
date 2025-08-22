@@ -32,12 +32,69 @@
         <TabItem Header="Menu and Toolbars">
             <StackPanel>
                 <Menu>
-                    <MenuItem Header="File">
-                        <MenuItem Header="New" KeyTipService.KeyTip="Ctrl + N"/>
-                        <MenuItem Header="Open..."/>
+                    <MenuItem Header="File" IsSubmenuOpen="False" MaxHeight="30">
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
                         <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                        <MenuItem Header="Save"/>
+                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Recent">
+                            <MenuItem Header="UnityUI.xaml"/>
+                        </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Edit"/>
+                    <MenuItem Header="Edit">
+                        <MenuItem Header="Copy"/>
+                        <MenuItem Header="Cut"/>
+                        <MenuItem Header="Paste"/>
+                    </MenuItem>
                     <MenuItem Header="Help"/>
                 </Menu>
                 <ToolBar>

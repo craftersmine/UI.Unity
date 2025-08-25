@@ -40,7 +40,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Menu">
-                    <Border Background="{DynamicResource MenuBarBackgroundBrush}" BorderBrush="{DynamicResource MenuBarBorderBrush}" BorderThickness="0 0 0 1">
+                    <Border Background="{DynamicResource MenuBarBackgroundBrush}" BorderBrush="{DynamicResource MenuBarBorderBrush}" BorderThickness="0 1 0 1">
                         <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" MinHeight="21"/>
                     </Border>
                 </ControlTemplate>

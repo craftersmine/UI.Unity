@@ -1,0 +1,137 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:craftersmine.Ui.Unity">
+
+    <SolidColorBrush x:Key="ToolBarTrayBackgroundBrush" Color="{DynamicResource ToolBarTrayBackgroundColor}"/>
+    
+    <SolidColorBrush x:Key="ToolBarThumbBrush" Color="{DynamicResource ToolBarThumbColor}"/>
+    <SolidColorBrush x:Key="ToolBarThumbHoverBrush" Color="{DynamicResource ToolBarThumbHoverColor}"/>
+    <SolidColorBrush x:Key="ToolBarOverflowToggleButtonHoverBackgroundBrush" Color="{DynamicResource ToolBarOverflowToggleButtonHoverBackgroundColor}"/>
+    <SolidColorBrush x:Key="ToolBarOverflowToggleButtonPressedBackgroundBrush" Color="{local:ColorBlend {DynamicResource UnityUIAccentColor}, {DynamicResource ToolBarTrayBackgroundColor}, 0.5}"/>
+
+
+    <Style TargetType="ToolBarTray">
+        <Setter Property="Background" Value="{DynamicResource ToolBarTrayBackgroundBrush}"/>
+    </Style>
+
+    <Style TargetType="Thumb" x:Key="HorizontalToolBarThumb">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Cursor" Value="SizeAll"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Border x:Name="ThumbRoot"
+                            Background="{DynamicResource ToolBarTrayBackgroundBrush}"
+                            BorderBrush="{DynamicResource ToolBarThumbBrush}"
+                            BorderThickness="1 0 1 0"
+                            SnapsToDevicePixels="True" Width="4"
+                            MaxHeight="16"
+                            Margin="4">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ThumbRoot" Property="BorderBrush" Value="{DynamicResource ToolBarThumbHoverBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="Thumb" x:Key="VerticalToolBarThumb">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Cursor" Value="SizeAll"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Border x:Name="ThumbRoot"
+                            Background="{DynamicResource ToolBarTrayBackgroundBrush}"
+                            BorderBrush="{DynamicResource ToolBarThumbBrush}"
+                            BorderThickness="0 1 0 1"
+                            SnapsToDevicePixels="True" Height="4"
+                            MaxWidth="16"
+                            Margin="4">
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ThumbRoot" Property="BorderBrush" Value="{DynamicResource ToolBarThumbHoverBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToolBarOverflowToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="MinWidth" Value="22"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="OverflowToggleButtonRoot" Background="{DynamicResource ToolBarTrayBackgroundBrush}"
+                            SnapsToDevicePixels="True" CornerRadius="2">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="4 2">
+                            <Path x:Name="Arrow"
+                                  Fill="{DynamicResource ControlForegroundBrush}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
+                                  Width="8"
+                                  Height="4"
+                                  Data="M 0 0 L 8 0 L 4 4"/>
+                            <ContentPresenter/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="OverflowToggleButtonRoot" Property="Background" Value="{DynamicResource ToolBarOverflowToggleButtonHoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="OverflowToggleButtonRoot" Property="Background" Value="{DynamicResource ToolBarOverflowToggleButtonPressedBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="ToolBar">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolBar">
+                    <Border x:Name="ToolBarRoot">
+                        <DockPanel>
+                            <Thumb x:Name="ToolBarThumb"
+                                   Style="{DynamicResource HorizontalToolBarThumb}"/>
+                            <ToolBarPanel x:Name="PART_ToolBarPanel"
+                                          IsItemsHost="True" Margin="0 2 0 2"/>
+                            <ToggleButton x:Name="ToolBarOverflowButton"
+                                          Style="{DynamicResource ToolBarOverflowToggleButtonStyle}"
+                                          Margin="4 2 2 2"
+                                          ClickMode="Press"
+                                          IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsOverflowOpen, Mode=TwoWay}"
+                                          DockPanel.Dock="Right" 
+                                          Visibility="Collapsed"
+                                          MinWidth="22"/>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Horizontal">
+                            <Setter TargetName="ToolBarOverflowButton" Property="DockPanel.Dock" Value="Right"/>
+                        </Trigger>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="ToolBarThumb" Property="Style" Value="{DynamicResource VerticalToolBarThumb}"/>
+                            <Setter TargetName="ToolBarThumb" Property="DockPanel.Dock" Value="Top"/>
+                            <Setter TargetName="ToolBarOverflowButton" Property="DockPanel.Dock" Value="Bottom"/>
+                        </Trigger>
+                        <Trigger Property="HasOverflowItems" Value="True">
+                            <Setter TargetName="ToolBarOverflowButton" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

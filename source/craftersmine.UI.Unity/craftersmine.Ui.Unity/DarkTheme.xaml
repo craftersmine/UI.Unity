@@ -116,4 +116,11 @@
 
     <Color x:Key="MenuItemSeparatorColor">#636363</Color>
 
+    <Color x:Key="ToolBarTrayBackgroundColor">#3C3C3C</Color>
+    
+    <Color x:Key="ToolBarThumbColor">#585858</Color>
+    <Color x:Key="ToolBarThumbHoverColor">#AAAAAA</Color>
+
+    <Color x:Key="ToolBarOverflowToggleButtonHoverBackgroundColor">#676767</Color>
+
 </ResourceDictionary>

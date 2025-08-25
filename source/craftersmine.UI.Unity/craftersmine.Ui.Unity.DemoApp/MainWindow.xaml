@@ -30,8 +30,8 @@
             </StackPanel>
         </TabItem>
         <TabItem Header="Menu and Toolbars">
-            <StackPanel>
-                <Menu>
+            <DockPanel>
+                <Menu DockPanel.Dock="Top">
                     <Menu.ItemsPanel>
                         <ItemsPanelTemplate>
                             <DockPanel HorizontalAlignment="Stretch"/>
@@ -107,7 +107,7 @@
                         <MenuItem Header="Cut" IsEnabled="False"/>
                         <MenuItem Header="Paste" HorizontalAlignment="Right"/>
                     </MenuItem>
-                    <MenuItem Header="Asset Types" IsSubmenuOpen="True">
+                    <MenuItem Header="Asset Types">
                         <MenuItem Header="Animation Clip" IsCheckable="True"/>
                         <Separator/>
                         <MenuItem Header="Audio Clip" IsCheckable="True"/>
@@ -134,51 +134,147 @@
                     
                     <MenuItem Header="Toggle Live Preview" IsCheckable="True" HorizontalAlignment="Right"/>
                 </Menu>
-                <ToolBar>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                </ToolBar>
-                <ToolBar>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                    <Button>
-                        <Button.Content>
-                            <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                        </Button.Content>
-                    </Button>
-                </ToolBar>
-            </StackPanel>
+                <ToolBarTray DockPanel.Dock="Top">
+                    <ToolBar>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                    </ToolBar>
+                    <ToolBar>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                    </ToolBar>
+                </ToolBarTray>
+                <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical">
+                    <ToolBar>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                    </ToolBar>
+                </ToolBarTray>
+                <ToolBarTray DockPanel.Dock="Left" Orientation="Vertical">
+                    <ToolBar>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                    </ToolBar>
+                    <ToolBar>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                    </ToolBar>
+                </ToolBarTray>
+                <ToolBarTray DockPanel.Dock="Bottom">
+                    <ToolBar>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                    </ToolBar></ToolBarTray>
+                <Grid></Grid>
+            </DockPanel>
         </TabItem>
         <TabItem Header="Buttons">
             <TabItem.ToolTip>

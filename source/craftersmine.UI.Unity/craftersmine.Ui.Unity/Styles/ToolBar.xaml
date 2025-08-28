@@ -9,6 +9,9 @@
     <SolidColorBrush x:Key="ToolBarOverflowToggleButtonHoverBackgroundBrush" Color="{DynamicResource ToolBarOverflowToggleButtonHoverBackgroundColor}"/>
     <SolidColorBrush x:Key="ToolBarOverflowToggleButtonPressedBackgroundBrush" Color="{local:ColorBlend {DynamicResource UnityUIAccentColor}, {DynamicResource ToolBarTrayBackgroundColor}, 0.5}"/>
 
+    <SolidColorBrush x:Key="ToolBarButtonBackgroundBrush" Color="{DynamicResource ToolBarButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="ToolBarButtonHoverBackgroundBrush" Color="{DynamicResource ToolBarButtonHoverBackgroundColor}"/>
+    <SolidColorBrush x:Key="ToolBarButtonPressedBackgroundBrush" Color="{local:ColorBlend {DynamicResource UnityUIAccentColor}, {DynamicResource ToolBarButtonBackgroundColor}, 0.5}"/>
 
     <Style TargetType="ToolBarTray">
         <Setter Property="Background" Value="{DynamicResource ToolBarTrayBackgroundBrush}"/>
@@ -72,6 +75,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}"
+                            Margin="0 2"
                             HorizontalAlignment="Left">
                         <DockPanel KeyboardNavigation.TabIndex="1"
                                    KeyboardNavigation.TabNavigation="Local">
@@ -116,5 +120,32 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <Style x:Key="ToolBarButtonBaseStyle"
+           TargetType="{x:Type ButtonBase}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinWidth" Value="32"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="ButtonRoot" Background="{DynamicResource ToolBarButtonBackgroundBrush}" Margin="1" MinHeight="{TemplateBinding MinHeight}" MinWidth="{TemplateBinding MinWidth}" CornerRadius="2">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" Margin="2"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonRoot" Property="Background" Value="{DynamicResource ToolBarButtonHoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonRoot" Property="Background" Value="{DynamicResource ToolBarButtonPressedBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" BasedOn="{StaticResource ToolBarButtonBaseStyle}" TargetType="{x:Type Button}"/>
+
 </ResourceDictionary>

@@ -123,4 +123,7 @@
 
     <Color x:Key="ToolBarOverflowToggleButtonHoverBackgroundColor">#676767</Color>
 
+    <Color x:Key="ToolBarButtonBackgroundColor">#585858</Color>
+    <Color x:Key="ToolBarButtonHoverBackgroundColor">#676767</Color>
+
 </ResourceDictionary>

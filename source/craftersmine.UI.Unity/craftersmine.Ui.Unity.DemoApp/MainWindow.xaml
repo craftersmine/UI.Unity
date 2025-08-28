@@ -136,6 +136,17 @@
                 </Menu>
                 <ToolBarTray DockPanel.Dock="Top">
                     <ToolBar>
+                        <!-- Temporarily unimplemented -->
+                        <!--
+                        <Menu>
+                            <MenuItem Header="Test">
+                                <MenuItem Header="Test"/>
+                                <MenuItem Header="Test"/>
+                                <MenuItem Header="Test"/>
+                                <MenuItem Header="Test"/>
+                            </MenuItem>
+                        </Menu>
+                        -->
                         <Button>
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
@@ -156,6 +167,7 @@
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
+                        
                     </ToolBar>
                     <ToolBar>
                         <Button>

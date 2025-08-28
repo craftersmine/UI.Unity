@@ -26,7 +26,7 @@
                             BorderThickness="1 0 1 0"
                             SnapsToDevicePixels="True" Width="4"
                             MaxHeight="16"
-                            Margin="4">
+                            Margin="4 2">
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -37,7 +37,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="Thumb" x:Key="VerticalToolBarThumb">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="Cursor" Value="SizeAll"/>
@@ -50,7 +50,7 @@
                             BorderThickness="0 1 0 1"
                             SnapsToDevicePixels="True" Height="4"
                             MaxWidth="16"
-                            Margin="4">
+                            Margin="2 4">
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -62,94 +62,38 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ToolBarOverflowToggleButtonStyle" TargetType="ToggleButton">
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="OverridesDefaultStyle" Value="True"/>
-        <Setter Property="MinWidth" Value="22"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ToggleButton">
-                    <Border x:Name="OverflowToggleButtonRoot" Background="{DynamicResource ToolBarTrayBackgroundBrush}"
-                            SnapsToDevicePixels="True" CornerRadius="2">
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="4 2">
-                            <Path x:Name="Arrow"
-                                  Fill="{DynamicResource ControlForegroundBrush}"
-                                  VerticalAlignment="Center"
-                                  HorizontalAlignment="Center"
-                                  Width="8"
-                                  Height="4"
-                                  Data="M 0 0 L 8 0 L 4 4"/>
-                            <ContentPresenter/>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="OverflowToggleButtonRoot" Property="Background" Value="{DynamicResource ToolBarOverflowToggleButtonHoverBackgroundBrush}"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="OverflowToggleButtonRoot" Property="Background" Value="{DynamicResource ToolBarOverflowToggleButtonPressedBackgroundBrush}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
     <Style TargetType="ToolBar">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolBar">
-                    <Grid Name="ToolBarRoot" SnapsToDevicePixels="True">
-                        <Grid HorizontalAlignment="Right">
-                            <ToggleButton x:Name="OverflowButton"
-                                          MinWidth="22"
-                                          FocusVisualStyle="{x:Null}"
-                                          Style="{DynamicResource ToolBarOverflowToggleButtonStyle}"
-                                          IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsOverflowOpen, Mode=TwoWay}"
-                                          ClickMode="Press"/>
-                            <Popup x:Name="OverflowPopup"
-                                   AllowsTransparency="True"
-                                   Placement="Bottom"
-                                   IsOpen="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsOverflowOpen}"
-                                   StaysOpen="False"
-                                   Focusable="False"
-                                   PopupAnimation="None">
-                                <Border Background="White"
-                                        BorderBrush="Red"
-                                        BorderThickness="1"
-                                        RenderOptions.ClearTypeHint="Enabled"
-                                        x:Name="ToolBarSubMenuBorder">
-                                    <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel"
-                                                          Margin="2"
-                                                          WrapWidth="200"
-                                                          Focusable="True"
-                                                          FocusVisualStyle="{x:Null}"
-                                                          KeyboardNavigation.TabNavigation="Cycle"
-                                                          KeyboardNavigation.DirectionalNavigation="Cycle"
-                                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                        <Border x:Name="MainPanelBorder"
-                                Background="{DynamicResource ToolBarTrayBackgroundBrush}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}">
-                            <DockPanel KeyboardNavigation.TabIndex="1"
-                                       KeyboardNavigation.TabNavigation="Local">
-                                <Thumb x:Name="ToolBarThumb"
-                                       Style="{StaticResource HorizontalToolBarThumb}"/>
-                                <ContentPresenter x:Name="ToolBarHeader"
-                                                  ContentSource="Header"
-                                                  HorizontalAlignment="Center"
-                                                  VerticalAlignment="Center"
-                                                  Margin="4 0 4 0"
-                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                                <ToolBarPanel x:Name="PART_ToolBarPanel" IsItemsHost="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                            </DockPanel>
-                        </Border>
-                    </Grid>
+                    <Border x:Name="MainPanelBorder"
+                            Background="Transparent"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalAlignment="Left">
+                        <DockPanel KeyboardNavigation.TabIndex="1"
+                                   KeyboardNavigation.TabNavigation="Local">
+                            <Thumb x:Name="ToolBarThumb"
+                                   Style="{StaticResource HorizontalToolBarThumb}"/>
+                            <ScrollViewer CanContentScroll="True" 
+                                          HorizontalScrollBarVisibility="Hidden" 
+                                          VerticalScrollBarVisibility="Disabled"
+                                          local:ScrollViewerExtensions.HorizontalScrollOnWheel="True"
+                                          x:Name="ToolBarScrollViewer">
+                                <Grid>
+                                    <ContentPresenter x:Name="ToolBarHeader"
+                                                      ContentSource="Header"
+                                                      HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"
+                                                      Margin="4 0 4 0"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                    <ToolBarPanel x:Name="PART_ToolBarPanel" IsItemsHost="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Grid>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsOverflowOpen" Value="True">
                             <Setter TargetName="ToolBarThumb" Property="IsEnabled" Value="False"/>
@@ -161,10 +105,11 @@
                             <Setter TargetName="ToolBarThumb" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="Orientation" Value="Vertical">
-                            <Setter TargetName="ToolBarThumb" Property="Height" Value="4"/>
-                            <Setter TargetName="ToolBarThumb" Property="Width" Value="16"/>
-                            <Setter TargetName="ToolBarThumb" Property="DockPanel.Dock" Value="Top"/>
                             <Setter TargetName="ToolBarThumb" Property="Style" Value="{DynamicResource VerticalToolBarThumb}"/>
+                            <Setter TargetName="ToolBarThumb" Property="DockPanel.Dock" Value="Top"/>
+                            <Setter TargetName="ToolBarScrollViewer" Property="local:ScrollViewerExtensions.HorizontalScrollOnWheel" Value="False"/>
+                            <Setter TargetName="ToolBarScrollViewer" Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+                            <Setter TargetName="ToolBarScrollViewer" Property="VerticalScrollBarVisibility" Value="Hidden"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

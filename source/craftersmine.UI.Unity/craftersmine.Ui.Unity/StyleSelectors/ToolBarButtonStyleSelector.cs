@@ -20,8 +20,6 @@ namespace craftersmine.Ui.Unity.StyleSelectors
                 return base.SelectStyle(item, container);
 
             int itemIndex = toolbar.Items.IndexOf(item);
-            Control itm = (Control)item;
-            Setter cornerRadius = (Setter)itm.Style.Setters.FirstOrDefault(s => ((Setter)s).Property == Border.CornerRadiusProperty);
             switch (itemIndex)
             {
                 case 0:

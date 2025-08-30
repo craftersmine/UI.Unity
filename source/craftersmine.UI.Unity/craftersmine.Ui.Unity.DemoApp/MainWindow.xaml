@@ -136,28 +136,101 @@
                 </Menu>
                 <ToolBarTray DockPanel.Dock="Top">
                     <ToolBar>
-                        <Button Style="{DynamicResource ToolBarButtonLeftGroupStyle}">
+                        <TextBlock Text="Buttons:" VerticalAlignment="Center"/>
+                        <Button>
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarButtonMiddleGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarButtonMiddleGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarButtonRightGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
                         <Separator/>
+                        <TextBlock Text="ToggleButtons:" VerticalAlignment="Center"/>
+                        <ToggleButton IsChecked="True">
+                            <ToggleButton.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </ToggleButton.Content>
+                        </ToggleButton>
+                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupBeginStyle}" IsChecked="True">
+                            <ToggleButton.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </ToggleButton.Content>
+                        </ToggleButton>
+                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}" IsChecked="True">
+                            <ToggleButton.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </ToggleButton.Content>
+                        </ToggleButton>
+                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}">
+                            <ToggleButton.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </ToggleButton.Content>
+                        </ToggleButton>
+                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupEndStyle}">
+                            <ToggleButton.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </ToggleButton.Content>
+                        </ToggleButton>
+                    </ToolBar>
+                    <ToolBar Band="1">
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Separator/>
+                        <TextBlock Text="Search:" VerticalAlignment="Center"/>
+                        <TextBox Width="150"/>
+                        <Separator/>
+                        <CheckBox Content="Check me"/>
+                        <Separator/>
+                        <RadioButton Content="Option 1"/>
+                        <RadioButton Content="Option 1"/>
+                        <RadioButton Content="Option 1"/>
+                        <Separator/>
+                    </ToolBar>
+                    <ToolBar Band="2">
+                        <Separator/>
                         <Menu>
+                            <MenuItem Header="Test">
+                                <MenuItem Header="Test"/>
+                                <MenuItem Header="Test"/>
+                                <MenuItem Header="Test"/>
+                                <MenuItem Header="Test"/>
+                            </MenuItem>
                             <MenuItem Header="Test">
                                 <MenuItem Header="Test"/>
                                 <MenuItem Header="Test"/>
@@ -172,17 +245,7 @@
                             <ComboBoxItem Content="Test"/>
                             <ComboBoxItem Content="Test"/>
                         </ComboBox>
-                        <Separator/>
-                        <ToggleButton>
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton>
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
+
                         <Button>
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
@@ -204,48 +267,16 @@
                             </Button.Content>
                         </Button>
                         <Separator/>
-                        <Button Style="{DynamicResource ToolBarButtonLeftGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarButtonRightGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                    </ToolBar>
-                    <ToolBar>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <TextBlock Text="Search:"/>
-                        <TextBox Width="150"/>
-                        <Separator/>
-                        <CheckBox Content="Check"/>
-                        <Separator/>
-                        <RadioButton Content="Option 1"/>
-                        <RadioButton Content="Option 1"/>
-                        <RadioButton Content="Option 1"/>
-                        <Separator/>
                     </ToolBar>
                 </ToolBarTray>
                 <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical">
@@ -274,54 +305,54 @@
                 </ToolBarTray>
                 <ToolBarTray DockPanel.Dock="Left" Orientation="Vertical">
                     <ToolBar>
-                        <Button Style="{DynamicResource ToolBarVerticalButtonTopGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarVerticalButtonMiddleGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarVerticalButtonMiddleGroupStyle}">
+                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarVerticalButtonBottomGroupStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
+                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
                         <Separator/>
-                        <Button Style="{DynamicResource ToolBarVerticalButtonTopGroupStyle}">
+                        <Button>
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>
                         </Button>
-                        <Button Style="{DynamicResource ToolBarVerticalButtonBottomGroupStyle}">
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button>
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Separator/>
+                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
+                            <Button.Content>
+                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
                             <Button.Content>
                                 <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                             </Button.Content>

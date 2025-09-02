@@ -126,4 +126,9 @@
     <Color x:Key="ToolBarButtonBackgroundColor">#585858</Color>
     <Color x:Key="ToolBarButtonHoverBackgroundColor">#676767</Color>
 
+    <Color x:Key="PanelledTabControlBorderColor">#191919</Color>
+    <Color x:Key="PanelledTabControlBackgroundColor">#424242</Color>
+    <Color x:Key="PanelledTabHeaderBorderColor">#242424</Color>
+    <Color x:Key="PanelledTabHeaderInactiveBackgroundColor">#383838</Color>
+
 </ResourceDictionary>

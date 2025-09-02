@@ -1,12 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <SolidColorBrush x:Key="HyperlinkBrush" Color="{DynamicResource UnityUIAccentColor}"/>
+
     <Style TargetType="TextBlock">
         <Style.Setters>
             <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
             <Setter Property="FontFamily" Value="{DynamicResource InterFont}"/>
             <Setter Property="FontSize" Value="9pt"/>
         </Style.Setters>
+    </Style>
+
+    <Style TargetType="Hyperlink">
+        <Setter Property="Foreground" Value="{DynamicResource HyperlinkBrush}"/>
     </Style>
     
 </ResourceDictionary>

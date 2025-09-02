@@ -232,7 +232,7 @@
                             <ComboBoxItem Content="Test"/>
                             <ComboBoxItem Content="Test"/>
                         </ComboBox>
-                        <ComboBox SelectedIndex="0" IsDropDownOpen="True">
+                        <ComboBox SelectedIndex="0">
                             <ComboBoxItem>
                                 <ComboBoxItem.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
@@ -387,7 +387,7 @@
                             <ComboBoxItem Content="Test"/>
                             <ComboBoxItem Content="Test"/>
                         </ComboBox>
-                        <ComboBox SelectedIndex="0" IsDropDownOpen="True">
+                        <ComboBox SelectedIndex="0">
                             <ComboBoxItem>
                                 <ComboBoxItem.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
@@ -547,6 +547,25 @@
                     </ToolBar></ToolBarTray>
                 <Grid></Grid>
             </DockPanel>
+        </TabItem>
+        <TabItem Header="Tabs and TabControls">
+            <Grid Margin="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <TabControl>
+                        <TabItem Header="Just a tab 1"/>
+                        <TabItem Header="Another tab 1"/>
+                    </TabControl>
+                </Border>
+                <GridSplitter Margin="1"/>
+                <TabControl Style="{DynamicResource PanelledTabControlStyle}" Grid.Column="1">
+                    <TabItem Header="Just a tab"/>
+                    <TabItem Header="Another tab"/>
+                </TabControl>
+            </Grid>
         </TabItem>
         <TabItem Header="Buttons">
             <TabItem.ToolTip>

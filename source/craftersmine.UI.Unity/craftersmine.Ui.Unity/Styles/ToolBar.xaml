@@ -155,7 +155,13 @@
         </Setter>
     </Style>
 
-    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" BasedOn="{StaticResource ToolBarButtonBaseStyle}" TargetType="{x:Type Button}"/>
+    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" BasedOn="{StaticResource ToolBarButtonBaseStyle}" TargetType="{x:Type Button}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
+                <Setter Property="MinWidth" Value="37"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
     <Style x:Key="ToolBarButtonGroupBeginStyle" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="Button">
         <Setter Property="Border.CornerRadius" Value="2 0 0 2"/>
         <Setter Property="Margin" Value="1"/>
@@ -163,6 +169,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="2 2 0 0"/>
                 <Setter Property="Margin" Value="1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -173,6 +180,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -183,6 +191,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0 0 2 2"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -232,24 +241,33 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
+                <Setter Property="MinWidth" Value="37"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarToggleButtonGroupBeginStyle" BasedOn="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}" TargetType="ToggleButton">
         <Setter Property="Border.CornerRadius" Value="2 0 0 2"/>
         <Setter Property="Margin" Value="1"/>
+        <Setter Property="MinWidth" Value="37"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="2 2 0 0"/>
                 <Setter Property="Margin" Value="1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarToggleButtonGroupMiddleStyle" BasedOn="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}" TargetType="ToggleButton">
         <Setter Property="Border.CornerRadius" Value="0"/>
         <Setter Property="Margin" Value="0 1 1 1"/>
+        <Setter Property="MinWidth" Value="37"/>
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -260,6 +278,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0 0 2 2"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -297,6 +316,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
+                <Setter Property="MinWidth" Value="37"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarCheckBoxGroupBeginStyle" BasedOn="{StaticResource {x:Static ToolBar.CheckBoxStyleKey}}" TargetType="CheckBox">
         <Setter Property="Border.CornerRadius" Value="2 0 0 2"/>
@@ -305,6 +329,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="2 2 0 0"/>
                 <Setter Property="Margin" Value="1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -315,6 +340,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -325,6 +351,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0 0 2 2"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -401,6 +428,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
+                <Setter Property="MinWidth" Value="37"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarRadioButtonGroupBeginStyle" BasedOn="{StaticResource {x:Static ToolBar.RadioButtonStyleKey}}" TargetType="RadioButton">
         <Setter Property="Border.CornerRadius" Value="2 0 0 2"/>
@@ -409,6 +441,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="2 2 0 0"/>
                 <Setter Property="Margin" Value="1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -419,6 +452,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -429,6 +463,7 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="Border.CornerRadius" Value="0 0 2 2"/>
                 <Setter Property="Margin" Value="1 0 1 1"/>
+                <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>

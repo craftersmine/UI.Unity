@@ -6,6 +6,11 @@
     <SolidColorBrush x:Key="TabControlSelectedBrush" Color="{DynamicResource TabControlTabSelectedColor}"/>
     <SolidColorBrush x:Key="TabControlFocusedBorderBrush" Color="{DynamicResource UnityUIAccentColor}"/>
 
+    <SolidColorBrush x:Key="PanelledTabControlBackgroundBrush" Color="{DynamicResource PanelledTabControlBackgroundColor}"/>
+    <SolidColorBrush x:Key="PanelledTabControlBorderBrush" Color="{DynamicResource PanelledTabControlBorderColor}"/>
+    <SolidColorBrush x:Key="PanelledTabHeaderBorderBrush" Color="{DynamicResource PanelledTabHeaderBorderColor}"/>
+    <SolidColorBrush x:Key="PanelledTabHeaderInactiveBrush" Color="{DynamicResource PanelledTabHeaderInactiveBackgroundColor}"/>
+
     <Style TargetType="TabControl">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource TabControlTabsBackgroundBrush}"/>
@@ -55,6 +60,61 @@
                             </MultiTrigger.Conditions>
                             <Setter TargetName="TabItemRoot" Property="BorderBrush" Value="{DynamicResource TabControlFocusedBorderBrush}"/>
                         </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PanelledTabControlStyle" BasedOn="{StaticResource {x:Type TabControl}}" TargetType="TabControl">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource PanelledTabItemStyle}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Border CornerRadius="2" BorderThickness="1" Background="{DynamicResource PanelledTabControlBackgroundBrush}"
+                                    BorderBrush="{DynamicResource PanelledTabControlBorderBrush}">
+                        <Grid KeyboardNavigation.TabNavigation="Local">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <UniformGrid Grid.Row="0" IsItemsHost="True" Panel.ZIndex="1" HorizontalAlignment="Stretch" Margin="0 0 -1 0"/>
+                            <Border Grid.Row="1" CornerRadius="2" BorderThickness="1 0 1 1">
+                                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PanelledTabItemStyle" BasedOn="{StaticResource {x:Type TabItem}}" TargetType="TabItem">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="TabHeaderBorder" BorderBrush="{DynamicResource PanelledTabHeaderBorderBrush}" Background="{DynamicResource PanelledTabControlBackgroundBrush}" BorderThickness="0 0 1 0">
+                        <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="{TemplateBinding MinHeight}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="TabHeaderBorder" Property="Background" Value="{DynamicResource PanelledTabHeaderInactiveBrush}"/>
+                            <Setter TargetName="TabHeaderBorder" Property="BorderThickness" Value="0 0 1 1"/>
+                            <Setter TargetName="TabHeaderBorder" Property="Margin" Value="0 0 0 0"/>
+                        </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5"/>
                         </Trigger>

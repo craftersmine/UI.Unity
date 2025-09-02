@@ -387,6 +387,29 @@
                             <ComboBoxItem Content="Test"/>
                             <ComboBoxItem Content="Test"/>
                         </ComboBox>
+                        <ComboBox SelectedIndex="0" IsDropDownOpen="True">
+                            <ComboBoxItem>
+                                <ComboBoxItem.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ComboBoxItem.Content>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <ComboBoxItem.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ComboBoxItem.Content>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <ComboBoxItem.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ComboBoxItem.Content>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <ComboBoxItem.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ComboBoxItem.Content>
+                            </ComboBoxItem>
+                        </ComboBox>
+                        <Separator/>
 
                         <Button>
                             <Button.Content>

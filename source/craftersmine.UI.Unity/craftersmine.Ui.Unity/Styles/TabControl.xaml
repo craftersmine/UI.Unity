@@ -9,6 +9,7 @@
     <SolidColorBrush x:Key="PanelledTabControlBackgroundBrush" Color="{DynamicResource PanelledTabControlBackgroundColor}"/>
     <SolidColorBrush x:Key="PanelledTabControlBorderBrush" Color="{DynamicResource PanelledTabControlBorderColor}"/>
     <SolidColorBrush x:Key="PanelledTabHeaderBorderBrush" Color="{DynamicResource PanelledTabHeaderBorderColor}"/>
+    <SolidColorBrush x:Key="PanelledTabHeaderHoverBrush" Color="{DynamicResource PanelledTabHeaderHoverBackgroundColor}"/>
     <SolidColorBrush x:Key="PanelledTabHeaderInactiveBrush" Color="{DynamicResource PanelledTabHeaderInactiveBackgroundColor}"/>
 
     <Style TargetType="TabControl">
@@ -115,6 +116,13 @@
                             <Setter TargetName="TabHeaderBorder" Property="BorderThickness" Value="0 0 1 1"/>
                             <Setter TargetName="TabHeaderBorder" Property="Margin" Value="0 0 0 0"/>
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="False"/>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="TabHeaderBorder" Property="Background" Value="{DynamicResource PanelledTabHeaderHoverBrush}"/>
+                        </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5"/>
                         </Trigger>

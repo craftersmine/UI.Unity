@@ -6,6 +6,7 @@
     <SolidColorBrush x:Key="ControlForegroundBrush" Color="{DynamicResource ForegroundColor}"/>
 
     <SolidColorBrush x:Key="WindowTitleBackgroundBrush" Color="{DynamicResource WindowHeaderBackgroundColor}"/>
+    <SolidColorBrush x:Key="WindowTitleBrush" Color="{DynamicResource WindowTitleColor}"/>
     <SolidColorBrush x:Key="WindowTitleInactiveBrush" Color="{DynamicResource WindowInactiveTitleColor}"/>
 
     <SolidColorBrush x:Key="WindowButtonGlyphBrush" Color="{DynamicResource WindowButtonGlyphColor}"/>
@@ -52,7 +53,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <Image Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="4 0 0 0" MouseUp="OnIconMouseUp" WindowChrome.IsHitTestVisibleInChrome="True"/>
-                                    <TextBlock x:Name="WindowTitleTextBlock" Text="{TemplateBinding Title}" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+                                    <TextBlock x:Name="WindowTitleTextBlock" Foreground="{DynamicResource WindowTitleBrush}" Text="{TemplateBinding Title}" Grid.Column="1" VerticalAlignment="Center" FontFamily="Segoe UI"/>
                                 </Grid>
                             </Border>
                             <Button x:Name="MinimizeButton" Focusable="False" IsTabStop="False" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" SnapsToDevicePixels="True" Click="OnMinimizeClick">
@@ -83,7 +84,7 @@
                                                     </VisualState>
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>
-                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,5 L 10,5" Stroke="White" StrokeThickness="1" StrokeEndLineCap="Flat"/>
+                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,5 L 10,5" Stroke="{DynamicResource WindowButtonGlyphBrush}" StrokeThickness="1" StrokeEndLineCap="Flat"/>
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsEnabled" Value="False">
@@ -142,7 +143,7 @@
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>
 
-                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,0 M 9,0 L 9,9 M 9,9 L 0,9 M 0,9 L 0,0" Stroke="White" StrokeThickness="1" UseLayoutRounding="False"/>
+                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,0 M 9,0 L 9,9 M 9,9 L 0,9 M 0,9 L 0,0" Stroke="{DynamicResource WindowButtonGlyphBrush}" StrokeThickness="1" UseLayoutRounding="False"/>
                                         </Border>
 
                                         <ControlTemplate.Triggers>
@@ -205,7 +206,7 @@
                                                 </VisualStateGroup>
                                             </VisualStateManager.VisualStateGroups>
 
-                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,9 M 0,9 L 9,0" Stroke="White" StrokeThickness="1"/>
+                                            <Path x:Name="ButtonGlyph" SnapsToDevicePixels="True" Width="10" Height="10" Data="M 0,0 L 9,9 M 0,9 L 9,0" Stroke="{DynamicResource WindowButtonGlyphBrush}" StrokeThickness="1"/>
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsEnabled" Value="False">

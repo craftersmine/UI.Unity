@@ -12,6 +12,7 @@
     <Color x:Key="UnityHelpBoxInfoIconColor">#F0F0F0</Color>
     <Color x:Key="UnityHelpBoxWarnIconColor">#FFC107</Color>
 
+    <Color x:Key="WindowTitleColor">#D2D2D2</Color>
     <Color x:Key="WindowInactiveTitleColor">#757575</Color>
     <Color x:Key="WindowButtonGlyphColor">#E9E9E8</Color>
     <Color x:Key="WindowButtonInactiveGlyphColor">#757575</Color>
@@ -134,4 +135,5 @@
 
     <Color x:Key="StatusBarBackgroundColor">#141414</Color>
     <Color x:Key="StatusBarSeparatorColor">#232323</Color>
+
 </ResourceDictionary>

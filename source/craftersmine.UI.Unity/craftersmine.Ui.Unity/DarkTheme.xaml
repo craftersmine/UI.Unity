@@ -131,4 +131,6 @@
     <Color x:Key="PanelledTabHeaderBorderColor">#242424</Color>
     <Color x:Key="PanelledTabHeaderInactiveBackgroundColor">#383838</Color>
 
+    <Color x:Key="StatusBarBackgroundColor">#141414</Color>
+    <Color x:Key="StatusBarSeparatorColor">#232323</Color>
 </ResourceDictionary>

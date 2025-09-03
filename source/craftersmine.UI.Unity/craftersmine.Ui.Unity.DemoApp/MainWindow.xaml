@@ -8,1200 +8,1239 @@
         Title="MainWindow" Height="450" Width="800"
         Style="{DynamicResource UnityWindowStyle}" Icon="/about.png"
         ResizeMode="CanResize">
-    <TabControl>
-        <TabItem Header="Groups And Boxes" Padding="4">
-            <StackPanel>
-                <GroupBox Header="Group Box" Margin="4">
-                    <TextBlock Text="Lorem ipsum sit dolor amet"/>
-                </GroupBox>
-                <GroupBox Header="Help Boxes" Margin="4">
-                    <StackPanel>
-                        <controls:HelpBox Margin="4">
-                            <TextBlock Text="This can show useful tip on how to use something"/>
-                        </controls:HelpBox>
-                        <controls:HelpBox Margin="4" Type="Warning">
-                            <TextBlock Text="This can show an important recomendation or warning user on something that might not work or work only with specific condition" TextWrapping="Wrap"/>
-                        </controls:HelpBox>
-                        <controls:HelpBox Margin="4" Type="Error">
-                            <TextBlock Text="This can show an issue with some settings or properties, or mark issue with something else that prevents something from working that user must fix" TextWrapping="Wrap"/>
-                        </controls:HelpBox>
-                    </StackPanel>
-                </GroupBox>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="Menu and Toolbars">
-            <DockPanel>
-                <Menu DockPanel.Dock="Top">
-                    <Menu.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <DockPanel HorizontalAlignment="Stretch"/>
-                        </ItemsPanelTemplate>
-                    </Menu.ItemsPanel>
-                    <MenuItem Header="File" MaxHeight="30">
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem Header="Groups And Boxes" Padding="4">
+                <StackPanel>
+                    <GroupBox Header="Group Box" Margin="4">
+                        <TextBlock Text="Lorem ipsum sit dolor amet"/>
+                    </GroupBox>
+                    <GroupBox Header="Help Boxes" Margin="4">
+                        <StackPanel>
+                            <controls:HelpBox Margin="4">
+                                <TextBlock Text="This can show useful tip on how to use something"/>
+                            </controls:HelpBox>
+                            <controls:HelpBox Margin="4" Type="Warning">
+                                <TextBlock Text="This can show an important recomendation or warning user on something that might not work or work only with specific condition" TextWrapping="Wrap"/>
+                            </controls:HelpBox>
+                            <controls:HelpBox Margin="4" Type="Error">
+                                <TextBlock Text="This can show an issue with some settings or properties, or mark issue with something else that prevents something from working that user must fix" TextWrapping="Wrap"/>
+                            </controls:HelpBox>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Menu and Toolbars">
+                <DockPanel>
+                    <Menu DockPanel.Dock="Top">
+                        <Menu.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <DockPanel HorizontalAlignment="Stretch"/>
+                            </ItemsPanelTemplate>
+                        </Menu.ItemsPanel>
+                        <MenuItem Header="File" MaxHeight="30">
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="New"/>
+                            <MenuItem Header="Open"/>
+                            <MenuItem Header="Save"/>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="UnityUI.xaml"/>
+                            </MenuItem>
                         </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="Copy"/>
+                            <MenuItem Header="Cut" IsEnabled="False"/>
+                            <MenuItem Header="Paste" HorizontalAlignment="Right"/>
                         </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
+                        <MenuItem Header="Asset Types">
+                            <MenuItem Header="Animation Clip" IsCheckable="True"/>
+                            <Separator/>
+                            <MenuItem Header="Audio Clip" IsCheckable="True"/>
+                            <MenuItem Header="Audio Mixer" IsCheckable="True"/>
+                            <Separator/>
+                            <MenuItem Header="Compute Shader" IsCheckable="True"/>
+                            <MenuItem Header="Font" IsCheckable="True"/>
+                            <MenuItem Header="GUI Skin" IsCheckable="True"/>
+                            <MenuItem Header="Graph" IsCheckable="True"/>
+                            <MenuItem Header="Material" IsCheckable="True"/>
+                            <MenuItem Header="Mesh" IsCheckable="True"/>
+                            <MenuItem Header="Model" IsCheckable="True"/>
+                            <MenuItem Header="Physics Material" IsCheckable="True"/>
+                            <MenuItem Header="Prefab" IsCheckable="True"/>
+                            <MenuItem Header="Scene" IsCheckable="True"/>
+                            <MenuItem Header="Script" IsCheckable="True"/>
+                            <MenuItem Header="Shader" IsCheckable="True"/>
+                            <MenuItem Header="Sprite" IsCheckable="True"/>
+                            <MenuItem Header="Texture" IsCheckable="True"/>
+                            <MenuItem Header="Video Clip" IsCheckable="True"/>
+                            <MenuItem Header="Visual Effect Asset" IsCheckable="True"/>
                         </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
-                        </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
-                        </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
-                        </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
-                        </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="New"/>
-                        <MenuItem Header="Open"/>
-                        <MenuItem Header="Save"/>
-                        <MenuItem Header="Exit"/>
-                        <MenuItem Header="Recent">
-                            <MenuItem Header="UnityUI.xaml"/>
-                        </MenuItem>
-                    </MenuItem>
-                    <MenuItem Header="Edit">
-                        <MenuItem Header="Copy"/>
-                        <MenuItem Header="Cut" IsEnabled="False"/>
-                        <MenuItem Header="Paste" HorizontalAlignment="Right"/>
-                    </MenuItem>
-                    <MenuItem Header="Asset Types">
-                        <MenuItem Header="Animation Clip" IsCheckable="True"/>
-                        <Separator/>
-                        <MenuItem Header="Audio Clip" IsCheckable="True"/>
-                        <MenuItem Header="Audio Mixer" IsCheckable="True"/>
-                        <Separator/>
-                        <MenuItem Header="Compute Shader" IsCheckable="True"/>
-                        <MenuItem Header="Font" IsCheckable="True"/>
-                        <MenuItem Header="GUI Skin" IsCheckable="True"/>
-                        <MenuItem Header="Graph" IsCheckable="True"/>
-                        <MenuItem Header="Material" IsCheckable="True"/>
-                        <MenuItem Header="Mesh" IsCheckable="True"/>
-                        <MenuItem Header="Model" IsCheckable="True"/>
-                        <MenuItem Header="Physics Material" IsCheckable="True"/>
-                        <MenuItem Header="Prefab" IsCheckable="True"/>
-                        <MenuItem Header="Scene" IsCheckable="True"/>
-                        <MenuItem Header="Script" IsCheckable="True"/>
-                        <MenuItem Header="Shader" IsCheckable="True"/>
-                        <MenuItem Header="Sprite" IsCheckable="True"/>
-                        <MenuItem Header="Texture" IsCheckable="True"/>
-                        <MenuItem Header="Video Clip" IsCheckable="True"/>
-                        <MenuItem Header="Visual Effect Asset" IsCheckable="True"/>
-                    </MenuItem>
-                    <MenuItem Header="Help"/>
-                    
-                    <MenuItem Header="Toggle Live Preview" IsCheckable="True" HorizontalAlignment="Right"/>
-                </Menu>
-                <ToolBarTray DockPanel.Dock="Top">
-                    <ToolBar>
-                        <TextBlock Text="Buttons:" VerticalAlignment="Center"/>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <TextBlock Text="ToggleButtons:" VerticalAlignment="Center"/>
-                        <ToggleButton IsChecked="True">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupBeginStyle}" IsChecked="True">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}" IsChecked="True">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupEndStyle}">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                    </ToolBar>
-                    <ToolBar Band="1">
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <TextBlock Text="Search:" VerticalAlignment="Center"/>
-                        <TextBox Width="150"/>
-                        <Separator/>
-                        <CheckBox Content="Check me"/>
-                        <Separator/>
-                        <RadioButton Content="Option 1"/>
-                        <RadioButton Content="Option 1"/>
-                        <RadioButton Content="Option 1"/>
-                        <Separator/>
-                        <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupBeginStyle}"/>
-                        <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupMiddleStyle}"/>
-                        <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupEndStyle}"/>
-                    </ToolBar>
-                    <ToolBar Band="2">
-                        <ComboBox SelectedIndex="0" Width="65">
-                            <ComboBoxItem Content="Test"/>
-                            <ComboBoxItem Content="Test"/>
-                            <ComboBoxItem Content="Test"/>
-                            <ComboBoxItem Content="Test"/>
-                        </ComboBox>
-                        <ComboBox SelectedIndex="0">
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
-                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
-                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
-                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
-                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                        </ComboBox>
-                        <Separator/>
+                        <MenuItem Header="Help"/>
 
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                    </ToolBar>
-                </ToolBarTray>
-                <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical">
-                    <ToolBar>
-                        <TextBlock Text="Buttons:" VerticalAlignment="Center"/>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <TextBlock Text="ToggleButtons:" VerticalAlignment="Center"/>
-                        <ToggleButton IsChecked="True">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupBeginStyle}" IsChecked="True">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}" IsChecked="True">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                        <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupEndStyle}">
-                            <ToggleButton.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </ToggleButton.Content>
-                        </ToggleButton>
-                    </ToolBar>
-                    <ToolBar Band="1">
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <TextBlock Text="Search:" VerticalAlignment="Center"/>
-                        <TextBox Width="150"/>
-                        <Separator/>
-                        <CheckBox Content="Check me"/>
-                        <Separator/>
-                        <RadioButton Content="Option 1"/>
-                        <RadioButton Content="Option 1"/>
-                        <RadioButton Content="Option 1"/>
-                        <Separator/>
-                        <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupBeginStyle}"/>
-                        <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupMiddleStyle}"/>
-                        <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupEndStyle}"/>
-                    </ToolBar>
-                    <ToolBar Band="2">
-                        <ComboBox SelectedIndex="0">
-                            <ComboBoxItem Content="Test"/>
-                            <ComboBoxItem Content="Test"/>
-                            <ComboBoxItem Content="Test"/>
-                            <ComboBoxItem Content="Test"/>
-                        </ComboBox>
-                        <ComboBox SelectedIndex="0">
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
+                        <MenuItem Header="Toggle Live Preview" IsCheckable="True" HorizontalAlignment="Right"/>
+                    </Menu>
+                    <ToolBarTray DockPanel.Dock="Top">
+                        <ToolBar>
+                            <TextBlock Text="Buttons:" VerticalAlignment="Center"/>
+                            <Button>
+                                <Button.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
+                                <Button.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                                <Button.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <ComboBoxItem.Content>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                                <Button.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </ComboBoxItem.Content>
-                            </ComboBoxItem>
-                        </ComboBox>
-                        <Separator/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <TextBlock Text="ToggleButtons:" VerticalAlignment="Center"/>
+                            <ToggleButton IsChecked="True">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupBeginStyle}" IsChecked="True">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}" IsChecked="True">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupEndStyle}">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                        </ToolBar>
+                        <ToolBar Band="1">
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <TextBlock Text="Search:" VerticalAlignment="Center"/>
+                            <TextBox Width="150"/>
+                            <Separator/>
+                            <CheckBox Content="Check me"/>
+                            <Separator/>
+                            <RadioButton Content="Option 1"/>
+                            <RadioButton Content="Option 1"/>
+                            <RadioButton Content="Option 1"/>
+                            <Separator/>
+                            <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupBeginStyle}"/>
+                            <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupMiddleStyle}"/>
+                            <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupEndStyle}"/>
+                        </ToolBar>
+                        <ToolBar Band="2">
+                            <ComboBox SelectedIndex="0" Width="65">
+                                <ComboBoxItem Content="Test"/>
+                                <ComboBoxItem Content="Test"/>
+                                <ComboBoxItem Content="Test"/>
+                                <ComboBoxItem Content="Test"/>
+                            </ComboBox>
+                            <ComboBox SelectedIndex="0">
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <Separator/>
 
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                    </ToolBar>
-                </ToolBarTray>
-                <ToolBarTray DockPanel.Dock="Left" Orientation="Vertical">
-                    <ToolBar>
-                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Separator/>
-                        <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                    </ToolBar>
-                    <ToolBar>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                    </ToolBar>
-                </ToolBarTray>
-                <ToolBarTray DockPanel.Dock="Bottom">
-                    <ToolBar>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                        <Button>
-                            <Button.Content>
-                                <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                            </Button.Content>
-                        </Button>
-                    </ToolBar></ToolBarTray>
-                <Grid></Grid>
-            </DockPanel>
-        </TabItem>
-        <TabItem Header="Tabs and TabControls">
-            <Grid Margin="16">
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical">
+                        <ToolBar>
+                            <TextBlock Text="Buttons:" VerticalAlignment="Center"/>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <TextBlock Text="ToggleButtons:" VerticalAlignment="Center"/>
+                            <ToggleButton IsChecked="True">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupBeginStyle}" IsChecked="True">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}" IsChecked="True">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupMiddleStyle}">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Style="{DynamicResource ToolBarToggleButtonGroupEndStyle}">
+                                <ToggleButton.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                        </ToolBar>
+                        <ToolBar Band="1">
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <TextBlock Text="Search:" VerticalAlignment="Center"/>
+                            <TextBox Width="150"/>
+                            <Separator/>
+                            <CheckBox Content="Check me"/>
+                            <Separator/>
+                            <RadioButton Content="Option 1"/>
+                            <RadioButton Content="Option 1"/>
+                            <RadioButton Content="Option 1"/>
+                            <Separator/>
+                            <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupBeginStyle}"/>
+                            <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupMiddleStyle}"/>
+                            <RadioButton Content="Option 1" Style="{DynamicResource ToolBarRadioButtonGroupEndStyle}"/>
+                        </ToolBar>
+                        <ToolBar Band="2">
+                            <ComboBox SelectedIndex="0">
+                                <ComboBoxItem Content="Test"/>
+                                <ComboBoxItem Content="Test"/>
+                                <ComboBoxItem Content="Test"/>
+                                <ComboBoxItem Content="Test"/>
+                            </ComboBox>
+                            <ComboBox SelectedIndex="0">
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <ComboBoxItem.Content>
+                                        <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                    </ComboBoxItem.Content>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <Separator/>
+
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ToolBarTray DockPanel.Dock="Left" Orientation="Vertical">
+                        <ToolBar>
+                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Separator/>
+                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupEndStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                        </ToolBar>
+                        <ToolBar>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ToolBarTray DockPanel.Dock="Bottom">
+                        <ToolBar>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button>
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <Grid></Grid>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Tabs and TabControls">
+                <Grid Margin="16">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Border BorderBrush="Black" BorderThickness="1">
-                    <TabControl>
-                        <TabItem Header="Just a tab 1"/>
-                        <TabItem Header="Another tab 1"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <TabControl>
+                            <TabItem Header="Just a tab 1"/>
+                            <TabItem Header="Another tab 1"/>
+                        </TabControl>
+                    </Border>
+                    <GridSplitter Margin="1"/>
+                    <TabControl Style="{DynamicResource PanelledTabControlStyle}" Grid.Column="1">
+                        <TabItem Header="Just a tab"/>
+                        <TabItem Header="Another tab"/>
                     </TabControl>
-                </Border>
-                <GridSplitter Margin="1"/>
-                <TabControl Style="{DynamicResource PanelledTabControlStyle}" Grid.Column="1">
-                    <TabItem Header="Just a tab"/>
-                    <TabItem Header="Another tab"/>
-                </TabControl>
-            </Grid>
-        </TabItem>
-        <TabItem Header="Buttons">
-            <TabItem.ToolTip>
-                <TextBlock Text="Every available button in this style"/>
-            </TabItem.ToolTip>
-            <StackPanel>
-                <Button Content="Button" Margin="1" Padding="10"/>
-                <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="CheckBoxes">
-            <StackPanel>
-                <CheckBox Content="Default"/>
-                <CheckBox Content="Checked" IsChecked="True"/>
-                <CheckBox Content="Indeterminate" IsThreeState="True" IsChecked="{x:Null}"/>
-                <CheckBox Content="Disabled" IsEnabled="False"/>
-                <CheckBox Content="CheckedDisabled" IsChecked="True" IsEnabled="False"/>
-                <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="TextBoxes">
-            <StackPanel>
-                <GroupBox Header="TextBox">
-                    <StackPanel>
-                        <TextBox Text="Default"/>
-                        <TextBox Text="Disabled" IsEnabled="False"/>
-                        <TextBox Text="ReadOnly" IsReadOnly="True"/>
-                        <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
-                    </StackPanel>
-                </GroupBox>
-                <GroupBox Header="PasswordBox">
-                    <StackPanel>
-                        <PasswordBox Password="Default"/>
-                        <PasswordBox Password="Disabled" IsEnabled="False"/>
-                    </StackPanel>
-                </GroupBox>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="Sliders">
-            <StackPanel Orientation="Horizontal">
+                </Grid>
+            </TabItem>
+            <TabItem Header="Buttons">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Every available button in this style"/>
+                </TabItem.ToolTip>
+                <StackPanel>
+                    <Button Content="Button" Margin="1" Padding="10"/>
+                    <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="CheckBoxes">
+                <StackPanel>
+                    <CheckBox Content="Default"/>
+                    <CheckBox Content="Checked" IsChecked="True"/>
+                    <CheckBox Content="Indeterminate" IsThreeState="True" IsChecked="{x:Null}"/>
+                    <CheckBox Content="Disabled" IsEnabled="False"/>
+                    <CheckBox Content="CheckedDisabled" IsChecked="True" IsEnabled="False"/>
+                    <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="TextBoxes">
+                <StackPanel>
+                    <GroupBox Header="TextBox">
+                        <StackPanel>
+                            <TextBox Text="Default"/>
+                            <TextBox Text="Disabled" IsEnabled="False"/>
+                            <TextBox Text="ReadOnly" IsReadOnly="True"/>
+                            <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="PasswordBox">
+                        <StackPanel>
+                            <PasswordBox Password="Default"/>
+                            <PasswordBox Password="Disabled" IsEnabled="False"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Sliders">
                 <StackPanel Orientation="Horizontal">
-                    <Slider Orientation="Vertical"/>
-                    <Slider IsEnabled="False" Orientation="Vertical"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Slider Orientation="Vertical"/>
+                        <Slider IsEnabled="False" Orientation="Vertical"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Slider/>
+                        <Slider IsEnabled="False"/>
+                    </StackPanel>
                 </StackPanel>
+            </TabItem>
+            <TabItem Header="RadioButtons">
                 <StackPanel>
-                    <Slider/>
-                    <Slider IsEnabled="False"/>
+                    <StackPanel>
+                        <RadioButton Content="Default"/>
+                        <RadioButton IsChecked="True" Content="Checked"/>
+                    </StackPanel>
+                    <RadioButton IsEnabled="False" Content="Disabled"/>
+                    <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
                 </StackPanel>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="RadioButtons">
-            <StackPanel>
+            </TabItem>
+            <TabItem Header="ComboBoxes" Padding="16">
                 <StackPanel>
-                    <RadioButton Content="Default"/>
-                    <RadioButton IsChecked="True" Content="Checked"/>
+                    <ComboBox SelectedIndex="0">
+                        <ComboBoxItem Content="Test"/>
+                        <ComboBoxItem Content="Test"/>
+                        <ComboBoxItem Content="Test" IsEnabled="False"/>
+                        <ComboBoxItem Content="Test"/>
+                    </ComboBox>
+                    <ComboBox IsEnabled="False" SelectedIndex="0">
+                        <ComboBoxItem Content="Test"/>
+                        <ComboBoxItem Content="Test"/>
+                        <ComboBoxItem Content="Test"/>
+                        <ComboBoxItem Content="Test"/>
+                    </ComboBox>
                 </StackPanel>
-                <RadioButton IsEnabled="False" Content="Disabled"/>
-                <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="ComboBoxes" Padding="16">
-            <StackPanel>
-                <ComboBox SelectedIndex="0">
-                    <ComboBoxItem Content="Test"/>
-                    <ComboBoxItem Content="Test"/>
-                    <ComboBoxItem Content="Test" IsEnabled="False"/>
-                    <ComboBoxItem Content="Test"/>
-                </ComboBox>
-                <ComboBox IsEnabled="False" SelectedIndex="0">
-                    <ComboBoxItem Content="Test"/>
-                    <ComboBoxItem Content="Test"/>
-                    <ComboBoxItem Content="Test"/>
-                    <ComboBoxItem Content="Test"/>
-                </ComboBox>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="ProgressBars">
-            <StackPanel Margin="4">
-                <Slider x:Name="ProgressSlider" Minimum="0" Maximum="100"/>
-                <ProgressBar Value="{Binding ElementName=ProgressSlider, Path=Value}"/>
-                <ProgressBar IsIndeterminate="True"/>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="Expanders">
-            <StackPanel>
-                <Expander Header="Inspector Style">
-                    <TextBlock Text="Unity UI is interesting"/>
-                </Expander>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="ScrollBars">
-            <ScrollViewer HorizontalScrollBarVisibility="Visible">
-                <TextBlock>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Integer ac enim vel lorem finibus varius non vel odio. 
-                        Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
-                        Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
-                        Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
-                        amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
-                        nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
-                        congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
-                        Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
-                        Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
-                        venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
-                        lacus aliquam consectetur in eu justo.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
-                        lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
-                        viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
-                        accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
-                        convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
-                        hendrerit sapien cursus. Integer consequat suscipit consequat.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
-                        Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
-                        tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
-                        tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
-                        feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
-                        accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
-                        blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
-                        Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
-                        suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
-                        viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
-                        Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
-                        potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
-                        ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
-                        vestibulum pulvinar.
-                    </Run>
-                    <LineBreak/>
-                    <Run>
-                        Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
-                        In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
-                        efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
-                        augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
-                        Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
-                        orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
-                        Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
-                        urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
-                        fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
-                        quis tortor scelerisque, facilisis quam vel, scelerisque odio.
-                    </Run>
-                    <LineBreak/>
-                </TextBlock>
-            </ScrollViewer>
-        </TabItem>
-        <TabItem Header="ListViews">
-            <Grid HorizontalAlignment="Stretch">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            </TabItem>
+            <TabItem Header="ProgressBars">
+                <StackPanel Margin="4">
+                    <Slider x:Name="ProgressSlider" Minimum="0" Maximum="100"/>
+                    <ProgressBar Value="{Binding ElementName=ProgressSlider, Path=Value}"/>
+                    <ProgressBar IsIndeterminate="True"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Expanders">
+                <StackPanel>
+                    <Expander Header="Inspector Style">
+                        <TextBlock Text="Unity UI is interesting"/>
+                    </Expander>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ScrollBars">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <TextBlock>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac enim vel lorem finibus varius non vel odio. 
+                    Curabitur vitae nisl at lorem congue pharetra at quis nunc. 
+                    Nullam porta diam et nisl feugiat semper. Sed rutrum urna et vulputate finibus. 
+                    Nam nulla urna, sollicitudin ac ipsum vitae, tincidunt convallis ipsum. Etiam sit 
+                    amet sollicitudin tellus. In libero lorem, pulvinar id nibh in, auctor rhoncus 
+                    nisl. Maecenas euismod velit nec imperdiet facilisis. Ut vel nibh nulla. Nam nec
+                    congue felis, et facilisis erat. Vestibulum vitae maximus erat, quis sodales leo. 
+                    Pellentesque molestie urna sed neque gravida, sed hendrerit ligula vestibulum. 
+                    Suspendisse eu aliquam justo, id ultricies diam. Phasellus mattis, risus in sodales 
+                    venenatis, odio massa efficitur mi, id finibus ipsum nisi eu augue. Mauris at felis a 
+                    lacus aliquam consectetur in eu justo.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Sed scelerisque ut orci id egestas. Praesent et orci vestibulum, porttitor 
+                    lectus nec, aliquam massa. Donec et lectus porta, pellentesque tellus in, 
+                    viverra arcu. Quisque imperdiet, enim finibus tristique ornare, ex sem 
+                    accumsan ligula, a tristique tortor mauris ut lectus. Suspendisse laoreet 
+                    convallis lorem et pulvinar. Morbi gravida nunc vitae urna eleifend, eleifend 
+                    hendrerit sapien cursus. Integer consequat suscipit consequat.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Praesent eget dolor sit amet sem tincidunt tincidunt eu quis felis. 
+                    Mauris ut augue odio. Duis nec erat tincidunt, consequat lectus ut, 
+                    tristique tortor. Mauris non tempor lectus. Praesent viverra quis 
+                    tortor ultricies semper. Etiam fermentum blandit urna, at mollis est 
+                    feugiat in. Phasellus non posuere urna, eget iaculis lectus. Nam eget laoreet nunc.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Morbi tincidunt tellus egestas justo consequat consequat. Curabitur 
+                    accumsan odio id volutpat sodales. Morbi sit amet mi sit amet lectus 
+                    blandit mollis a in turpis. Curabitur rutrum orci eu accumsan efficitur. 
+                    Donec sodales et augue et lobortis. Mauris ante metus, volutpat sit amet 
+                    suscipit facilisis, condimentum laoreet mauris. Donec aliquam suscipit 
+                    viverra. Cras sit amet elit vel risus sodales consequat tincidunt eu mi. 
+                    Aenean at mauris et ex molestie ornare vitae sit amet lorem. Suspendisse 
+                    potenti. Duis viverra, quam pellentesque euismod vestibulum, nulla enim 
+                    ultrices erat, vel dictum metus tellus ac erat. Nunc interdum sem eleifend 
+                    vestibulum pulvinar.
+                </Run>
+                <LineBreak/>
+                <Run>
+                    Nulla facilisi. Nullam quis lacus in quam aliquet vulputate. Nam vel porta turpis. 
+                    In sem neque, blandit ac tempus eget, tempor vitae augue. Nunc maximus tortor nec 
+                    efficitur vestibulum. Phasellus maximus, est vel ornare suscipit, lacus nisl dapibus 
+                    augue, at aliquet sapien nulla non turpis. Cras convallis eros ac dapibus tristique. 
+                    Morbi sed ultrices felis. Etiam vulputate, massa non mollis facilisis, justo quam pretium 
+                    orci, ac dignissim leo sapien eu ligula. Sed non massa sapien. Curabitur vel tempus dui. 
+                    Cras non dignissim orci. Proin sagittis, mauris nec laoreet tincidunt, ante nisi dictum 
+                    urna, et aliquet magna arcu sed risus. Maecenas elementum arcu metus, ut interdum enim 
+                    fringilla eu. In vel quam vitae orci aliquet gravida sit amet ullamcorper justo. Mauris 
+                    quis tortor scelerisque, facilisis quam vel, scelerisque odio.
+                </Run>
+                <LineBreak/>
+                    </TextBlock>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="ListViews">
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <TreeView Grid.Column="0">
-                    <TreeViewItem IsExpanded="True">
-                        <TreeViewItem.Header>
-                            <TextBlock Text="Favourites" FontWeight="Bold"/>
-                        </TreeViewItem.Header>
-                        <TreeViewItem Header="All Materials"/>
-                        <TreeViewItem Header="All Models"/>
-                        <TreeViewItem Header="All Prefabs"/>
-                    </TreeViewItem>
-                    <TreeViewItem IsEnabled="False"/>
-                    <TreeViewItem IsExpanded="True">
-                        <TreeViewItem.Header>
-                            <TextBlock Text="Assets" FontWeight="Bold"/>
-                        </TreeViewItem.Header>
-                        <TreeViewItem Header="Content"/>
-                        <TreeViewItem Header="Editor"/>
-                        <TreeViewItem Header="Prefabs" IsEnabled="False"/>
-                        <TreeViewItem Header="Scripts">
-                            <TreeViewItem Header="Player Controlers"/>
-                            <TreeViewItem Header="NPC"/>
-                            <TreeViewItem Header="Systems"/>
+                    <TreeView Grid.Column="0">
+                        <TreeViewItem IsExpanded="True">
+                            <TreeViewItem.Header>
+                                <TextBlock Text="Favourites" FontWeight="Bold"/>
+                            </TreeViewItem.Header>
+                            <TreeViewItem Header="All Materials"/>
+                            <TreeViewItem Header="All Models"/>
+                            <TreeViewItem Header="All Prefabs"/>
                         </TreeViewItem>
-                        <TreeViewItem Header="Scenes"/>
-                    </TreeViewItem>
-                    <TreeViewItem>
-                        <TreeViewItem.Header>
-                            <TextBlock Text="Packages" FontWeight="Bold"/>
-                        </TreeViewItem.Header>
-                        <TreeViewItem Header="Burst" IsEnabled="False"/>
-                        <TreeViewItem Header="Unity UI"/>
-                        <TreeViewItem Header="Universal RP"/>
-                        <TreeViewItem Header="Visual Studio Editor"/>
-                    </TreeViewItem>
-                </TreeView>
+                        <TreeViewItem IsEnabled="False"/>
+                        <TreeViewItem IsExpanded="True">
+                            <TreeViewItem.Header>
+                                <TextBlock Text="Assets" FontWeight="Bold"/>
+                            </TreeViewItem.Header>
+                            <TreeViewItem Header="Content"/>
+                            <TreeViewItem Header="Editor"/>
+                            <TreeViewItem Header="Prefabs" IsEnabled="False"/>
+                            <TreeViewItem Header="Scripts">
+                                <TreeViewItem Header="Player Controlers"/>
+                                <TreeViewItem Header="NPC"/>
+                                <TreeViewItem Header="Systems"/>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Scenes"/>
+                        </TreeViewItem>
+                        <TreeViewItem>
+                            <TreeViewItem.Header>
+                                <TextBlock Text="Packages" FontWeight="Bold"/>
+                            </TreeViewItem.Header>
+                            <TreeViewItem Header="Burst" IsEnabled="False"/>
+                            <TreeViewItem Header="Unity UI"/>
+                            <TreeViewItem Header="Universal RP"/>
+                            <TreeViewItem Header="Visual Studio Editor"/>
+                        </TreeViewItem>
+                    </TreeView>
 
-                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="2"/>
+                    <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="2"/>
 
-                <ListBox Grid.Column="2" SelectionMode="Extended">
-                    <ListBoxItem Content="Content"/>
-                    <ListBoxItem Content="Editor"/>
-                    <ListBoxItem Content="Models"/>
-                    <ListBoxItem Content="Scenes"/>
-                    <ListBoxItem Content="Scripts"/>
-                </ListBox>
-                
-                <GridSplitter Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="2"/>
-                
-                <ListView Grid.Column="4" ItemsSource="{DynamicResource Assets}" SelectionMode="Extended">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="S" DisplayMemberBinding="{Binding Path=Symbol}"/>
-                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
-                            <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Path=Type}"/>
-                        </GridView>
-                    </ListView.View>
-                    <ListView.Resources>
-                        <collections:ArrayList x:Key="Assets">
-                            <demoapp:DebugItem Symbol="O" Name="Material1.mat" Type="Material"/>
-                            <demoapp:DebugItem Symbol="O" Name="Material2.mat" Type="Material"/>
-                            <demoapp:DebugItem Symbol="O" Name="Material3.mat" Type="Material"/>
-                            <demoapp:DebugItem Symbol="P" Name="Table.prefab" Type="Prefab"/>
-                            <demoapp:DebugItem Symbol="P" Name="Character.prefab" Type="Prefab"/>
-                        </collections:ArrayList>
-                    </ListView.Resources>
-                </ListView>
-            </Grid>
-        </TabItem>
-    </TabControl>
+                    <ListBox Grid.Column="2" SelectionMode="Extended">
+                        <ListBoxItem Content="Content"/>
+                        <ListBoxItem Content="Editor"/>
+                        <ListBoxItem Content="Models"/>
+                        <ListBoxItem Content="Scenes"/>
+                        <ListBoxItem Content="Scripts"/>
+                    </ListBox>
+
+                    <GridSplitter Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="2"/>
+
+                    <ListView Grid.Column="4" ItemsSource="{DynamicResource Assets}" SelectionMode="Extended">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="S" DisplayMemberBinding="{Binding Path=Symbol}"/>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
+                                <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Path=Type}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.Resources>
+                            <collections:ArrayList x:Key="Assets">
+                                <demoapp:DebugItem Symbol="O" Name="Material1.mat" Type="Material"/>
+                                <demoapp:DebugItem Symbol="O" Name="Material2.mat" Type="Material"/>
+                                <demoapp:DebugItem Symbol="O" Name="Material3.mat" Type="Material"/>
+                                <demoapp:DebugItem Symbol="P" Name="Table.prefab" Type="Prefab"/>
+                                <demoapp:DebugItem Symbol="P" Name="Character.prefab" Type="Prefab"/>
+                            </collections:ArrayList>
+                        </ListView.Resources>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="1">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem Grid.Column="0">
+                <Label Content="Ready"/>
+            </StatusBarItem>
+            <Separator Grid.Column="1"/>
+            <StatusBarItem Grid.Column="2">
+                <Label Content="Test"/>
+            </StatusBarItem>
+            <Separator Grid.Column="3" HorizontalAlignment="Center"/>
+            <StatusBarItem Grid.Column="4">
+                <Label Content="Test"/>
+            </StatusBarItem>
+            <Separator Grid.Column="5" HorizontalAlignment="Center"/>
+            <StatusBarItem Grid.Column="6">
+                <Label Content="Test"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
 </Window>

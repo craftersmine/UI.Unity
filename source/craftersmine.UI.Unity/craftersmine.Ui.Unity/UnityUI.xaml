@@ -60,5 +60,6 @@
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ListView.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/MenuBar.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/ToolBar.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/StatusBar.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

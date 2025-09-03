@@ -6,7 +6,7 @@
 
     <SolidColorBrush x:Key="TreeViewBackgroundBrush" Color="{DynamicResource TreeViewBackgroundColor}"/>
     <SolidColorBrush x:Key="TreeViewItemSelectedBackgroundBrush" Color="{DynamicResource TreeViewItemSelectedBackgroundColor}"/>
-    <SolidColorBrush x:Key="TreeViewItemFocusedBackgroundBrush" Color="{local:ColorBlend {DynamicResource UnityUIAccentColor}, DarkGray, 0.3}"/>
+    <SolidColorBrush x:Key="TreeViewItemFocusedBackgroundBrush" Color="{local:ColorBlend {DynamicResource UnityUIAccentColor}, TreeViewBackgroundColor, 0.3}"/>
     <SolidColorBrush x:Key="TreeViewItemGlyphBrush" Color="{DynamicResource TreeViewItemGlyphColor}" Opacity="0.6"/>
 
     <Style TargetType="TreeView">

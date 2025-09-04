@@ -26,7 +26,7 @@
                     <ControlTemplate TargetType="TextBox">
                         <Border x:Name="BorderTop" BorderBrush="{DynamicResource TextBoxTopBorderBrush}" Background="{DynamicResource TextBoxBackgroundBrush}" BorderThickness="0 1 0 0" CornerRadius="1.5">
                             <Border x:Name="Border" BorderBrush="{DynamicResource TextBoxBorderBrush}" BorderThickness="1 0 1 1" CornerRadius="1.5">
-                                <ScrollViewer x:Name="PART_ContentHost" Margin="0" Focusable="False" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                <ScrollViewer x:Name="PART_ContentHost" Margin="0" Focusable="False" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" VerticalContentAlignment="Center" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                             </Border>
                         </Border>
 

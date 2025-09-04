@@ -26,7 +26,7 @@
                         </Grid.RowDefinitions>
                         <TabPanel IsItemsHost="True" Grid.Row="0" Panel.ZIndex="1" Background="{DynamicResource TabControlTabsBackgroundBrush}"/>
                         <Grid Grid.Row="1">
-                            <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
+                            <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" HorizontalAlignment="Stretch" Margin="{TemplateBinding Padding}"/>
                         </Grid>
                     </Grid>
                 </ControlTemplate>
@@ -83,10 +83,8 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <UniformGrid Grid.Row="0" IsItemsHost="True" Panel.ZIndex="1" HorizontalAlignment="Stretch" Margin="0 0 -1 0"/>
-                            <Border Grid.Row="1" CornerRadius="2" BorderThickness="1 0 1 1">
-                                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
-                            </Border>
+                            <UniformGrid Grid.Row="0" IsItemsHost="True" HorizontalAlignment="Stretch" Margin="0 0 -1 0" Rows="1"/>
+                            <ContentPresenter Grid.Row="1" x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" HorizontalAlignment="Stretch"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>

@@ -86,6 +86,8 @@
     <Color x:Key="ExpanderHeaderGlyphColor">#7c7c7c</Color>
     <Color x:Key="ExpanderHeaderGlyphHoverColor">#838383</Color>
 
+    <Color x:Key="SimpleBorderedExpanderHeaderBackgroundColor">#cbcbcb</Color>
+
     <Color x:Key="ScrollBarBackgroundColor">#b8b8b8</Color>
     <Color x:Key="ScrollBarBorderColor">#a5a5a5</Color>
     <Color x:Key="ScrollBarGlyphColor">#555550</Color>

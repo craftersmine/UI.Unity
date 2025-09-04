@@ -32,6 +32,9 @@
                             </controls:HelpBox>
                         </StackPanel>
                     </GroupBox>
+                    <Border Style="{DynamicResource UnityBorder}" Margin="4" Padding="8">
+                        <TextBlock Text="Just a Unity styled border"/>
+                    </Border>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Menu and Toolbars">
@@ -660,6 +663,29 @@
                     <Expander Header="Inspector Style">
                         <TextBlock Text="Unity UI is interesting"/>
                     </Expander>
+                    <TabControl Style="{DynamicResource PanelledTabControlStyle}" Margin="8">
+                        <TabItem Header="This is first tab" HorizontalContentAlignment="Stretch">
+                            <StackPanel>
+                                <Expander Header="Panelled Expander" Style="{DynamicResource SimpleBorderedExpanderStyle}" Padding="8 8 0 8">
+                                    <StackPanel>
+                                        <Expander Header="Inner expander 1" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
+                                            <TextBlock Text="This is an expander content"/>
+                                        </Expander>
+                                        <Expander Header="Inner expander 2" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
+                                            <TextBlock Text="This is an expander content"/>
+                                        </Expander>
+                                        <Expander Header="Inner expander 3" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
+                                            <TextBlock Text="This is an expander content"/>
+                                        </Expander>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander Header="Panelled Expander 2" Style="{DynamicResource SimpleBorderedExpanderStyle}" Padding="8 8 0 8">
+                                    <TextBlock Text="This is another expander content"/>
+                                </Expander>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="This tab is empty"/>
+                    </TabControl>
                 </StackPanel>
             </TabItem>
             <TabItem Header="ScrollBars">

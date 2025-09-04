@@ -9,8 +9,12 @@
 
     <Color x:Key="UnityHelpBoxForegroundColor">#919191</Color>
     <Color x:Key="UnityHelpBoxErrorIconColor">#FF5555</Color>
+    <Color x:Key="UnityHelpBoxErrorGlyphColor">Transparent</Color>
     <Color x:Key="UnityHelpBoxInfoIconColor">#F0F0F0</Color>
+    <Color x:Key="UnityHelpBoxInfoGlyphColor">Transparent</Color>
+    <Color x:Key="UnityHelpBoxInfoBorderColor">Transparent</Color>
     <Color x:Key="UnityHelpBoxWarnIconColor">#FFC107</Color>
+    <Color x:Key="UnityHelpBoxWarnGlyphColor">Transparent</Color>
 
     <Color x:Key="WindowTitleColor">#D2D2D2</Color>
     <Color x:Key="WindowInactiveTitleColor">#757575</Color>

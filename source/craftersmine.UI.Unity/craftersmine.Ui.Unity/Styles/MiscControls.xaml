@@ -3,10 +3,19 @@
 
     <SolidColorBrush x:Key="GridSplitterBrush" Color="{DynamicResource GridSplitterColor}"/>
 
+    <SolidColorBrush x:Key="UnityBorderBackgroundBrush" Color="{DynamicResource UnityBorderBackgroundColor}"/>
+    <SolidColorBrush x:Key="UnityBorderBrush" Color="{DynamicResource UnityBorderColor}"/>
+
     <Style TargetType="GridSplitter">
         <Setter Property="MinWidth" Value="1"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource GridSplitterBrush}"/>
+    </Style>
+
+    <Style x:Key="UnityBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="{DynamicResource UnityBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="{DynamicResource UnityBorderBackgroundBrush}"/>
     </Style>
     
 </ResourceDictionary>

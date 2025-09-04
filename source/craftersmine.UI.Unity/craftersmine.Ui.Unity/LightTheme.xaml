@@ -142,4 +142,7 @@
     <Color x:Key="StatusBarBackgroundColor">#dcdcdc</Color>
     <Color x:Key="StatusBarSeparatorColor">#999999</Color>
 
+    <Color x:Key="UnityBorderBackgroundColor">#d6d6d6</Color>
+    <Color x:Key="UnityBorderColor">#dcdcdc</Color>
+
 </ResourceDictionary>

@@ -21,12 +21,19 @@
             <Setter Property="MinWidth" Value="120"/>
             <Setter Property="CaretBrush" Value="{DynamicResource ControlForegroundBrush}"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Border x:Name="BorderTop" BorderBrush="{DynamicResource TextBoxTopBorderBrush}" Background="{DynamicResource TextBoxBackgroundBrush}" BorderThickness="0 1 0 0" CornerRadius="1.5">
                             <Border x:Name="Border" BorderBrush="{DynamicResource TextBoxBorderBrush}" BorderThickness="1 0 1 1" CornerRadius="1.5">
-                                <ScrollViewer x:Name="PART_ContentHost" Margin="0" Focusable="False" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" VerticalContentAlignment="Center" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}" Focusable="False"
+                                              HorizontalScrollBarVisibility="Auto"
+                                              VerticalScrollBarVisibility="Auto"/>
+                                <!--VerticalContentAlignment="Center"
+                                              CanContentScroll="True"
+                                              HorizontalScrollBarVisibility="Auto" 
+                                              VerticalScrollBarVisibility="Auto"-->
                             </Border>
                         </Border>
 
@@ -39,7 +46,69 @@
                                 <Setter TargetName="BorderTop" Property="BorderBrush" Value="{DynamicResource TextBoxForegroundBrush}"/>
                                 <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource TextBoxForegroundBrush}"/>
                             </Trigger>
-                            
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="SearchTextBoxStyle" TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{DynamicResource InterFont}"/>
+            <Setter Property="FontSize" Value="8pt"/>
+            <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="MinHeight" Value="18"/>
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="CaretBrush" Value="{DynamicResource ControlForegroundBrush}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="BorderTop" BorderBrush="{DynamicResource TextBoxTopBorderBrush}" Background="{DynamicResource TextBoxBackgroundBrush}" BorderThickness="0 1 0 0" CornerRadius="1.5">
+                            <Border x:Name="Border" BorderBrush="{DynamicResource TextBoxBorderBrush}" BorderThickness="1 0 1 1" CornerRadius="1.5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Path x:Name="SearchIcon" Width="8" Height="8" Grid.Column="0"
+                                          Stroke="{DynamicResource TextBoxHoverBorderBrush}">
+                                        <Path.Data>
+                                            <GeometryGroup>
+                                                <EllipseGeometry Center="3,3"
+                                                                 RadiusX="2.5"
+                                                                 RadiusY="2.5"/>
+                                                <LineGeometry StartPoint="5,5"
+                                                              EndPoint="7,7"/>
+                                            </GeometryGroup>
+                                        </Path.Data>
+                                    </Path>
+
+                                    <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1"
+                                                  Margin="{TemplateBinding Padding}" Focusable="False"
+                                                  HorizontalScrollBarVisibility="Auto"
+                                                  VerticalScrollBarVisibility="Auto"/>
+                                </Grid>
+                            </Border>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="BorderTop" Property="BorderBrush" Value="{DynamicResource TextBoxHoverTopBorderBrush}"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource TextBoxHoverBorderBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="BorderTop" Property="BorderBrush" Value="{DynamicResource TextBoxForegroundBrush}"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource TextBoxForegroundBrush}"/>
+                            </Trigger>
+
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Opacity" Value="0.5"/>
                             </Trigger>

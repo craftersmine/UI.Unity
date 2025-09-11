@@ -596,22 +596,40 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="TextBoxes">
-                <StackPanel>
-                    <GroupBox Header="TextBox">
-                        <StackPanel>
-                            <TextBox Text="Default"/>
-                            <TextBox Text="Disabled" IsEnabled="False"/>
-                            <TextBox Text="ReadOnly" IsReadOnly="True"/>
-                            <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Header="PasswordBox">
-                        <StackPanel>
-                            <PasswordBox Password="Default"/>
-                            <PasswordBox Password="Disabled" IsEnabled="False"/>
-                        </StackPanel>
-                    </GroupBox>
-                </StackPanel>
+                <ScrollViewer Padding="4">
+                    <StackPanel>
+                        <GroupBox Header="TextBox">
+                            <StackPanel>
+                                <TextBox Text="Default"/>
+                                <TextBox Text="Disabled" IsEnabled="False"/>
+                                <TextBox Text="ReadOnly" IsReadOnly="True"/>
+                                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Search TextBox">
+                            <StackPanel>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="Default"/>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="Disabled" IsEnabled="False"/>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="ReadOnly" IsReadOnly="True"/>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Multiline TextBox">
+                            <StackPanel>
+                                <TextBox Text="Default" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
+                                <TextBox Text="Disabled" IsEnabled="False" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
+                                <TextBox Text="ReadOnly" IsReadOnly="True" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
+                                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="PasswordBox">
+                            <StackPanel>
+                                <PasswordBox Password="Default"/>
+                                <PasswordBox Password="Disabled" IsEnabled="False"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Sliders">
                 <StackPanel Orientation="Horizontal">

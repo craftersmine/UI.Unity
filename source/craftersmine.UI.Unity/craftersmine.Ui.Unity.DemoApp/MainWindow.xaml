@@ -1253,6 +1253,18 @@
                     </ListView>
                 </Grid>
             </TabItem>
+            <TabItem Header="Custom ListBox">
+                <Grid>
+                    <controls:EditableListBox Margin="8">
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                    </controls:EditableListBox>
+                </Grid>
+            </TabItem>
         </TabControl>
         <StatusBar Grid.Row="1">
             <StatusBar.ItemsPanel>

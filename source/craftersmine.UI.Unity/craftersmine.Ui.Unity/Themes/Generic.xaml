@@ -5,6 +5,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Themes/HelpBox.xaml"/>
+        <ResourceDictionary Source="/craftersmine.UI.Unity;component/Themes/EditableListBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

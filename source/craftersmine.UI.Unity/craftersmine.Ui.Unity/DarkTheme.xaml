@@ -145,4 +145,12 @@
     <Color x:Key="UnityBorderBackgroundColor">#474747</Color>
     <Color x:Key="UnityBorderColor">#141414</Color>
 
+    <Color x:Key="UnityListBoxBorderColor">#242424</Color>
+    <Color x:Key="UnityListBoxHeaderBackgroundColor">#353535</Color>
+    <Color x:Key="UnityListBoxBackgroundColor">#414141</Color>
+
+    <SolidColorBrush x:Key="UnityListBoxBorderBrush" Color="{DynamicResource UnityListBoxBorderColor}"/>
+    <SolidColorBrush x:Key="UnityListBoxHeaderBackgroundBrush" Color="{DynamicResource UnityListBoxHeaderBackgroundColor}"/>
+    <SolidColorBrush x:Key="UnityListBoxBackgroundBrush" Color="{DynamicResource UnityListBoxBackgroundColor}"/>
+
 </ResourceDictionary>

@@ -45,7 +45,13 @@
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="HasHeader" Value="False">
+                            <Setter TargetName="HeaderBorder" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
                         <Trigger Property="HasItems" Value="False">
+                            <Setter TargetName="RemoveButton" Property="IsEnabled" Value="False"/>
+                        </Trigger>
+                        <Trigger Property="SelectedItem" Value="{x:Null}">
                             <Setter TargetName="RemoveButton" Property="IsEnabled" Value="False"/>
                         </Trigger>
 					</ControlTemplate.Triggers>

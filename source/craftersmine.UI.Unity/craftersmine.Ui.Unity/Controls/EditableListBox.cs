@@ -10,15 +10,16 @@ using System.Windows.Controls.Primitives;
 
 namespace craftersmine.Ui.Unity.Controls
 {
-    public class EditableListBox : Selector
+    public class EditableListBox : ListBox
     {
         internal static readonly DependencyProperty HeaderVisibilityProperty = DependencyProperty.Register(nameof(HeaderVisibility), typeof(Visibility), typeof(EditableListBox), new PropertyMetadata(Visibility.Collapsed));
 
-        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(nameof(Header), typeof(object), typeof(EditableListBox), new PropertyMetadata(null));
-        public static readonly DependencyProperty HeaderTemplateProperty = DependencyProperty.Register(nameof(HeaderTemplate), typeof(DataTemplate), typeof(EditableListBox), new PropertyMetadata(null));
-        public static readonly DependencyProperty HeaderTemplateSelectorProperty = DependencyProperty.Register(nameof(HeaderTemplateSelector), typeof(DataTemplateSelector), typeof(EditableListBox), new PropertyMetadata(null));
+        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(nameof(Header), typeof(object), typeof(EditableListBox), new PropertyMetadata(null, OnHeaderPropertyChanged));
+        public static readonly DependencyProperty HeaderTemplateProperty = DependencyProperty.Register(nameof(HeaderTemplate), typeof(DataTemplate), typeof(EditableListBox), new PropertyMetadata(null, OnHeaderPropertyChanged));
+        public static readonly DependencyProperty HeaderTemplateSelectorProperty = DependencyProperty.Register(nameof(HeaderTemplateSelector), typeof(DataTemplateSelector), typeof(EditableListBox), new PropertyMetadata(null, OnHeaderPropertyChanged));
 
-        public static readonly DependencyProperty HasHeaderProperty = DependencyProperty.Register(nameof(HasHeader), typeof(bool), typeof(EditableListBox), new PropertyMetadata(false));
+        private static readonly DependencyPropertyKey HasHeaderPropertyKey = DependencyProperty.RegisterReadOnly(nameof(HasHeader), typeof(bool), typeof(EditableListBox), new FrameworkPropertyMetadata(false));
+        public static readonly DependencyProperty HasHeaderProperty = HasHeaderPropertyKey.DependencyProperty;
 
         static EditableListBox()
         {
@@ -34,6 +35,9 @@ namespace craftersmine.Ui.Unity.Controls
                 return Visibility.Collapsed;
             }
         }
+
+        public event RoutedEventHandler? AddClick;
+        public event RoutedEventHandler? RemoveClick;
 
         public object Header
         {
@@ -54,16 +58,30 @@ namespace craftersmine.Ui.Unity.Controls
         public bool HasHeader
         {
             get => (bool)GetValue(HasHeaderProperty);
-            set => SetValue(HasHeaderProperty, Header is not null || HeaderTemplate is not null);
         }
 
-        public void OnAddClick(object sender, RoutedEventArgs e)
+        public override void OnApplyTemplate()
         {
-            Debugger.Break();
+            base.OnApplyTemplate();
+
+            if (GetTemplateChild("AddButton") is Button addButton)
+                addButton.Click += (s, e) => AddClick?.Invoke(this, e);
+            if (GetTemplateChild("RemoveButton") is Button removeButton)
+                removeButton.Click += (s, e) => RemoveClick?.Invoke(this, e);
         }
-        public void OnRemoveClick(object sender, RoutedEventArgs e)
+
+        private static void OnHeaderPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            Debugger.Break();
+            EditableListBox? lb = d as EditableListBox;
+            if (lb is null)
+                return;
+            lb.UpdateHasHeaderProperty();
+        }
+
+        private void UpdateHasHeaderProperty()
+        {
+            bool hasHeader = Header is not null || HeaderTemplate is not null || HeaderTemplateSelector is not null;
+            SetValue(HasHeaderPropertyKey, hasHeader);
         }
     }
 }

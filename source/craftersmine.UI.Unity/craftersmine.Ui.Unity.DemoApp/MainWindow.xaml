@@ -15,29 +15,37 @@
         </Grid.RowDefinitions>
         <TabControl Grid.Row="0">
             <TabItem Header="Groups And Boxes" Padding="4">
-                <StackPanel>
-                    <GroupBox Header="Group Box" Margin="4">
-                        <TextBlock Text="Lorem ipsum sit dolor amet"/>
-                    </GroupBox>
-                    <GroupBox Header="Help Boxes" Margin="4">
-                        <StackPanel>
-                            <controls:HelpBox Margin="4">
-                                <TextBlock Text="This can show useful tip on how to use something"/>
-                            </controls:HelpBox>
-                            <controls:HelpBox Margin="4" Type="Warning">
-                                <TextBlock Text="This can show an important recomendation or warning user on something that might not work or work only with specific condition" TextWrapping="Wrap"/>
-                            </controls:HelpBox>
-                            <controls:HelpBox Margin="4" Type="Error">
-                                <TextBlock Text="This can show an issue with some settings or properties, or mark issue with something else that prevents something from working that user must fix" TextWrapping="Wrap"/>
-                            </controls:HelpBox>
-                        </StackPanel>
-                    </GroupBox>
-                    <Border Style="{DynamicResource UnityBorder}" Margin="4" Padding="8">
-                        <TextBlock Text="Just a Unity styled border"/>
-                    </Border>
-                </StackPanel>
+                <TabItem.ToolTip>
+                    <TextBlock Text="Every available group box, border and help box in this style"/>
+                </TabItem.ToolTip>
+                <ScrollViewer Padding="4 4 4 0">
+                    <StackPanel>
+                        <GroupBox Header="Group Box" Margin="4">
+                            <TextBlock Text="Lorem ipsum sit dolor amet"/>
+                        </GroupBox>
+                        <GroupBox Header="Help Boxes" Margin="4">
+                            <StackPanel>
+                                <controls:HelpBox Margin="4">
+                                    <TextBlock Text="This can show useful tip on how to use something"/>
+                                </controls:HelpBox>
+                                <controls:HelpBox Margin="4" Type="Warning">
+                                    <TextBlock Text="This can show an important recomendation or warning user on something that might not work or work only with specific condition" TextWrapping="Wrap"/>
+                                </controls:HelpBox>
+                                <controls:HelpBox Margin="4" Type="Error">
+                                    <TextBlock Text="This can show an issue with some settings or properties, or mark issue with something else that prevents something from working that user must fix" TextWrapping="Wrap"/>
+                                </controls:HelpBox>
+                            </StackPanel>
+                        </GroupBox>
+                        <Border Style="{DynamicResource UnityBorder}" Margin="4" Padding="8">
+                            <TextBlock Text="Just a Unity styled border"/>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Menu and Toolbars">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Menubar and Toolbar demo page"/>
+                </TabItem.ToolTip>
                 <DockPanel>
                     <Menu DockPanel.Dock="Top">
                         <Menu.ItemsPanel>
@@ -558,6 +566,9 @@
                 </DockPanel>
             </TabItem>
             <TabItem Header="Tabs and TabControls">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Every available tab control in this style"/>
+                </TabItem.ToolTip>
                 <Grid Margin="16">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -576,137 +587,173 @@
                     </TabControl>
                 </Grid>
             </TabItem>
-            <TabItem Header="Buttons">
+            <TabItem Header="Buttons and toggles">
                 <TabItem.ToolTip>
-                    <TextBlock Text="Every available button in this style"/>
+                    <TextBlock Text="Every available button and toggle in this style"/>
                 </TabItem.ToolTip>
-                <StackPanel>
-                    <Button Content="Button" Margin="1" Padding="10"/>
-                    <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="CheckBoxes">
-                <StackPanel>
-                    <CheckBox Content="Default"/>
-                    <CheckBox Content="Checked" IsChecked="True"/>
-                    <CheckBox Content="Indeterminate" IsThreeState="True" IsChecked="{x:Null}"/>
-                    <CheckBox Content="Disabled" IsEnabled="False"/>
-                    <CheckBox Content="CheckedDisabled" IsChecked="True" IsEnabled="False"/>
-                    <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="TextBoxes">
-                <ScrollViewer Padding="4">
+                <ScrollViewer Padding="4 4 4 0">
                     <StackPanel>
-                        <GroupBox Header="TextBox">
+                        <GroupBox Header="Buttons">
                             <StackPanel>
-                                <TextBox Text="Default"/>
-                                <TextBox Text="Disabled" IsEnabled="False"/>
-                                <TextBox Text="ReadOnly" IsReadOnly="True"/>
-                                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+                                <Button Content="Button" Margin="1" Padding="10"/>
+                                <Button Content="Button" IsEnabled="False" Margin="1" Padding="10"/>
                             </StackPanel>
                         </GroupBox>
-                        <GroupBox Header="Search TextBox">
+                        <GroupBox Header="Checkboxes" Margin="0 8 0 0">
                             <StackPanel>
-                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="Default"/>
-                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="Disabled" IsEnabled="False"/>
-                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="ReadOnly" IsReadOnly="True"/>
-                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False"/>
+                                <CheckBox Content="Default"/>
+                                <CheckBox Content="Checked" IsChecked="True"/>
+                                <CheckBox Content="Indeterminate" IsThreeState="True" IsChecked="{x:Null}"/>
+                                <CheckBox Content="Disabled" IsEnabled="False"/>
+                                <CheckBox Content="CheckedDisabled" IsChecked="True" IsEnabled="False"/>
+                                <CheckBox Content="IndeterminateDisabled" IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False"/>
                             </StackPanel>
                         </GroupBox>
-                        <GroupBox Header="Multiline TextBox">
+                        <GroupBox Header="Radio buttons" Margin="0 8 0 0">
                             <StackPanel>
-                                <TextBox Text="Default" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
-                                <TextBox Text="Disabled" IsEnabled="False" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
-                                <TextBox Text="ReadOnly" IsReadOnly="True" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
-                                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top"/>
-                            </StackPanel>
-                        </GroupBox>
-                        <GroupBox Header="PasswordBox">
-                            <StackPanel>
-                                <PasswordBox Password="Default"/>
-                                <PasswordBox Password="Disabled" IsEnabled="False"/>
+                                <StackPanel>
+                                    <RadioButton Content="Default"/>
+                                    <RadioButton IsChecked="True" Content="Checked"/>
+                                </StackPanel>
+                                <RadioButton IsEnabled="False" Content="Disabled"/>
+                                <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Sliders">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Orientation="Horizontal">
-                        <Slider Orientation="Vertical"/>
-                        <Slider IsEnabled="False" Orientation="Vertical"/>
-                    </StackPanel>
+            <TabItem Header="Text boxes">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Every available text box in this style"/>
+                </TabItem.ToolTip>
+                <ScrollViewer Padding="4 4 4 0">
                     <StackPanel>
-                        <Slider/>
-                        <Slider IsEnabled="False"/>
-                    </StackPanel>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="RadioButtons">
-                <StackPanel>
-                    <StackPanel>
-                        <RadioButton Content="Default"/>
-                        <RadioButton IsChecked="True" Content="Checked"/>
-                    </StackPanel>
-                    <RadioButton IsEnabled="False" Content="Disabled"/>
-                    <RadioButton IsChecked="True" IsEnabled="False" Content="Disabled Checked"/>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="ComboBoxes" Padding="16">
-                <StackPanel>
-                    <ComboBox SelectedIndex="0">
-                        <ComboBoxItem Content="Test"/>
-                        <ComboBoxItem Content="Test"/>
-                        <ComboBoxItem Content="Test" IsEnabled="False"/>
-                        <ComboBoxItem Content="Test"/>
-                    </ComboBox>
-                    <ComboBox IsEnabled="False" SelectedIndex="0">
-                        <ComboBoxItem Content="Test"/>
-                        <ComboBoxItem Content="Test"/>
-                        <ComboBoxItem Content="Test"/>
-                        <ComboBoxItem Content="Test"/>
-                    </ComboBox>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="ProgressBars">
-                <StackPanel Margin="4">
-                    <Slider x:Name="ProgressSlider" Minimum="0" Maximum="100"/>
-                    <ProgressBar Value="{Binding ElementName=ProgressSlider, Path=Value}"/>
-                    <ProgressBar IsIndeterminate="True"/>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="Expanders">
-                <StackPanel>
-                    <Expander Header="Inspector Style">
-                        <TextBlock Text="Unity UI is interesting"/>
-                    </Expander>
-                    <TabControl Style="{DynamicResource PanelledTabControlStyle}" Margin="8">
-                        <TabItem Header="This is first tab" HorizontalContentAlignment="Stretch">
+                        <GroupBox Header="TextBox">
                             <StackPanel>
-                                <Expander Header="Panelled Expander" Style="{DynamicResource SimpleBorderedExpanderStyle}" Padding="8 8 0 8">
+                                <TextBox Text="Default" Margin="4"/>
+                                <TextBox Text="Disabled" IsEnabled="False" Margin="4"/>
+                                <TextBox Text="ReadOnly" IsReadOnly="True" Margin="4"/>
+                                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False" Margin="4"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Search TextBox" Margin="0 8 0 0">
+                            <StackPanel>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="Default" Margin="4"/>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="Disabled" IsEnabled="False" Margin="4"/>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="ReadOnly" IsReadOnly="True" Margin="4"/>
+                                <TextBox Style="{DynamicResource SearchTextBoxStyle}" Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False" Margin="4"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Multiline TextBox" Margin="0 8 0 0">
+                            <StackPanel>
+                                <TextBox Text="Default" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top" Margin="4"/>
+                                <TextBox Text="Disabled" IsEnabled="False" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top" Margin="4"/>
+                                <TextBox Text="ReadOnly" IsReadOnly="True" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top" Margin="4"/>
+                                <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False" AcceptsReturn="True" Height="40" VerticalContentAlignment="Top" Margin="4"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="PasswordBox" Margin="0 8 0 0">
+                            <StackPanel>
+                                <PasswordBox Password="Default" Margin="4"/>
+                                <PasswordBox Password="Disabled" IsEnabled="False" Margin="4"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Sliders and progressbars">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Every available slider and progressbars in this style"/>
+                </TabItem.ToolTip>
+                <ScrollViewer Padding="4 4 4 0">
+                    <StackPanel>
+                        <GroupBox Header="Horizontal slider">
+                            <StackPanel>
+                                <Slider/>
+                                <Slider IsEnabled="False"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Vertical slider" Height="80" Margin="0 4 0 0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Slider Orientation="Vertical"/>
+                                <Slider Orientation="Vertical" IsEnabled="False"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Progress bar" Margin="0 4 0 0">
+                            <StackPanel Margin="4">
+                                <controls:HelpBox>
+                                    <TextBlock Text="Progress bars and also some other colored elements might not be correctly displayed in Designer mode. This is a known issue with how ColorMixer works on some resources." TextWrapping="Wrap"/>
+                                </controls:HelpBox>
+                                <Slider x:Name="ProgressSlider" Minimum="0" Maximum="100"/>
+                                <ProgressBar Value="{Binding ElementName=ProgressSlider, Path=Value}"/>
+                                <controls:HelpBox Margin="0 4 0 0">
+                                    <TextBlock Text="Intermediate ProgressBar is not animated since there is no known animated intermediate progress bar in Unity. So closest variant was to make it fully filled." TextWrapping="Wrap"/>
+                                </controls:HelpBox>
+                                <ProgressBar IsIndeterminate="True" Margin="0 4 0 0"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Comboboxes and expanders" Padding="16">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Every available combobox and expander in this style"/>
+                </TabItem.ToolTip>
+                <ScrollViewer Padding="4 4 4 0">
+                    <StackPanel>
+                        <GroupBox Header="Combobox">
+                            <StackPanel>
+                                <ComboBox SelectedIndex="0" Margin="4">
+                                    <ComboBoxItem Content="Test"/>
+                                    <ComboBoxItem Content="Test"/>
+                                    <ComboBoxItem Content="Test" IsEnabled="False"/>
+                                    <ComboBoxItem Content="Test"/>
+                                </ComboBox>
+                                <ComboBox IsEnabled="False" SelectedIndex="0" Margin="4">
+                                    <ComboBoxItem Content="Test"/>
+                                    <ComboBoxItem Content="Test"/>
+                                    <ComboBoxItem Content="Test"/>
+                                    <ComboBoxItem Content="Test"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Inspector styled expander" Margin="0 4 0 0" Padding="0 4 0 0">
+                            <Expander Header="Inspector Style">
+                                <TextBlock Text="Unity UI is interesting"/>
+                            </Expander>
+                        </GroupBox>
+                        <GroupBox Header="Panelled (floating) expander" Margin="0 4 0 0">
+                            <TabControl Style="{DynamicResource PanelledTabControlStyle}" Margin="8">
+                                <TabItem Header="This is first tab" HorizontalContentAlignment="Stretch">
                                     <StackPanel>
-                                        <Expander Header="Inner expander 1" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
-                                            <TextBlock Text="This is an expander content"/>
+                                        <Expander Header="Panelled Expander" Style="{DynamicResource SimpleBorderedExpanderStyle}" Padding="8 8 0 8">
+                                            <StackPanel>
+                                                <Expander Header="Inner expander 1" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
+                                                    <TextBlock Text="This is an expander content"/>
+                                                </Expander>
+                                                <Expander Header="Inner expander 2" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
+                                                    <TextBlock Text="This is an expander content"/>
+                                                </Expander>
+                                                <Expander Header="Inner expander 3" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
+                                                    <TextBlock Text="This is an expander content"/>
+                                                </Expander>
+                                            </StackPanel>
                                         </Expander>
-                                        <Expander Header="Inner expander 2" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
-                                            <TextBlock Text="This is an expander content"/>
-                                        </Expander>
-                                        <Expander Header="Inner expander 3" Style="{DynamicResource SimpleExpanderStyle}" Padding="16 8 0 8">
-                                            <TextBlock Text="This is an expander content"/>
+                                        <Expander Header="Panelled Expander 2" Style="{DynamicResource SimpleBorderedExpanderStyle}" Padding="8 8 0 8">
+                                            <TextBlock Text="This is another expander content"/>
                                         </Expander>
                                     </StackPanel>
-                                </Expander>
-                                <Expander Header="Panelled Expander 2" Style="{DynamicResource SimpleBorderedExpanderStyle}" Padding="8 8 0 8">
-                                    <TextBlock Text="This is another expander content"/>
-                                </Expander>
-                            </StackPanel>
-                        </TabItem>
-                        <TabItem Header="This tab is empty"/>
-                    </TabControl>
-                </StackPanel>
+                                </TabItem>
+                                <TabItem Header="This tab is empty"/>
+                            </TabControl>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
-            <TabItem Header="ScrollBars">
+            <TabItem Header="ScrollBar and ScrollViewer">
+                <TabItem.ToolTip>
+                    <TextBlock Text="ScrollViewer and ScrollBars demo page"/>
+                </TabItem.ToolTip>
                 <ScrollViewer HorizontalScrollBarVisibility="Visible">
                     <TextBlock>
                 <Run>
@@ -1176,7 +1223,10 @@
                     </TextBlock>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="ListViews">
+            <TabItem Header="ListViews and TreeViews">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Every available listbox, listview and treeview in this style"/>
+                </TabItem.ToolTip>
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -1254,6 +1304,9 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Custom ListBox">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Custom editable Unity-like listbox in this style"/>
+                </TabItem.ToolTip>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -1261,10 +1314,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <controls:EditableListBox Margin="8">
-                        <controls:EditableListBox.Header>
-                            <TextBlock Text="Header text"/>
-                        </controls:EditableListBox.Header>
+                    <controls:EditableListBox Margin="8" Header="Test list header" AddClick="EditableListBox_AddClick" RemoveClick="EditableListBox_RemoveClick">
                         <ListBoxItem Content="Test"/>
                         <ListBoxItem Content="Test"/>
                         <ListBoxItem Content="Test"/>
@@ -1275,7 +1325,7 @@
 
                     <GridSplitter Grid.Column="1"/>
 
-                    <controls:EditableListBox Margin="8" Grid.Column="2">
+                    <controls:EditableListBox Margin="8" Grid.Column="2" AddClick="EditableListBox_AddClick" RemoveClick="EditableListBox_RemoveClick">
                         <ListBoxItem Content="Test"/>
                         <ListBoxItem Content="Test"/>
                         <ListBoxItem Content="Test"/>
@@ -1307,15 +1357,15 @@
             </StatusBarItem>
             <Separator Grid.Column="1"/>
             <StatusBarItem Grid.Column="2">
-                <Label Content="Test"/>
+                <Label Content="Demo"/>
             </StatusBarItem>
             <Separator Grid.Column="3" HorizontalAlignment="Center"/>
             <StatusBarItem Grid.Column="4">
-                <Label Content="Test"/>
+                <Label Content="WPF Unity UI"/>
             </StatusBarItem>
             <Separator Grid.Column="5" HorizontalAlignment="Center"/>
             <StatusBarItem Grid.Column="6">
-                <Label Content="Test"/>
+                <Label Content="Not endorsed with Unity"/>
             </StatusBarItem>
         </StatusBar>
     </Grid>

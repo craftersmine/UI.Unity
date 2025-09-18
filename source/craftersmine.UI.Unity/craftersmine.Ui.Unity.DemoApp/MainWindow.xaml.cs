@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using craftersmine.Ui.Unity.Controls;
+
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +21,24 @@ namespace craftersmine.Ui.Unity.DemoApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void EditableListBox_AddClick(object sender, RoutedEventArgs e)
+        {
+            EditableListBox? lb = sender as EditableListBox;
+            if (lb is null)
+                return;
+            lb.Items.Add("New Item!");
+        }
+
+        private void EditableListBox_RemoveClick(object sender, RoutedEventArgs e)
+        {
+            EditableListBox? lb = sender as EditableListBox;
+            if (lb is null)
+                return;
+            if (lb.SelectedItem is null)
+                return;
+            lb.Items.Remove(lb.SelectedItem);
         }
     }
 }

@@ -1255,7 +1255,27 @@
             </TabItem>
             <TabItem Header="Custom ListBox">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
                     <controls:EditableListBox Margin="8">
+                        <controls:EditableListBox.Header>
+                            <TextBlock Text="Header text"/>
+                        </controls:EditableListBox.Header>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                        <ListBoxItem Content="Test"/>
+                    </controls:EditableListBox>
+
+                    <GridSplitter Grid.Column="1"/>
+
+                    <controls:EditableListBox Margin="8" Grid.Column="2">
                         <ListBoxItem Content="Test"/>
                         <ListBoxItem Content="Test"/>
                         <ListBoxItem Content="Test"/>

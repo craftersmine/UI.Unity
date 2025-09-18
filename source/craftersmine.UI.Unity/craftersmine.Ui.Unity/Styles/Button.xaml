@@ -16,6 +16,9 @@
     <SolidColorBrush x:Key="ButtonPressedBorderBottomBrush" Color="{DynamicResource ButtonBorderColor}" Opacity="1"/>
     <SolidColorBrush x:Key="ButtonPressedBorderTopBrush" Color="{DynamicResource ButtonPressedBorderColor}" Opacity="1"/>
 
+    <SolidColorBrush x:Key="UnityListBoxButtonBackgroundBrush" Color="Transparent"/>
+    <SolidColorBrush x:Key="UnityListBoxButtonHoverBackgroundBrush" Color="White" Opacity="0.05"/>
+
     <Style TargetType="Button">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}"/>
@@ -49,6 +52,31 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value=".5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="UnityListBoxButtonStyle" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Padding" Value="7 3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="ButtonRoot" Background="{DynamicResource UnityListBoxButtonBackgroundBrush}">
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}" Focusable="False"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonRoot" Property="Background" Value="{DynamicResource UnityListBoxButtonHoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonRoot" Property="Background" Value="{DynamicResource UnityListBoxButtonBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

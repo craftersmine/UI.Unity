@@ -18,8 +18,8 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Border Background="{DynamicResource UnityListBoxHeaderBackgroundBrush}" BorderBrush="{DynamicResource UnityListBoxBorderBrush}" BorderThickness="0 0 0 1" Grid.Row="0">
-                                    <TextBlock Margin="8 0 0 0" Text="Header"/>
+                                <Border x:Name="HeaderBorder" Background="{DynamicResource UnityListBoxHeaderBackgroundBrush}" BorderBrush="{DynamicResource UnityListBoxBorderBrush}" BorderThickness="0 0 0 1" Grid.Row="0" Height="18">
+                                    <ContentPresenter Margin="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Stretch" ContentSource="Header"/>
                                 </Border>
                                 <ScrollViewer Grid.Row="1" Margin="0 2 0 2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                                     <StackPanel IsItemsHost="True"/>
@@ -34,12 +34,21 @@
                             </Grid.ColumnDefinitions>
                             <Border Grid.Column="1" BorderBrush="{DynamicResource UnityListBoxBorderBrush}" BorderThickness="1 0 1 1" Padding="2" Margin="0 -1 0 0" Background="{DynamicResource UnityListBoxBackgroundBrush}" CornerRadius="0 0 2 2">
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="+"/>
-                                    <Button Content="-"/>
+									<Button x:Name="AddButton" Style="{DynamicResource UnityListBoxButtonStyle}">
+										<Path Width="10" Height="10" Stroke="{DynamicResource ControlForegroundBrush}" StrokeThickness="2" Data="M5,0L5,10M0,5L10,5"/>
+									</Button>
+                                    <Button x:Name="RemoveButton" Style="{DynamicResource UnityListBoxButtonStyle}">
+                                        <Path Width="10" Height="10" Stroke="{DynamicResource ControlForegroundBrush}" StrokeThickness="2" Data="M1.5,5L8.5,5"/>
+									</Button>
                                 </StackPanel>
                             </Border>
                         </Grid>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasItems" Value="False">
+                            <Setter TargetName="RemoveButton" Property="IsEnabled" Value="False"/>
+                        </Trigger>
+					</ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

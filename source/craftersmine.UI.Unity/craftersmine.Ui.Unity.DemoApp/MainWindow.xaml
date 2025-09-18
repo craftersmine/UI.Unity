@@ -1335,6 +1335,18 @@
                     </controls:EditableListBox>
                 </Grid>
             </TabItem>
+            <TabItem Header="Other custom controls">
+                <TabItem.ToolTip>
+                    <TextBlock Text="Other custom Unity-like controls in this style"/>
+                </TabItem.ToolTip>
+                <ScrollViewer Margin="4 4 4 0">
+                    <StackPanel>
+                        <GroupBox Header="Color Picker">
+                            <controls:UnityColorPicker/>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
         </TabControl>
         <StatusBar Grid.Row="1">
             <StatusBar.ItemsPanel>

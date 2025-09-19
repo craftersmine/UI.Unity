@@ -162,6 +162,6 @@
     <SolidColorBrush x:Key="UnityPickerButtonBackgroundBrush" Color="{DynamicResource UnityPickerButtonBackgroundColor}"/>
     <SolidColorBrush x:Key="UnityPickerBorderHoverBrush" Color="{DynamicResource UnityPickerBorderHoverColor}"/>
     <SolidColorBrush x:Key="UnityPickerButtonBackgroundHoverBrush" Color="{DynamicResource UnityPickerButtonBackgroundHoverColor}"/>
-    <SolidColorBrush x:Key="UnityPickerBorderFocusedBrush" Color="{local:ColorBlend {DynamicResource UnityUIAccentColor}, White, 0.5}"/>
+    <SolidColorBrush x:Key="UnityPickerBorderFocusedBrush" Color="{DynamicResource UnityUIAccentColor}"/>
 
 </ResourceDictionary>

@@ -1344,6 +1344,21 @@
                         <GroupBox Header="Color Picker">
                             <controls:UnityColorPicker Click="UnityColorPicker_Click"/>
                         </GroupBox>
+                        <GroupBox Header="Object Picker" Margin="0 4 0 0">
+                            <StackPanel>
+                                <controls:UnityObjectPicker>
+                                    <controls:UnityObjectPicker.SelectedObject>
+                                        <SolidColorBrush/>
+                                    </controls:UnityObjectPicker.SelectedObject>
+                                </controls:UnityObjectPicker>
+                                <controls:UnityObjectPicker Margin="0 2 0 0">
+                                    <controls:UnityObjectPicker.SelectedObject>
+                                        <Size/>
+                                    </controls:UnityObjectPicker.SelectedObject>
+                                </controls:UnityObjectPicker>
+                                <controls:UnityObjectPicker Margin="0 2 0 0" SelectedObject="{x:Null}" AllowedType="{x:Type Brush}"/>
+                            </StackPanel>
+                        </GroupBox>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

@@ -155,11 +155,13 @@
 
     <Color x:Key="UnityPickerBorderColor">#202020</Color>
     <Color x:Key="UnityPickerButtonBackgroundColor">#383838</Color>
+    <Color x:Key="UnityPickerContentBackgroundColor">#282828</Color>
     <Color x:Key="UnityPickerBorderHoverColor">#656565</Color>
     <Color x:Key="UnityPickerButtonBackgroundHoverColor">#4C4C4C</Color>
 
     <SolidColorBrush x:Key="UnityPickerBorderBrush" Color="{DynamicResource UnityPickerBorderColor}"/>
     <SolidColorBrush x:Key="UnityPickerButtonBackgroundBrush" Color="{DynamicResource UnityPickerButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="UnityPickerContentBackgroundBrush" Color="{DynamicResource UnityPickerContentBackgroundColor}"/>
     <SolidColorBrush x:Key="UnityPickerBorderHoverBrush" Color="{DynamicResource UnityPickerBorderHoverColor}"/>
     <SolidColorBrush x:Key="UnityPickerButtonBackgroundHoverBrush" Color="{DynamicResource UnityPickerButtonBackgroundHoverColor}"/>
     <SolidColorBrush x:Key="UnityPickerBorderFocusedBrush" Color="{DynamicResource UnityUIAccentColor}"/>

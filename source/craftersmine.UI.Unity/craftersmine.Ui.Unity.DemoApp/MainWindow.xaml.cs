@@ -1,5 +1,6 @@
 ﻿using craftersmine.Ui.Unity.Controls;
 
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,6 +40,18 @@ namespace craftersmine.Ui.Unity.DemoApp
             if (lb.SelectedItem is null)
                 return;
             lb.Items.Remove(lb.SelectedItem);
+        }
+
+        private void UnityColorPicker_Click(object sender, RoutedEventArgs e)
+        {
+            UnityColorPicker picker = (UnityColorPicker)sender;
+            Color color = new Color();
+            byte[] colorData = RandomNumberGenerator.GetBytes(4);
+            color.R = colorData[0];
+            color.G = colorData[1];
+            color.B = colorData[2];
+            color.A = colorData[3];
+            picker.Color = color;
         }
     }
 }

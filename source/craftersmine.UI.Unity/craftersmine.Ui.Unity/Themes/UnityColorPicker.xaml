@@ -8,57 +8,44 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:UnityColorPicker}">
-                    <Button>
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border x:Name="PickerRoot" Background="{DynamicResource UnityPickerButtonBackgroundBrush}" BorderBrush="{DynamicResource UnityPickerBorderBrush}" BorderThickness="1" CornerRadius="0 2 2 0" IsHitTestVisible="True">
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition/>
-                                                        <ColumnDefinition Width="18"/>
-                                                    </Grid.ColumnDefinitions>
-                                                    <Grid Grid.Column="0">
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition/>
-                                                            <RowDefinition Height="3"/>
-                                                        </Grid.RowDefinitions>
-                                                        <Rectangle x:Name="SelectedColorRectangle" Fill="Red" Grid.Row="0" IsHitTestVisible="False"/>
-                                                        <Grid Grid.Row="1">
-                                                            <Rectangle Fill="Black" IsHitTestVisible="False"/>
-                                                            <Rectangle x:Name="AlphaValueRectangle" Fill="White" Width="150" HorizontalAlignment="Left" IsHitTestVisible="False"/>
-                                                        </Grid>
-                                                    </Grid>
-                                                    <Grid Grid.Column="1">
-                                                        <TextBlock Text="P"/>
-                                                    </Grid>
-                                                </Grid>
-                                            </Border>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsFocused" Value="True">
-                                                    <Setter TargetName="PickerRoot" Property="Background" Value="{DynamicResource UnityPickerButtonBackgroundBrush}"/>
-                                                    <Setter TargetName="PickerRoot" Property="BorderBrush" Value="{DynamicResource UnityPickerBorderFocusedBrush}"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter TargetName="PickerRoot" Property="Background" Value="{DynamicResource UnityPickerButtonBackgroundHoverBrush}"/>
-                                                    <Setter TargetName="PickerRoot" Property="BorderBrush" Value="{DynamicResource UnityPickerBorderHoverBrush}"/>
-                                                </Trigger>
-                                                <Trigger Property="IsPressed" Value="True">
-                                                    <Setter TargetName="PickerRoot" Property="Background" Value="{DynamicResource UnityPickerButtonBackgroundBrush}"/>
-                                                    <Setter TargetName="PickerRoot" Property="BorderBrush" Value="{DynamicResource UnityPickerBorderBrush}"/>
-                                                </Trigger>
-                                                <Trigger Property="IsEnabled" Value="False">
-                                                    <Setter Property="Opacity" Value="0.5"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </Button.Style>
-                    </Button>
+                    <Border x:Name="PickerRoot" Background="{DynamicResource UnityPickerButtonBackgroundBrush}" BorderBrush="{DynamicResource UnityPickerBorderBrush}" BorderThickness="1" CornerRadius="0 2 2 0" IsHitTestVisible="True">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="18"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="3"/>
+                                </Grid.RowDefinitions>
+                                <Rectangle x:Name="SelectedColorRectangle" Grid.Row="0" IsHitTestVisible="False" Fill="Black"/>
+                                <Border x:Name="AlphaIndicatorTrack" Grid.Row="1" Background="Black" MinHeight="3">
+                                    <Border HorizontalAlignment="Left" x:Name="AlphaIndicator" Background="White"/>
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Image Source="{DynamicResource UnityEyeDropperIcon}" Width="14" Height="14"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="PickerRoot" Property="Background" Value="{DynamicResource UnityPickerButtonBackgroundBrush}"/>
+                            <Setter TargetName="PickerRoot" Property="BorderBrush" Value="{DynamicResource UnityPickerBorderFocusedBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PickerRoot" Property="Background" Value="{DynamicResource UnityPickerButtonBackgroundHoverBrush}"/>
+                            <Setter TargetName="PickerRoot" Property="BorderBrush" Value="{DynamicResource UnityPickerBorderHoverBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="PickerRoot" Property="Background" Value="{DynamicResource UnityPickerButtonBackgroundBrush}"/>
+                            <Setter TargetName="PickerRoot" Property="BorderBrush" Value="{DynamicResource UnityPickerBorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

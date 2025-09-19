@@ -47,6 +47,16 @@
         </DrawingImage.Drawing>
     </DrawingImage>
 
+    <DrawingImage x:Key="UnityEyeDropperIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V3.7041666 H3.7041666 V0 H0 Z">
+                <DrawingGroup Opacity="1">
+                    <GeometryDrawing Brush="{DynamicResource ControlForegroundBrush}" Geometry="F1 M3.7041666,3.7041666z M0,0z M1.794145,0.87407064L2.8637314,1.9436571 3.1110015,1.6963871 2.7142194,1.299605 3.0822491,0.93157526C3.3146908,0.69913348,3.0082792,0.40749682,2.783225,0.63255112L2.4295713,0.98620468 2.0529159,0.60954925z" />
+                    <GeometryDrawing Brush="{DynamicResource ControlForegroundBrush}" Geometry="F1 M3.7041666,3.7041666z M0,0z M2.1430216,1.0293945L0.70848387,2.4453287C0.60880917,2.5585871,0.60880917,2.6721013,0.70848387,2.7853597L0.53640136,2.9553751 0.71468505,3.131075 0.87281493,2.9750122C1.0017741,3.1073001,1.1309122,3.1184024,1.2598714,2.9750122L2.6866577,1.5663126 2.1430216,1.0293945z M2.1564575,1.2361002L2.4525634,1.532723 1.5957682,2.3895182 1.2996622,2.0934122 2.1564575,1.2361002z" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/Window.xaml"/>
         <ResourceDictionary Source="/craftersmine.UI.Unity;component/Styles/MiscControls.xaml"/>

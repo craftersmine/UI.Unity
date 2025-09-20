@@ -1342,7 +1342,7 @@
                 <ScrollViewer Margin="4 4 4 0">
                     <StackPanel>
                         <GroupBox Header="Color Picker">
-                            <controls:UnityColorPicker Click="UnityColorPicker_Click"/>
+                            <controls:UnityColorPicker Click="UnityColorPicker_Click" Color="#aa441122"/>
                         </GroupBox>
                         <GroupBox Header="Object Picker" Margin="0 4 0 0">
                             <StackPanel>

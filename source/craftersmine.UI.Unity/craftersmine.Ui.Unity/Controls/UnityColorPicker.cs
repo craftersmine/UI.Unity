@@ -30,6 +30,19 @@ namespace craftersmine.Ui.Unity.Controls
             UnityColorPicker? picker = o as UnityColorPicker;
             if (picker is null)
                 return;
+            UpdateColorValue(picker, e.NewValue);
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            UpdateColorValue(this, Color);
+        }
+
+        private static void UpdateColorValue(UnityColorPicker picker, object newValue)
+        {
+            if (picker is null)
+                return;
 
             Rectangle? selColorRect = picker.GetTemplateChild("SelectedColorRectangle") as Rectangle;
             if (selColorRect is null)
@@ -41,17 +54,12 @@ namespace craftersmine.Ui.Unity.Controls
             if (alphaIndicatorTrackBorder is null || alphaIndicatorBorder is null)
                 return;
 
-            o.SetValue(e.Property, e.NewValue);
+            picker.SetValue(ColorProperty, newValue);
             Color fillColor = picker.Color;
             fillColor.A = 255;
             selColorRect.Fill = new SolidColorBrush(fillColor);
 
             alphaIndicatorBorder.Width = (alphaIndicatorTrackBorder.ActualWidth / 255) * picker.Color.A;
-        }
-
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
         }
     }
 }

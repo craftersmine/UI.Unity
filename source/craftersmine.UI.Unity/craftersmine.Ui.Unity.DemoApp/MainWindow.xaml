@@ -54,10 +54,10 @@
                             </ItemsPanelTemplate>
                         </Menu.ItemsPanel>
                         <MenuItem Header="File" MaxHeight="30">
-                            <MenuItem Header="New"/>
-                            <MenuItem Header="Open"/>
+                            <MenuItem Header="New" InputGestureText="Ctrl+N"/>
+                            <MenuItem Header="Open" InputGestureText="Ctrl+O"/>
                             <MenuItem Header="Save"/>
-                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Exit" InputGestureText="Alt+F4"/>
                             <MenuItem Header="Recent">
                                 <MenuItem Header="UnityUI.xaml"/>
                             </MenuItem>
@@ -630,7 +630,7 @@
                     <StackPanel>
                         <GroupBox Header="TextBox">
                             <StackPanel>
-                                <TextBox Text="Default" Margin="4"/>
+                                <TextBox Text="Default" Margin="4" VerticalContentAlignment="Center"/>
                                 <TextBox Text="Disabled" IsEnabled="False" Margin="4"/>
                                 <TextBox Text="ReadOnly" IsReadOnly="True" Margin="4"/>
                                 <TextBox Text="DisabledReadOnly" IsReadOnly="True" IsEnabled="False" Margin="4"/>

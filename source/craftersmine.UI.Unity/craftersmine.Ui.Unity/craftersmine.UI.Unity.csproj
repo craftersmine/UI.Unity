@@ -6,10 +6,41 @@
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>craftersmine.Ui.Unity</RootNamespace>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>craftersmine.UI.Unity</Title>
+    <Authors>craftersmine</Authors>
+    <Company>craftersmine</Company>
+    <Description>Unity UI styles for WPF application.</Description>
+    <Copyright>Library: craftersmine © 2026. Unity UI: Unity Technologies © 2004-2026</Copyright>
+    <PackageProjectUrl>https://github.com/craftersmine/UI.Unity</PackageProjectUrl>
+    <PackageIcon>PackageIcon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/craftersmine/UI.Unity</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>UI;Unity Style;WPF;Theme;Style</PackageTags>
+    <PackageOutputPath>$(OutputPath)\NuGet\</PackageOutputPath>
+    <AssemblyVersion>1.0.4</AssemblyVersion>
+    <FileVersion>1.0.4</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Version>1.0.4-pre</Version>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Fonts\Inter.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\_DEV\craftersmine.Ui.Unity\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="D:\_DEV\craftersmine.Ui.Unity\Resources\PackageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

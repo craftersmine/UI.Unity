@@ -19,6 +19,7 @@
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="MinHeight" Value="18"/>
             <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="Padding" Value="1 1 1 0"/>
             <Setter Property="CaretBrush" Value="{DynamicResource ControlForegroundBrush}"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -65,6 +66,7 @@
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="MinHeight" Value="18"/>
             <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="Padding" Value="1 1 1 0"/>
             <Setter Property="CaretBrush" Value="{DynamicResource ControlForegroundBrush}"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

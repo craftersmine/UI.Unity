@@ -145,4 +145,53 @@
     <Color x:Key="UnityBorderBackgroundColor">#d6d6d6</Color>
     <Color x:Key="UnityBorderColor">#dcdcdc</Color>
 
+    <Color x:Key="UnityIconPrimaryColor">#555555</Color>
+    <Color x:Key="UnityIconBlueColor">#0c6ccb</Color>
+    <Color x:Key="UnityIconCharcoalWhiteColor">#f0f0f0</Color>
+    <Color x:Key="UnityIconCoralColor">#b73c15</Color>
+    <Color x:Key="UnityIconCyanColor">#0f7686</Color>
+    <Color x:Key="UnityIconGreenColor">#2e7d32</Color>
+    <Color x:Key="UnityIconMagentaColor">#cd237f</Color>
+    <Color x:Key="UnityIconPurpleColor">#673ab7</Color>
+    <Color x:Key="UnityIconYellowColor">#c99700</Color>
+
+    <Color x:Key="UnityIconFeedbackGray50Color">#80555555</Color>
+    <Color x:Key="UnityIconFeedbackCobaltColor">#0f49bd</Color>
+    <Color x:Key="UnityIconFeedbackGrayColor">#555555</Color>
+    <Color x:Key="UnityIconFeedbackGreenColor">#008126</Color>
+    <Color x:Key="UnityIconFeedbackScarletColor">#b10c0c</Color>
+    <Color x:Key="UnityIconFeedbackWhiteColor">#f0f0f0</Color>
+    <Color x:Key="UnityIconFeedbackYellowColor">#c99700</Color>
+
+    <Color x:Key="UnityIconAccentAntiqueRedColor">#b25553</Color>
+    <Color x:Key="UnityIconAccentIrisPurpleColor">#6d66cc</Color>
+    <Color x:Key="UnityIconAccentOrangeColor">#b76106</Color>
+    <Color x:Key="UnityIconAccentSeaSpringGreenColor">#00876a</Color>
+    <Color x:Key="UnityIconAccentSteelBlueColor">#4b88ac</Color>
+
+    <SolidColorBrush x:Key="UnityIconPrimaryBrush" Color="{DynamicResource UnityIconPrimaryColor}"/>
+    <SolidColorBrush x:Key="UnityIconBlueBrush" Color="{DynamicResource UnityIconBlueColor}"/>
+    <SolidColorBrush x:Key="UnityIconCharcoalWhiteBrush" Color="{DynamicResource UnityIconCharcoalWhiteColor}"/>
+    <SolidColorBrush x:Key="UnityIconCoralBrush" Color="{DynamicResource UnityIconCoralColor}"/>
+    <SolidColorBrush x:Key="UnityIconCyanBrush" Color="{DynamicResource UnityIconCyanColor}"/>
+    <SolidColorBrush x:Key="UnityIconGreenBrush" Color="{DynamicResource UnityIconGreenColor}"/>
+    <SolidColorBrush x:Key="UnityIconMagentaBrush" Color="{DynamicResource UnityIconMagentaColor}"/>
+    <SolidColorBrush x:Key="UnityIconPurpleBrush" Color="{DynamicResource UnityIconPurpleColor}"/>
+    <SolidColorBrush x:Key="UnityIconYellowBrush" Color="{DynamicResource UnityIconYellowColor}"/>
+
+    <SolidColorBrush x:Key="UnityIconFeedbackGray50Brush" Color="{DynamicResource UnityIconFeedbackGray50Color}"/>
+    <SolidColorBrush x:Key="UnityIconFeedbackCobaltBrush" Color="{DynamicResource UnityIconFeedbackCobaltColor}"/>
+    <SolidColorBrush x:Key="UnityIconFeedbackGrayBrush" Color="{DynamicResource UnityIconFeedbackGrayColor}"/>
+    <SolidColorBrush x:Key="UnityIconFeedbackGreenBrush" Color="{DynamicResource UnityIconFeedbackGreenColor}"/>
+    <SolidColorBrush x:Key="UnityIconFeedbackScarletBrush" Color="{DynamicResource UnityIconFeedbackScarletColor}"/>
+    <SolidColorBrush x:Key="UnityIconFeedbackWhiteBrush" Color="{DynamicResource UnityIconFeedbackWhiteColor}"/>
+    <SolidColorBrush x:Key="UnityIconFeedbackYellowBrush" Color="{DynamicResource UnityIconFeedbackYellowColor}"/>
+
+    <SolidColorBrush x:Key="UnityIconAccentAntiqueRedBrush" Color="{DynamicResource UnityIconAccentAntiqueRedColor}"/>
+    <SolidColorBrush x:Key="UnityIconAccentIrisPurpleBrush" Color="{DynamicResource UnityIconAccentIrisPurpleColor}"/>
+    <SolidColorBrush x:Key="UnityIconAccentOrangeBrush" Color="{DynamicResource UnityIconAccentOrangeColor}"/>
+    <SolidColorBrush x:Key="UnityIconAccentSeaSpringBrush" Color="{DynamicResource UnityIconAccentSeaSpringColor}"/>
+    <SolidColorBrush x:Key="UnityIconAccentSteelBlueBrush" Color="{DynamicResource UnityIconAccentSteelBlueColor}"/>
+
+
 </ResourceDictionary>

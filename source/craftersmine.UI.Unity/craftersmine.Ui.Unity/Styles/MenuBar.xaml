@@ -125,7 +125,7 @@
                                   ContentSource="Icon" 
                                   HorizontalAlignment="Center" 
                                   VerticalAlignment="Center" 
-                                  Width="16" Height="16"
+                                  Width="16" Height="16" Margin="2 0 0 0"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <ContentPresenter ContentSource="Header" Grid.Column="1"
                                   Margin="{TemplateBinding Padding}"
@@ -172,7 +172,7 @@
                                   ContentSource="Icon"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Width="16" Height="16"
+                                  Width="16" Height="16" Margin="2 0 0 0"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Grid.Column="0"/>
                 <ContentPresenter ContentSource="Header" Grid.Column="2"
                                   Margin="{TemplateBinding Padding}"
@@ -250,7 +250,8 @@
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="IconPresenter" ContentSource="Icon"
                                   HorizontalAlignment="Center" VerticalAlignment="Center"
-                                  Width="16" Height="16" Grid.Column="0"/>
+                                  Width="16" Height="16" Grid.Column="0"
+                                  Margin="2 0 0 0"/>
                 <Border x:Name="CheckedGlyphBorder" Height="16" Width="16" 
                         VerticalAlignment="Center" HorizontalAlignment="Center" 
                         Visibility="Collapsed" Grid.Column="0">
@@ -261,7 +262,7 @@
                                   Margin="4 0 0 0" RecognizesAccessKey="True" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center"/>
-                <TextBlock x:Name="MenuGestureText" Grid.Column="2" Margin="{TemplateBinding Padding}" Opacity="0.7" Text="{TemplateBinding InputGestureText}" VerticalAlignment="Center"/>
+                <TextBlock x:Name="MenuGestureText" Grid.Column="2" Margin="16 0 0 0" Opacity="0.7" Text="{TemplateBinding InputGestureText}" VerticalAlignment="Center"/>
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
@@ -293,7 +294,8 @@
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="IconPresenter" ContentSource="Icon"
                                   HorizontalAlignment="Center" VerticalAlignment="Center"
-                                  Width="16" Height="16" Grid.Column="0"/>
+                                  Width="16" Height="16" Grid.Column="0"
+                                  Margin="2 0 0 0"/>
                 <Border x:Name="CheckedGlyphBorder" Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" Grid.Column="0">
                     <Path Width="8" Height="8" Data="{DynamicResource MenuItemCheckGeometry}" Stroke="{DynamicResource ControlForegroundBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Border>
@@ -302,7 +304,7 @@
                                   Margin="4 0 0 0" RecognizesAccessKey="True" 
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                   VerticalAlignment="Center"/>
-                <TextBlock x:Name="MenuGestureText" Grid.Column="2" Margin="{TemplateBinding Padding}" Opacity="0.7" Text="{TemplateBinding InputGestureText}" VerticalAlignment="Center"/>
+                <TextBlock x:Name="MenuGestureText" Grid.Column="2" Margin="16 0 0 0" Opacity="0.7" Text="{TemplateBinding InputGestureText}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 <Path x:Name="RightArrow" Fill="{DynamicResource ControlForegroundBrush}" Data="{DynamicResource MenuItemRightArrowGeometry}" Grid.Column="3" Margin="8 0 8 0" Height="8" Width="4"/>
                 <Popup x:Name="PART_Popup" AllowsTransparency="True"
                        Focusable="False"

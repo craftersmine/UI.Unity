@@ -160,6 +160,9 @@
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBar}, Path=Orientation}" Value="Vertical">
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarButtonGroupBeginStyle" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="Button">
@@ -171,6 +174,9 @@
                 <Setter Property="Margin" Value="1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarButtonGroupMiddleStyle" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="Button">
@@ -182,6 +188,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarButtonGroupEndStyle" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" TargetType="Button">
@@ -193,6 +202,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 
@@ -257,6 +269,9 @@
                 <Setter Property="Margin" Value="1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarToggleButtonGroupMiddleStyle" BasedOn="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}" TargetType="ToggleButton">
@@ -269,6 +284,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarToggleButtonGroupEndStyle" BasedOn="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}" TargetType="ToggleButton">
@@ -280,6 +298,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 
@@ -331,6 +352,9 @@
                 <Setter Property="Margin" Value="1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarCheckBoxGroupMiddleStyle" BasedOn="{StaticResource {x:Static ToolBar.CheckBoxStyleKey}}" TargetType="CheckBox">
@@ -342,6 +366,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarCheckBoxGroupEndStyle" BasedOn="{StaticResource {x:Static ToolBar.CheckBoxStyleKey}}" TargetType="CheckBox">
@@ -353,6 +380,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 
@@ -443,6 +473,9 @@
                 <Setter Property="Margin" Value="1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarRadioButtonGroupMiddleStyle" BasedOn="{StaticResource {x:Static ToolBar.RadioButtonStyleKey}}" TargetType="RadioButton">
@@ -454,6 +487,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style x:Key="ToolBarRadioButtonGroupEndStyle" BasedOn="{StaticResource {x:Static ToolBar.RadioButtonStyleKey}}" TargetType="RadioButton">
@@ -465,6 +501,9 @@
                 <Setter Property="Margin" Value="1 0 1 1"/>
                 <Setter Property="MinWidth" Value="37"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 
@@ -500,6 +539,9 @@
             </Trigger>
             <Trigger Property="IsChecked" Value="True">
                 <Setter TargetName="ButtonRoot" Property="Background" Value="{DynamicResource ToolBarButtonPressedBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

@@ -19,12 +19,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>UI;Unity Style;WPF;Theme;Style</PackageTags>
     <PackageOutputPath>$(OutputPath)\NuGet\</PackageOutputPath>
-    <AssemblyVersion>1.0.5</AssemblyVersion>
-    <FileVersion>1.0.5</FileVersion>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Version>1.0.5-pre</Version>
+    <Version>1.1.0</Version>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
 

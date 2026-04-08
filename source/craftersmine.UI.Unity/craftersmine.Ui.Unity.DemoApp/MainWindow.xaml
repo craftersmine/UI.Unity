@@ -153,22 +153,22 @@
                     <ToolBarTray DockPanel.Dock="Top">
                         <ToolBar>
                             <TextBlock Text="Buttons:" VerticalAlignment="Center"/>
-                            <Button>
+                            <Button IsEnabled="False">
                                 <Button.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                                 </Button.Content>
                             </Button>
-                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}">
-                                <Button.Content>
-                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
-                                </Button.Content>
-                            </Button>
-                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                            <Button Style="{DynamicResource ToolBarButtonGroupBeginStyle}" IsEnabled="False">
                                 <Button.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                                 </Button.Content>
                             </Button>
                             <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}">
+                                <Button.Content>
+                                    <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{DynamicResource ToolBarButtonGroupMiddleStyle}" IsEnabled="False">
                                 <Button.Content>
                                     <Path Width="16" Height="16" Data="M 0,0 L 16,0 L 16,16 L 0,16 L 0,0" Fill="{DynamicResource ControlForegroundBrush}"/>
                                 </Button.Content>

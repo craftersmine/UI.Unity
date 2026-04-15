@@ -238,12 +238,13 @@
                             </Button>
                         </Grid>
                         <Grid Grid.Row="1" Background="{DynamicResource ControlBackgroundBrush}">
-                            <ContentPresenter />
+                            <ContentPresenter x:Name="WindowRootContainer"/>
                         </Grid>
                     </Grid>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="WindowRootContainer" Property="Margin" Value="8 0 8 8"/>
                             <Setter TargetName="WindowTitleBackground" Property="Height" Value="22"/>
                             <Setter TargetName="WindowTitleBackground" Property="VerticalAlignment" Value="Bottom"/>
                             <Setter TargetName="WindowTitle" Property="Margin" Value="0 0 8 0"/>
